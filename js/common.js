@@ -32,6 +32,15 @@ function findUserById(id){
  
  }
 
+ function findUserIndexById(id){
+    for(let i = 0; i < model.data.users.length; i++){
+        let user = model.data.users[i];
+        if(user.id === id) return i;
+    } 
+    return null;
+ 
+ }
+
  function getLowestPoints(){
      
 

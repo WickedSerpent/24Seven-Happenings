@@ -16,3 +16,9 @@ function createNewHappening(){
     model.data.happenings.push(happening);
     updateView()
 }
+
+function goToDeleteUserPage(userId) {
+    model.app.page = 'deleteUser';
+    model.inputs.deleteUser.id = userId;
+    updateView()
+}
