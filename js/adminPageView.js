@@ -30,7 +30,7 @@ function getAllUsersAdmin(){
             <li>Navn - ${user.name} 
             <button onclick="goToEditPageUser(${user.id})">Endre</button> 
             <button onclick="goToDeleteUserPage(${user.id})">Slett</button><br></li>
-            Poeng - ${user.points} <br>
+            <br>
             </ul>
         `;
     }

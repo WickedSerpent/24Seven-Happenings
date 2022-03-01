@@ -17,6 +17,5 @@ function createDeleteUserHtml(){
     const user = findUserById(userId);
     return /*html*/`
         Navn: ${user.name}<br>
-        Poeng: ${user.points}<br>
     `;
 }

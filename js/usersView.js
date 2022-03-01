@@ -18,7 +18,6 @@ function getAllUsers(){
         html += /*html*/`
             <ul>
             <li>Navn - ${user.name}<br></li>
-                Poeng - ${user.points} <br>
             </ul>
         `;
     }
