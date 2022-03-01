@@ -44,7 +44,7 @@ function getAllHappeningsAdmin(){
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} <button>Endre</button> <button>Slett</button></li>
+            <li>${happening.name} <button>Endre</button> <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
             </ul>      
         `;
     }
