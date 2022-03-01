@@ -6,11 +6,14 @@ const model = {
 
     inputs: {
         newHappening: {
+            happeningId: '',
             name: '',
+            points: '',
             },
         
         newUser: {
             name: '',
+            lastName: '',
             points: null,
         },
         
@@ -28,6 +31,7 @@ const model = {
         editUser: {
             userId: null,
             name: '',
+            lastName: '',
             points: '',
         },
 
@@ -35,6 +39,7 @@ const model = {
         deleteUser: {
             userId: null,
             name: '',
+            lastName: '',
             points: '',
             areYouSure: false,
         },
