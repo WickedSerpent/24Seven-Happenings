@@ -1,70 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+const appDiv = document.getElementById("app");
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            display: flex;
-        }
+let content = '';
 
-        .boxOne{
-            width: 50vw;
-            max-height: 60vh;
-            border: solid grey 1px;
-            overflow: scroll;
-            font-size: 70px;
-            padding: 10px;
-        }
+showView();
 
-        .boxTwo{
-            width: 50vw;
-            max-height: 60vh;
-            border: solid grey 1px;
-            overflow: scroll;
-            font-size: 70px;
-            padding: 10px;
-        }
-
-        .button{
-            height: 40px;
-            padding: 10px;
-        }
-
-        .inBox{
-            height: 40px;
-        }
-        
-        header{
-            font-size: 80px;
-        }
-
-        .btn--bottom1{
-            position: absolute;
-            left: 25%;
-        }
-        
-        .btn--bottom2{
-            position: absolute;
-            left: 75%;
-        }
-
-        .input--bottom1{
-            position: absolute;
-            left: 10%;
-        }
-
-        .input--bottom2{
-            position: absolute;
-            left: 60%;
-        }
-    </style>
-</head>
-
-<body>
+function showView() {
+    let html = /*html*/ `
     <button class="button">Administratorside</button>
     <button class="button">Arrangementsside</button>
     <button class="button">Brukerside</button>
@@ -92,6 +33,11 @@
     </div>
     <input class="input--bottom1"type="text"><button class="btn--bottom1">Legg til nytt arrangement</button>
     <input class="input--bottom2"type="text"><button class="btn--bottom2">Legg til ny person</button>
-</body>
+    <div>${content}</div>
+  `;
 
-</html>
+  appDiv.innerHTML = html;
+}
+
+
+
