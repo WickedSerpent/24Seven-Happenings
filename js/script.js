@@ -7,4 +7,5 @@ updateView()
             else if(page === 'users') updateViewUsers();
             else if(page === 'editUser') updateViewEditUser();
             else if(page === 'deleteUser') updateViewDeleteUser();
+            else if(page === 'deleteHappening') updateViewDeleteHappening();
         }
