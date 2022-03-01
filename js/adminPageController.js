@@ -22,3 +22,9 @@ function goToDeleteUserPage(userId) {
     model.inputs.deleteUser.id = userId;
     updateView()
 }
+
+function goToDeleteHappeningPage(happeningId) {
+    model.app.page = 'deleteHappening';
+    model.inputs.deleteHappening.id = happeningId;
+    updateView()
+}
