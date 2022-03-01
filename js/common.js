@@ -24,6 +24,23 @@ function getMaxHappeningId(){
     return id;
 }
 
+function findHappeningById(id) {
+    for (let happening of model.data.happenings) {
+        if (happening.id === id) return happening;
+    }
+    return null;
+
+}
+
+function findHappeningIndexById(id) {
+    for (let i = 0; i < model.data.happenings.length; i++) {
+        let happening = model.data.happenings[i];
+        if (happening.id === id) return i;
+    }
+    return null;
+
+}
+
 function findUserById(id){
     for(let user of model.data.users){
         if(user.id === id) return user;
