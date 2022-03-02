@@ -5,7 +5,7 @@ const modelUsers = {
     },
 
     inputs: {
-      
+        selectAll: false,
         newUser: {
             name: '',
             points: null,
@@ -28,7 +28,7 @@ const modelUsers = {
     },
 
     data: {
-
+        
         allUsers: [
             {id: 1, name:'Per', isSelected: true, points: ''},
             {id: 2, name:'Pål', isSelected: true, points: ''},

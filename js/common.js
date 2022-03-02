@@ -9,7 +9,7 @@ function createMenuHtml() {
 
 function getMaxUserId() {
     let id = 0;
-    for (let user of modelUsers.data.allUsers) {
+    for (let user of modelUsers.data.allUsers.id) {
         if (user.id > id) id = user.id;
     }
     return id;
