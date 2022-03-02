@@ -7,7 +7,7 @@ const modelHappenings = {
         
         editHappening: {
             happeningId: null,
-            name: ''
+            name: '',
         },
 
         deleteHappening: {
