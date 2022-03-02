@@ -1,43 +1,56 @@
-function createMenuHtml(){
+function createMenuHtml() {
     return /*html*/`
-        <button onclick="model.app.page='home'; updateView()">Hjem</button>
-        <button onclick="model.app.page='users'; updateView()">Alle brukere</button>
-        <button onclick="model.app.page='admin'; updateView()">Administratorside</button>
-        <button onclick="model.app.page='happening'; updateView()">Hold trekning</button>
+        <button onclick="modelUsers.app.page='home'; updateView()">Hjemmeside</button>
+        <button onclick="modelUsers.app.page='happenings'; updateView()">Trekningsside</button>
+        <button onclick="modelUsers.app.page='doneHappening'; updateView()">Tidligere trekninger</button>
         <hr>
     `;
 }
 
-function getMaxUserId(){
+function getMaxUserId() {
     let id = 0;
-    for (let user of model.data.users) {
+    for (let user of modelUsers.data.allUsers) {
         if (user.id > id) id = user.id;
     }
     return id;
 }
 
-function getMaxHappeningId(){
+function getMaxHappeningId() {
     let id = 0;
-    for (let happening of model.data.happenings) {
+    for (let happening of modelHappenings.data.happenings) {
         if (happening.id > id) id = happening.id;
     }
     return id;
 }
 
-function findUserById(id){
-    for(let user of model.data.users){
-        if(user.id === id) return user;
-    } 
+function findHappeningById(id) {
+    for (let happening of modelHappenings.data.happenings) {
+        if (happening.id === id) return happening;
+    }
     return null;
- }
 
- function findHappeningById(id){
-    for(let happening of model.data.happenings){
-        if(happening.id === id) return happening;
-    } 
+}
+
+function findHappeningIndexById(id) {
+    for (let i = 0; i < modelHappenings.data.happenings.length; i++) {
+        let happening = modelHappenings.data.happenings[i];
+        if (happening.id === id) return i;
+    }
     return null;
- }
 
- function getLowestPoints(){
-     
+}
+
+function findUserById(id) {
+    for (let user of modelUsers.data.allUsers) {
+        if (user.id === id) return user;
+    }
+    return null;
+}
+
+function findUserIndexById(id) {
+    for (let i = 0; i < modelUsers.data.allUsers.length; i++) {
+        let user = modelUsers.data.allUsers[i];
+        if (user.id === id) return i;
+    }
+    return null;
 }
