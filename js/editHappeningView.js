@@ -6,7 +6,7 @@ function updateViewHappeningEdit(){
     <br/><br/>
     <input 
         type="text" 
-        value="${modelHappenings.data.happenings.name}"
+        value="${modelHappenings.inputs.editHappening.name}"
         oninput="modelHappenings.inputs.editHappening.name=this.value"
     >
     <br/>
