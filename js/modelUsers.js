@@ -8,7 +8,8 @@ const modelUsers = {
       
         newUser: {
             name: '',
-            points: null,
+            points: '',
+            isSelected: false,
         },
         
         
@@ -29,10 +30,11 @@ const modelUsers = {
 
     data: {
 
+        selectAll: false,
         allUsers: [
-            {id: 1, name:'Per', isSelected: true, points: ''},
-            {id: 2, name:'Pål', isSelected: true, points: ''},
-            {id: 3, name:'Espen', isSelected: true, points: ''},
+            {id: 1, name:'Per', points: '', isSelected: false,},
+            {id: 2, name:'Pål', points: '', isSelected: false,},
+            {id: 3, name:'Espen', points: '', isSelected: false,},
         ],
        
     },
