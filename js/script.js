@@ -1,11 +1,12 @@
 updateView()
         function updateView(){
-            const page = model.app.page;
-            if(page === 'admin') updateViewAdmin();
-            else if(page === 'happening') updateViewHappening();
-            else if(page === 'home') updateViewHome();
-            else if(page === 'users') updateViewUsers();
+            const page = modelUsers.app.page;
+            if(page === 'home') updateViewHome();
+            else if(page === 'happenings') updateViewHappenings();
             else if(page === 'editUser') updateViewEditUser();
+            else if(page === 'editHappening') updateViewEditUser();
             else if(page === 'deleteUser') updateViewDeleteUser();
             else if(page === 'deleteHappening') updateViewDeleteHappening();
+            else if(page === 'happening') updateViewHappeningPage();
+            else if(page === 'doneHappening') updateViewDoneHappening();
         }

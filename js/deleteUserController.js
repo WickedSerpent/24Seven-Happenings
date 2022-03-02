@@ -1,8 +1,8 @@
 function deleteUser(){
-    if (! model.inputs.deleteUser.areYouSure) return;
-    const index = findUserIndexById(model.inputs.deleteUser.id);
-    model.data.users.splice(index, 1);
-    model.app.page='admin';
-    model.inputs.deleteUser.areYouSure = false;
+    if (! modelUsers.inputs.deleteUser.areYouSure) return;
+    const index = findUserIndexById(modelUsers.inputs.deleteUser.id);
+    modelUsers.data.allUsers.splice(index, 1);
+    modelUsers.app.page='home';
+    modelUsers.inputs.deleteUser.areYouSure = false;
     updateView()
 }
