@@ -11,6 +11,6 @@ function updateViewHappeningEdit(){
     >
     <br/>
     <br/>    
-    <button onclick="editUser()">Endre</button>
+    <button onclick="editHappening()">Endre</button>
 `;
 }
