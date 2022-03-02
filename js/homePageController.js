@@ -28,3 +28,19 @@ function goToDeleteHappeningPage(happeningId) {
     modelHappenings.inputs.deleteHappening.id = happeningId;
     updateView()
 }
+
+function goToEditUserPage(userId){
+    modelUsers.app.page = 'editUser';
+    modelUsers.inputs.editUser.userId = userId;
+    const user = findUserById(userId);
+    modelUsers.inputs.editUser.name = user.name;
+    updateView();
+}
+
+function goToEditHappeningPage(happeningId){
+    modelUsers.app.page = 'editHappening';
+    modelHappenings.inputs.editHappening.happeningId = happeningId;
+    const happening = findHappeningById(happeningId);
+    modelHappenings.inputs.editHappening.name = happening.name;
+    updateView();
+}

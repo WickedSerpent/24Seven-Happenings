@@ -27,7 +27,7 @@ function getAllUsersHome(){
         html += /*html*/`
             <ul>
             <li>Navn - ${user.name} 
-            <button onclick="">Endre</button> 
+            <button onclick="goToEditUserPage(${user.id})">Endre</button> 
             <button onclick="goToDeleteUserPage(${user.id})">Slett</button><br></li>
             </ul>
         `;
@@ -42,7 +42,8 @@ function getAllHappeningsHome(){
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} <button>Endre</button> <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
+            <li>${happening.name} <button onclick="goToEditHappeningPage(${happening.id})">Endre</button> 
+            <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
             </ul>      
         `;
     }
