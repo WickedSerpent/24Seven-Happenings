@@ -1,3 +1,13 @@
+function updateViewHome() {
+    document.getElementById('app').innerHTML = /*html*/`
+        ${createMenuHtml()} 
+        <h1>Her vises alle arrangementer!</h1>
+        ${getAllHappenings()}
+        
+    `;
+
+}
+
 
 function getAllHappenings(){
     let html = '';
@@ -5,29 +15,10 @@ function getAllHappenings(){
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`
-        
-        
             <ul>
             <li>${happening.name}</li>
-            </ul><br>
-            </div>
-
+            </ul>      
         `;
     }
     return html;
 }
-function getAllUsers(){
-    let html = '';
-    const users = model.data.users;
-    for(let i = 0; i < users.length; i++) {
-        const user = users[i];
-        html += /*html*/`
-            <ul>
-            <li>${user.name}</li>
-            </ul>
-            </div>
-        `;
-    }
-    return html;
-}
-    
