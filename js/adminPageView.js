@@ -19,7 +19,6 @@ function updateViewAdmin(){
     `; 
 }
 
-
 function getAllUsersAdmin(){
     let html = '';
     const users = model.data.users;
@@ -27,10 +26,9 @@ function getAllUsersAdmin(){
         const user = users[i];
         html += /*html*/`
             <ul>
-            <li>Navn - ${user.name} 
-            <button onclick="goToEditPageUser(${user.id})">Endre</button> 
-            <button onclick="goToDeleteUserPage(${user.id})">Slett</button><br></li>
-            <br>
+                <li>Navn - ${user.name} 
+                    <button onclick="goToEditUserPage(${user.id})">Endre</button> 
+                    <button onclick="goToDeleteUserPage(${users.id})">Slett</button><br></li>
             </ul>
         `;
     }
@@ -44,7 +42,10 @@ function getAllHappeningsAdmin(){
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} <button>Endre</button> <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
+                <li>
+                    ${happening.name} 
+                    <button onclick="goToEditHappeningPage(${happening.Id})">Endre</button> 
+                    <button>Slett</button></li>
             </ul>      
         `;
     }

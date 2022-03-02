@@ -17,14 +17,18 @@ function createNewHappening(){
     updateView()
 }
 
-function goToDeleteUserPage(userId) {
-    model.app.page = 'deleteUser';
-    model.inputs.deleteUser.id = userId;
-    updateView()
+function goToEditUserPage(userId){
+    model.app.page = 'editUser';
+    model.inputs.editUser.userId = userId;
+    const user = findUserById(userId);
+    model.inputs.editUser.name = user.name;
+    updateView();
 }
 
-function goToDeleteHappeningPage(happeningId) {
-    model.app.page = 'deleteHappening';
-    model.inputs.deleteHappening.id = happeningId;
-    updateView()
+function goToEditHappeningPage(happeningId){
+    model.app.page = 'edithappening';
+    model.inputs.editHappening.happeningId = happeningId;
+    const happening = findHappeningById(happeningId);
+    model.inputs.editHappening.name = happening.name;
+    updateView();
 }

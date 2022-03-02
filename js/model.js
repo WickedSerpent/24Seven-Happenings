@@ -1,23 +1,19 @@
 const model = {
 
     app: {
-        page: 'admin', // administratorside, arrangementsside, unikbrukerside
+        page: 'home', // administratorside, arrangementsside, unikbrukerside
     },
 
     inputs: {
         newHappening: {
-            happeningId: '',
             name: '',
-            points: '',
             },
         
         newUser: {
             name: '',
-            lastName: '',
             points: null,
         },
         
-
         editHappening: {
             happeningId: null,
             name: ''
@@ -31,15 +27,12 @@ const model = {
         editUser: {
             userId: null,
             name: '',
-            lastName: '',
             points: '',
         },
-
-        
+  
         deleteUser: {
             userId: null,
             name: '',
-            lastName: '',
             points: '',
             areYouSure: false,
         },
