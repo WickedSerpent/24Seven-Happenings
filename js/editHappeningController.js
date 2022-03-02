@@ -1,6 +1,6 @@
 function editHappening() {
-    const happening = findUserById(modelHappening.inputs.editHappening.Id);
-    happening.name = modelHappening.inputs.editHappening.name;
-    modelUser.app.page = 'home';
+    const happening = findHappeningById(modelHappenings.inputs.editHappening.happeningId);
+    happening.name = modelHappenings.inputs.editHappening.name;
+    modelUsers.app.page = 'home';
     updateView();
 }

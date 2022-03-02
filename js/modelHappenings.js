@@ -7,7 +7,7 @@ const modelHappenings = {
         
         editHappening: {
             happeningId: null,
-            name: ''
+            name: '',
         },
 
         deleteHappening: {
@@ -22,22 +22,12 @@ const modelHappenings = {
             {
                 id: 1, 
                 name:'Kahoot',
-                users: [
-                    {id: 1, name:'Per', isSelected: true},
-                    {id: 2, name:'Pål', isSelected: true},
-                    {id: 3, name:'Espen', isSelected: true},
-                ],
-                selectAll: true,
+                users: [],
             }, 
             {
                 id: 2, 
                 name:'Vaske kjøkkenet',
-                users: [  
-                    {id: 1, name:'Per', isSelected: false},
-                    {id: 2, name:'Pål', isSelected: false},
-                    {id: 3, name:'Espen', isSelected: false},
-                ],
-                selectAll: false,
+                users: [],
             }, 
         ],
 

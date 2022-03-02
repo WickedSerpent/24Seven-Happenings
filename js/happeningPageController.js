@@ -1,8 +1,8 @@
 
 function selectAll(SA){
   modelUsers.inputs.selectAll = SA;
-  for(let person of modelUsers.data.allUsers){
-      person.isSelected = SA;
+  for(let user of modelUsers.data.allUsers){
+      user.isSelected = SA;
   }
   updateView();
 }

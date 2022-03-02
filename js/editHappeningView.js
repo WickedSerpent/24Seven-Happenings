@@ -2,15 +2,15 @@ function updateViewHappeningEdit(){
     document.getElementById('app').innerHTML = /*html*/` 
     ${createMenuHtml()}
 
-    <p>Endre happening <strong>${modelHappenings.data.happenings.name}</strong> 
+    <p>Endre navn på arrangement <strong>${modelHappenings.inputs.editHappening.name}</strong> 
     <br/><br/>
     <input 
         type="text" 
-        value="${modelHappenings.data.happenings.name}"
+        value="${modelHappenings.inputs.editHappening.name}"
         oninput="modelHappenings.inputs.editHappening.name=this.value"
     >
     <br/>
     <br/>    
-    <button onclick="editUser()">Endre</button>
+    <button onclick="editHappening()">Endre</button>
 `;
 }
