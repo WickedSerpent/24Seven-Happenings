@@ -1,4 +1,5 @@
 function updateViewHappeningPage(){
+    html = '';
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
     ${createHappeningPageHtml()}
@@ -10,6 +11,7 @@ function updateViewHappeningPage(){
     <button onclick="drawUser()">Trekk!</button>       
     `;
 }
+
 
 function createHappeningPageHtml(){
     const happeningId = modelHappenings.data.happenings.id;
@@ -34,4 +36,6 @@ function getAllUsers(){
     }
     return html;
 }
-
+function getChecked(isSelected) {
+    return isSelected ? 'checked="checked"' : '';
+  }

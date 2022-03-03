@@ -17,6 +17,30 @@ function togglePersonSelected(id) {
     updateView();
   }
 
+function toggleSelected(id){
+  const user = findUser(id);
+  user.isSelected = !user.isSelected;
+  updateView();
+}
+
+function findUser(id){
+  return modelUsers.data.allUsers.find(p => p.id === id);
+}
+
+// function selectAllOrNone(selectAll) {
+//   const selectAll = modelUsers.data.allUsers;
+//     for (let user of selectAll){
+//       user.isSelected = selectAll;
+//     }
+//     updateView();
+//   }
+
+// function togglePersonSelected(id) {
+//     const user = findUserById(id);
+//     user.isSelected = !user.isSelected;
+//     updateView();
+//   }
+
 
 function getCheckedUsers(){
   let happening = modelHappenings.data.happenings.users;
