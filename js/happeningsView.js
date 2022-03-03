@@ -2,11 +2,11 @@ function updateViewHappenings(){
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
     <h2>Velg en trekning!</h2>
-    ${getAllHappenings()}
+    ${getHappeningButton()}
     `;
 }
 
-function getAllHappenings(){
+function getHappeningButton(){
     let html = '';
     const happenings = modelHappenings.data.happenings;
     for (let i = 0; i < happenings.length; i++) {

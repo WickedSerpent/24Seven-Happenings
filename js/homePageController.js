@@ -4,18 +4,25 @@ function createNewUser(){
     user.name = modelUsers.inputs.newUser.name
     modelUsers.app.page='home';
     user.points = '';
+    user.isSelected = false;
+    user.happeningArray = modelHappenings.data.happenings
     modelUsers.data.allUsers.push(user);
     updateView()
 }
 
 function createNewHappening(){
+    let allUsers = modelUsers.data.allUsers;
     const happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = modelHappenings.inputs.newHappening.name
-    happening.users = [];
+    happening.points = '' ;
     modelUsers.app.page='home';
     modelHappenings.data.happenings.push(happening);
+    for(user of allUsers) {
+    user.happeningArray.push(happening)
+    }
     updateView()
+    console.log('test')
 }
 
 function goToDeleteUserPage(userId) {
