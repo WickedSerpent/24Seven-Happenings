@@ -37,7 +37,7 @@ function getAllUsersHome(){
 
 function getAllHappeningsHome(){
     let html = '';
-    const happenings = modelHappenings.data.happenings;
+    let happenings = modelHappenings.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`

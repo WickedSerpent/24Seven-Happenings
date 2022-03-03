@@ -37,8 +37,8 @@ let newArrangement = {name: "Kjøpe pizza", currentScore: 0}
 let haveusers = allUsers.length > 0 ? true : false
 let arragementAlreadyExist = false;
 if(haveusers) {
-    for(let arragementIndex = 0; arragementIndex< allUsers[0].arrangementsArray.length && !arragementAlreadyExist; arragementIndex++) {
-        let arragementName = allUsers[0].arrangementsArray[arragementIndex].name;
+    for(let I = 0; I< allUsers[0].happeningArray.length && !arragementAlreadyExist; I++) {
+        let arragementName = allUsers[0].arrangementsArray[I].name;}
         if(arragementName === newArrangement.name) {
             arragementAlreadyExist = true;
         }
