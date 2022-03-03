@@ -9,7 +9,7 @@ function createMenuHtml() {
 
 function getMaxUserId() {
     let id = 0;
-    for (let user of modelUsers.data.allUsers.id) {
+    for (let user of modelUsers.data.allUsers) {
         if (user.id > id) id = user.id;
     }
     return id;
@@ -71,4 +71,12 @@ function findUsersWithLowestPoint(){
     let lowestPoint = findLowestPoint()
     let users = checkedUsers
     return users.filter(obj => { return obj.points === lowestPoint })
+}
+
+function getAllHappenings(){
+    const happenings = modelHappenings.data.happenings;
+    for (let i = 0; i < happenings.length; i++) {
+        const happening = happenings[i];
+    }
+    return happenings;
 }

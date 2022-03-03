@@ -3,6 +3,7 @@ const modelHappenings = {
     inputs: {
         newHappening: {
             name: '',
+            points: '',
             },
         
         editHappening: {
@@ -22,12 +23,12 @@ const modelHappenings = {
             {
                 id: 1, 
                 name:'Kahoot',
-                users: [],
+                points: '344',
             }, 
             {
                 id: 2, 
                 name:'Vaske kjøkkenet',
-                users: [],
+                points: '5664',
             }, 
         ],
 

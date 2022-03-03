@@ -17,30 +17,6 @@ function togglePersonSelected(id) {
     updateView();
   }
 
-function toggleSelectedUser(id){
-  const user = findUser(id);
-  user.isSelected = !user.isSelected;
-  updateView();
-}
-
-function findUser(id){
- return modelUsers.data.allUsers.find(p => p.id === id); /*lambda expression; tar inn parameter og spytter ut en verdi*/
-}
-
-// function selectAllOrNone(selectAll) {
-//   const selectAll = modelUsers.data.allUsers;
-//     for (let user of selectAll){
-//       user.isSelected = selectAll;
-//     }
-//     updateView();
-//   }
-
-// function togglePersonSelected(id) {
-//     const user = findUserById(id);
-//     user.isSelected = !user.isSelected;
-//     updateView();
-//   }
-
 
 function getCheckedUsers(){
   let happening = modelHappenings.data.happenings.users;
@@ -55,5 +31,4 @@ function drawUser(){
   let listOfUsers = findUsersWithLowestPoint()
   let winner = listOfUsers[Math.floor(Math.random()*listOfUsers.length)];
   console.log(winner)
-  //winner[points++]
 }
