@@ -1,8 +1,10 @@
 function createMenuHtml() {
     return /*html*/`
-        <button onclick="modelUsers.app.page='home'; updateView()">Hjemmeside</button>
-        <button onclick="modelUsers.app.page='happenings'; updateView()">Trekningsside</button>
-        <button onclick="modelUsers.app.page='doneHappening'; updateView()">Tidligere trekninger</button>
+    <div class="header">
+        <button class="btn--top" onclick="modelUsers.app.page='home'; updateView()">Hjemmeside</button>
+        <button class="btn--top" onclick="modelUsers.app.page='happenings'; updateView()">Trekningsside</button>
+        <button class="btn--top" onclick="modelUsers.app.page='doneHappening'; updateView()">Tidligere trekninger</button>
+    </div>
         <hr>
     `;
 }

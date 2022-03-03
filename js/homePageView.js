@@ -2,13 +2,13 @@ function updateViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
     <div class="container">
-        <div class="boxOne">
+        <div class="box--home">
             <h2>Arrangementer</h2>
             ${getAllHappeningsHome()}
             <input oninput="modelHappenings.inputs.newHappening.name = this.value" type="text">
             <button onclick="createNewHappening()">Legg til nytt arrangement</button>
         </div>
-        <div class="boxTwo">
+        <div class="box--home">
             <h2>Personer</h2>
             ${getAllUsersHome()}
             <input oninput="modelUsers.inputs.newUser.name = this.value" type="text">
@@ -17,7 +17,6 @@ function updateViewHome(){
     </div>
     `; 
 }
-
 
 function getAllUsersHome(){
     let html = '';
@@ -37,7 +36,7 @@ function getAllUsersHome(){
 
 function getAllHappeningsHome(){
     let html = '';
-    let happenings = modelHappenings.data.happenings;
+    const happenings = modelHappenings.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`
