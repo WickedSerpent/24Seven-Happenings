@@ -3,7 +3,7 @@ function createNewUser(){
     user.id = getMaxUserId() + 1;
     user.name = modelUsers.inputs.newUser.name
     modelUsers.app.page='home';
-    user.points = 0;
+    user.points = '';
     modelUsers.data.allUsers.push(user);
     updateView()
 }
@@ -12,6 +12,7 @@ function createNewHappening(){
     const happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = modelHappenings.inputs.newHappening.name
+    happening.users = [];
     modelUsers.app.page='home';
     modelHappenings.data.happenings.push(happening);
     updateView()

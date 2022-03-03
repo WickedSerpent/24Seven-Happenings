@@ -3,8 +3,11 @@ function updateViewHappeningPage(){
     ${createMenuHtml()}
     ${createHappeningPageHtml()}
     <h3>Velg hvem som skal være med i trekningen</h3>
-    <input type="checkbox"/> Velg alle<br/>
-    ${getAllUsers()}       
+    <input type="checkbox"
+    onclick="selectAllOrNone(this.checked)"
+    ${getChecked(modelUsers.data.selectAll)}/> Velg alle<br/>
+    ${getAllUsers()} <br/>
+    <button onclick="drawUser()">Trekk!</button>       
     `;
 }
 
@@ -23,7 +26,10 @@ function getAllUsers(){
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`
-        <input type="checkbox"/> ${user.name} <br> 
+        <input type="checkbox" 
+        onclick="togglePersonSelected(${user.id})" 
+        ${getChecked(user.isSelected)}/> ${user.name} <br>
+
         `;
     }
     return html;
