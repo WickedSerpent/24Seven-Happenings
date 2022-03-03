@@ -25,7 +25,7 @@ function getAllUsers(){
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`
-        <input type="checkbox" onclick="toggleSelected()"/> ${user.name} <br> 
+        <input type="checkbox" onclick="toggleSelectedUser()"/> ${user.name} <br> 
         `;
     }
     return html;

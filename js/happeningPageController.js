@@ -7,14 +7,14 @@ function selectAll(SA){
   updateView();
 }
 
-function toggleSelected(id){
+function toggleSelectedUser(id){
   const user = findUser(id);
   user.isSelected = !user.isSelected;
   updateView();
 }
 
 function findUser(id){
-  return modelUsers.data.allUsers.find(p => p.id === id);
+ return modelUsers.data.allUsers.find(p => p.id === id); /*lambda expression; tar inn parameter og spytter ut en verdi*/
 }
 
 // function selectAllOrNone(selectAll) {
