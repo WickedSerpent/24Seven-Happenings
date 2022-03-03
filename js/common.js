@@ -54,3 +54,21 @@ function findUserIndexById(id) {
     }
     return null;
 }
+
+function sortUserByPoints(){
+    let users = modelUsers.data.allUsers
+    users.sort(function(a,b){return a.points-b.points; })
+    return users
+}
+
+function findLowestPoint(){
+    let users = getCheckedUsers()
+    return Math.min(...users.map(item => item.points));
+}
+
+function findUsersWithLowestPoint(){
+    let checkedUsers = getCheckedUsers()
+    let lowestPoint = findLowestPoint()
+    let users = checkedUsers
+    return users.filter(obj => { return obj.points === lowestPoint })
+}
