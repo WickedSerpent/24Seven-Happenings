@@ -48,16 +48,26 @@ const model = {
     data: {
 
         selectAll: false,
-        users: [
-            {id: 1, name:'Per', isSelected: false, },
-            {id: 2, name:'Pål', isSelected: false, },
-            {id: 3, name:'Espen', isSelected: false, },
+        users: [ 1, 2, 3, {happenings:[1, 2, 3,]},],
+
+        userArray: [
+            {id: 1, 
+            name:'Per',
+            
+            isSelected: false, },
+            {id: 2, 
+            name:'Pål', 
+            isSelected: false, },
+            {id: 3, 
+            name:'Espen', 
+            isSelected: false, },
         ],
-       
+
         happenings: [
             {
                 id: 1, 
                 name:'Kahoot',
+                
             }, 
             {
                 id: 2, 

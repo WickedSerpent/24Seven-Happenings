@@ -12,20 +12,22 @@ function createNewUser(){
 }
 
 function createNewHappening(){
-    modelUsers.app.page='home';
-    let allUsers = modelUsers.data.allUsers;
-    let haveUsers = allUsers.length > 0 ? true : false
+    model.app.page='home';
+    let users = model.data.users;
+    // let users = allUsers.length > 0 ? true : false -- ser ann denne. 
     let happeningExists = false;
-    const happeningArrayName = modelUsers.data.allUsers.happeningArray.name;
+    const happeningArray= model.data.happenings.name;
     const happening = {};
     happening.id = getMaxHappeningId() + 1;
-    happening.name = modelHappenings.inputs.newHappening.name
-    happening.points = '' ;
+    happening.name = model.inputs.newHappening.name
+    // happening.points = '' ;
 
-    if(happening.name ==  happeningArrayName){happeningExists === true};
+    if(happening.name ==  happeningArray){happeningExists === true};
     if(happeningExists === true){alert('Du kan ikke legge til identiske happenings')}
-    else{for(let i = 0; i < allUsers.length ; i++ )allUsers[i].happening.push(happening);}
- 
+    else{for(let i = 0; i < users.length ; i++ ){
+        for(let u = 0; u < happeningArray.length; u++ ){
+        users[i].happenings[u].push(happening);}}
+/* Kan hende vi trenger en for inni denne for loopen om vi må */
         updateUserHappenings();
         updateView()
 }
