@@ -20,7 +20,7 @@ function updateViewHome(){
 
 function getAllUsersHome(){
     let html = '';
-    const users = model.data.allUsers;
+    const users = model.data.users;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`

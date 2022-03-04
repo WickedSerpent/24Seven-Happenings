@@ -1,6 +1,6 @@
 updateView()
         function updateView(){
-            const page = modelUsers.app.page;
+            const page = model.app.page;
             if(page === 'home') updateViewHome();
             else if(page === 'happenings') updateViewHappenings();
             else if(page === 'editUser') updateViewUserEdit();

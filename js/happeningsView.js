@@ -8,7 +8,7 @@ function updateViewHappenings(){
 
 function getHappeningButton(){
     let html = '';
-    const happenings = modelHappenings.data.happenings;
+    const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`
