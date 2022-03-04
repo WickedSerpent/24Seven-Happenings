@@ -1,13 +1,15 @@
 function updateViewHappeningPage(){
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
+    <div class="box--home">
     ${createHappeningPageHtml()}
     <h3>Velg hvem som skal være med i trekningen</h3>
     <input type="checkbox"
     onclick="selectAllOrNone(this.checked)"
     ${getChecked(model.data.selectAll)}/> Velg alle<br/>
     ${getusers()} <br/>
-    <button onclick="drawUser()">Trekk!</button>       
+    <button onclick="drawUser()">Trekk!</button>     
+    </div>  
     `;
 }
 
