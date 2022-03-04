@@ -10,7 +10,7 @@ function updateViewHome(){
         </div>
         <div class="box--home">
             <h2>Personer</h2>
-            ${getAllUsersHome()}
+            ${getusersHome()}
             <input oninput="model.inputs.newUser.name = this.value" type="text">
             <button onclick="createNewUser()">Legg til ny person</button>
         </div>
@@ -18,7 +18,8 @@ function updateViewHome(){
     `; 
 }
 
-function getAllUsersHome(){
+
+function getusersHome(){
     let html = '';
     const users = model.data.users;
     for (let i = 0; i < users.length; i++) {

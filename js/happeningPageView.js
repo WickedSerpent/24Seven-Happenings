@@ -6,13 +6,13 @@ function updateViewHappeningPage(){
     <input type="checkbox"
     onclick="selectAllOrNone(this.checked)"
     ${getChecked(model.data.selectAll)}/> Velg alle<br/>
-    ${getAllUsers()} <br/>
+    ${getusers()} <br/>
     <button onclick="drawUser()">Trekk!</button>       
     `;
 }
 
 function createHappeningPageHtml(){
-    const happeningId = modelHappenings.data.happenings.id;
+    const happeningId = model.data.happenings.id;
     const happening = findHappeningById(happeningId);
     return /*html*/`
         <h1>${happening.name}</h1>
@@ -20,9 +20,9 @@ function createHappeningPageHtml(){
     `;
 }
 
-function getAllUsers(){
+function getusers(){
     let html = '';
-    const users = model.data.allUsers;
+    const users = model.data.users;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`

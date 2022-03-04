@@ -48,30 +48,17 @@ const model = {
     data: {
 
         selectAll: false,
-        users: [ 1, 2, 3, {happenings:[1, 2, 3,]},],
-
-        userArray: [
-            {id: 1, 
-            name:'Per',
-            
-            isSelected: false, },
-            {id: 2, 
-            name:'Pål', 
-            isSelected: false, },
-            {id: 3, 
-            name:'Espen', 
-            isSelected: false, },
+        users: [
+            {id: 1, name:'Per', points: 2, isSelected: false, },
+            {id: 2, name:'Pål', points: 2, isSelected: false, },
+            {id: 3, name:'Espen', points: 2, isSelected: false, },
+            {id: 4, name:'Ingrid', points: 3, isSelected: false, },
         ],
-
+       
         happenings: [
             {
                 id: 1, 
                 name:'Kahoot',
-                
-            }, 
-            {
-                id: 2, 
-                name:'Vaske kjøkkenet',
             }, 
         ],
 
@@ -81,7 +68,6 @@ const model = {
                 id: 1,
                 name: 'Kahoot',
                 userDrawn: 1,
-                participants: [],
             }
         ]
     
