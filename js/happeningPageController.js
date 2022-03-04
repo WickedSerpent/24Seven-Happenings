@@ -1,6 +1,6 @@
 function selectAllOrNone(selectAll) {
-    modelUsers.data.selectAll = selectAll;
-    for (let user of modelUsers.data.allUsers) {
+    model.data.selectAll = selectAll;
+    for (let user of model.data.allUsers) {
       user.isSelected = selectAll;
     }
     updateView();
@@ -19,8 +19,8 @@ function togglePersonSelected(id) {
 
 
 function getCheckedUsers(){
-  let happening = modelHappenings.data.happenings.users;
-  let users = modelUsers.data.allUsers;
+  let happening = model.data.happenings.users;
+  let users = model.data.allUsers;
   let checkedUsers = users.filter(user => {
     return user.isSelected === true
   })

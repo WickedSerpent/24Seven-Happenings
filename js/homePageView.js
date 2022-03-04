@@ -5,13 +5,13 @@ function updateViewHome(){
         <div class="box--home">
             <h2>Arrangementer</h2>
             ${getAllHappeningsHome()}
-            <input oninput="modelHappenings.inputs.newHappening.name = this.value" type="text">
+            <input oninput="model.inputs.newHappening.name = this.value" type="text">
             <button onclick="createNewHappening()">Legg til nytt arrangement</button>
         </div>
         <div class="box--home">
             <h2>Personer</h2>
             ${getAllUsersHome()}
-            <input oninput="modelUsers.inputs.newUser.name = this.value" type="text">
+            <input oninput="model.inputs.newUser.name = this.value" type="text">
             <button onclick="createNewUser()">Legg til ny person</button>
         </div>
     </div>
@@ -20,7 +20,7 @@ function updateViewHome(){
 
 function getAllUsersHome(){
     let html = '';
-    const users = modelUsers.data.allUsers;
+    const users = model.data.allUsers;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`
@@ -36,7 +36,7 @@ function getAllUsersHome(){
 
 function getAllHappeningsHome(){
     let html = '';
-    const happenings = modelHappenings.data.happenings;
+    const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`

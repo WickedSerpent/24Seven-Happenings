@@ -5,15 +5,15 @@ function updateViewDeleteUser(){
         ${createDeleteUserHtml()}
         <input
             type="checkbox"
-            oninput="modelUsers.inputs.deleteUser.areYouSure = this.checked"
-            ${modelUsers.inputs.deleteUser.areYouSure ? 'checked' : ''}
+            oninput="model.inputs.deleteUser.areYouSure = this.checked"
+            ${model.inputs.deleteUser.areYouSure ? 'checked' : ''}
             /> Er du sikker på at du vil slette?<br>
         <button onclick="deleteUser()"> Slett! </button>
        `;
 }
 
 function createDeleteUserHtml(){
-    const userId = modelUsers.inputs.deleteUser.id;
+    const userId = model.inputs.deleteUser.id;
     const user = findUserById(userId);
     return /*html*/`
         Navn: ${user.name}<br>

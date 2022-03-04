@@ -1,5 +1,5 @@
 function goToHappeningPage(happeningId) {
-    modelUsers.app.page = 'happening';
+    model.app.page = 'happening';
     modelHappenings.data.happenings.id = happeningId;
     updateView()
 }

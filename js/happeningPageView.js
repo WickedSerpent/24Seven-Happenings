@@ -5,7 +5,7 @@ function updateViewHappeningPage(){
     <h3>Velg hvem som skal være med i trekningen</h3>
     <input type="checkbox"
     onclick="selectAllOrNone(this.checked)"
-    ${getChecked(modelUsers.data.selectAll)}/> Velg alle<br/>
+    ${getChecked(model.data.selectAll)}/> Velg alle<br/>
     ${getAllUsers()} <br/>
     <button onclick="drawUser()">Trekk!</button>       
     `;
@@ -22,7 +22,7 @@ function createHappeningPageHtml(){
 
 function getAllUsers(){
     let html = '';
-    const users = modelUsers.data.allUsers;
+    const users = model.data.allUsers;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`

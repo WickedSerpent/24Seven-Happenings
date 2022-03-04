@@ -1,12 +1,12 @@
 function createNewUser(){
-    modelUsers.app.page='home';
+    model.app.page='home';
     const user = {};
     user.id = getMaxUserId() + 1;
-    user.name = modelUsers.inputs.newUser.name
+    user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
-    user.happeningArray = modelHappenings.data.happenings
-    modelUsers.data.allUsers.push(user);
+    user.happeningArray = model.data.happenings
+    model.data.allUsers.push(user);
     updateUserHappenings();
     updateView()
 }
@@ -20,54 +20,53 @@ function createNewHappening(){
     const happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
-    // happening.points = '' ;
+    happeningPoints = model.inputs.newHappening.name +
 
     if(happening.name ==  happeningArray){happeningExists === true};
     if(happeningExists === true){alert('Du kan ikke legge til identiske happenings')}
     else{for(let i = 0; i < users.length ; i++ ){
         for(let u = 0; u < happeningArray.length; u++ ){
         users[i].happenings[u].push(happening);}}
-/* Kan hende vi trenger en for inni denne for loopen om vi må */
         updateUserHappenings();
         updateView()
 }
-
+}
 
 
 function updateUserHappenings(){
 for(let i=0; i < allUsers.length; i++){
-    for(let j = 0; j < modelHappenings.data.happenings.length; j++){
-    allUsers[i].happeningArray.push(modelHappenings.data.happenings)
+    for(let j = 0; j < model.data.happenings.length; j++){
+    allUsers[i].happeningArray.push(model.data.happenings)
     }
 }  
 }                
 
 
 function goToDeleteUserPage(userId) {
-    modelUsers.app.page = 'deleteUser';
-    modelUsers.inputs.deleteUser.id = userId;
+    model.app.page = 'deleteUser';
+    model.inputs.deleteUser.id = userId;
     updateView()
 }
 
 function goToDeleteHappeningPage(happeningId) {
-    modelUsers.app.page = 'deleteHappening';
-    modelHappenings.inputs.deleteHappening.id = happeningId;
+    model.app.page = 'deleteHappening';
+    model.inputs.deleteHappening.id = happeningId;
     updateView()
 }
 
 function goToEditUserPage(userId){
-    modelUsers.app.page = 'editUser';
-    modelUsers.inputs.editUser.userId = userId;
+    model.app.page = 'editUser';
+    model.inputs.editUser.userId = userId;
     const user = findUserById(userId);
-    modelUsers.inputs.editUser.name = user.name;
+    model.inputs.editUser.name = user.name;
     updateView();
 }
 
 function goToEditHappeningPage(happeningId){
-    modelUsers.app.page = 'editHappening';
-    modelHappenings.inputs.editHappening.happeningId = happeningId;
+    model.app.page = 'editHappening';
+    model.inputs.editHappening.happeningId = happeningId;
     const happening = findHappeningById(happeningId);
-    modelHappenings.inputs.editHappening.name = happening.name;
+    model.inputs.editHappening.name = happening.name;
     updateView();
 } 
 

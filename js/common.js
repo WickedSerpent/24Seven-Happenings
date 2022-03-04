@@ -1,9 +1,9 @@
 function createMenuHtml() {
     return /*html*/`
     <div class="header">
-        <button class="btn--top" onclick="modelUsers.app.page='home'; updateView()">Hjemmeside</button>
-        <button class="btn--top" onclick="modelUsers.app.page='happenings'; updateView()">Trekningsside</button>
-        <button class="btn--top" onclick="modelUsers.app.page='doneHappening'; updateView()">Tidligere trekninger</button>
+        <button class="btn--top" onclick="model.app.page='home'; updateView()">Hjemmeside</button>
+        <button class="btn--top" onclick="model.app.page='happenings'; updateView()">Trekningsside</button>
+        <button class="btn--top" onclick="model.app.page='doneHappening'; updateView()">Tidligere trekninger</button>
     </div>
         <hr>
     `;
@@ -11,7 +11,7 @@ function createMenuHtml() {
 
 function getMaxUserId() {
     let id = 0;
-    for (let user of modelUsers.data.allUsers) {
+    for (let user of model.data.allUsers) {
         if (user.id > id) id = user.id;
     }
     return id;
@@ -19,14 +19,14 @@ function getMaxUserId() {
 
 function getMaxHappeningId() {
     let id = 0;
-    for (let happening of modelHappenings.data.happenings) {
+    for (let happening of model.data.happenings) {
         if (happening.id > id) id = happening.id;
     }
     return id;
 }
 
 function findHappeningById(id) {
-    for (let happening of modelHappenings.data.happenings) {
+    for (let happening of model.data.happenings) {
         if (happening.id === id) return happening;
     }
     return null;
@@ -34,8 +34,8 @@ function findHappeningById(id) {
 }
 
 function findHappeningIndexById(id) {
-    for (let i = 0; i < modelHappenings.data.happenings.length; i++) {
-        let happening = modelHappenings.data.happenings[i];
+    for (let i = 0; i < model.data.happenings.length; i++) {
+        let happening = model.data.happenings[i];
         if (happening.id === id) return i;
     }
     return null;
@@ -43,22 +43,22 @@ function findHappeningIndexById(id) {
 }
 
 function findUserById(id) {
-    for (let user of modelUsers.data.allUsers) {
+    for (let user of model.data.allUsers) {
         if (user.id === id) return user;
     }
     return null;
 }
 
 function findUserIndexById(id) {
-    for (let i = 0; i < modelUsers.data.allUsers.length; i++) {
-        let user = modelUsers.data.allUsers[i];
+    for (let i = 0; i < model.data.allUsers.length; i++) {
+        let user = model.data.allUsers[i];
         if (user.id === id) return i;
     }
     return null;
 }
 
 function sortUserByPoints(){
-    let users = modelUsers.data.allUsers
+    let users = model.data.allUsers
     users.sort(function(a,b){return a.points-b.points; })
     return users
 }
@@ -76,7 +76,7 @@ function findUsersWithLowestPoint(){
 }
 
 function getAllHappenings(){
-    const happenings = modelHappenings.data.happenings;
+    const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
     }

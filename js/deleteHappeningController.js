@@ -1,8 +1,8 @@
 function deleteHappening(){
-    if (! modelHappenings.inputs.deleteHappening.areYouSure) return;
-    const index = findHappeningIndexById(modelHappenings.inputs.deleteHappening.id);
-    modelHappenings.data.happenings.splice(index, 1);
-    modelUsers.app.page='home';
-    modelHappenings.inputs.deleteHappening.areYouSure = false;
+    if (! model.inputs.deleteHappening.areYouSure) return;
+    const index = findHappeningIndexById(model.inputs.deleteHappening.id);
+    model.data.happenings.splice(index, 1);
+    model.app.page='home';
+    model.inputs.deleteHappening.areYouSure = false;
     updateView()
 }
