@@ -23,7 +23,7 @@ function updateViewDoneHappening() {
 
 function getHappening() {
     let html = '';
-    const happenings = modelHappenings.data.doneHappenings;
+    const happenings = model.data.doneHappenings;
     for (let i = 0; i < happenings.length; i++) {
         const doneHappening = happenings[i];
         html += /*html*/`
