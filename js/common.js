@@ -11,7 +11,7 @@ function createMenuHtml() {
 
 function getMaxUserId() {
     let id = 0;
-    for (let user of model.data.allUsers) {
+    for (let user of model.data.users) {
         if (user.id > id) id = user.id;
     }
     return id;

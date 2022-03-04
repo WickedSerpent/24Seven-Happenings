@@ -12,7 +12,7 @@ function updateViewHappeningPage(){
 }
 
 function createHappeningPageHtml(){
-    const happeningId = modelHappenings.data.happenings.id;
+    const happeningId = model.data.happenings.id;
     const happening = findHappeningById(happeningId);
     return /*html*/`
         <h1>${happening.name}</h1>
