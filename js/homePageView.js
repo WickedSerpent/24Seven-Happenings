@@ -18,6 +18,7 @@ function updateViewHome(){
     `; 
 }
 
+
 function getAllUsersHome(){
     let html = '';
     const users = model.data.users;
