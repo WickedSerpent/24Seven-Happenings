@@ -23,14 +23,14 @@ function createNewHappening(){
     const happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name;
-    let nameAndPoints = userPoints && happening;
+    // let nameAndPoints = userPoints && happening;
 
 
-    if(happening.name ==  happeningsName){happeningExists === true};
+    if(happening.name ===  happeningsName){happeningExists == true};
     if(happeningExists === true){alert('Du kan ikke legge til identiske happenings')}
     else{for(let i = 0; i < users.length ; i++ ){
         for(let u = 0; u < happeningsName.length; u++ ){
-        users[i].happenings[u].push(nameAndPoints)
+          happenings[u].push(happening) && users[i].push(userPoints)
         }
     }
         updateUserHappenings();
