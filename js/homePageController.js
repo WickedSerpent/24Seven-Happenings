@@ -5,7 +5,7 @@ function createNewUser(){
     user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
-    user.happeningArray = model.data.happenings
+    // user.happeningArray = model.data.happenings
     model.data.users.push(user);
     updateUserHappenings();
     updateView()
@@ -13,41 +13,34 @@ function createNewUser(){
 
 function createNewHappening(){
     model.app.page='home';
-    let users = model.data.users;
+    // let users = model.data.users;
     // let user = users.length > 0 ? true : false -- ser ann denne. 
-    let happeningExists = false;
-    const happeningsName= model.data.happenings.name;
-    const userPoints = `${happeningsName}points: '0',`;
+    const happeningExists = model.inputs.newHappening.happeningExists;
+    const happeningsName = model.data.happenings.name;
+    // const userPoints = `${happeningsName}`+'points: 0,';
     const happenings = model.data.happenings;
-    
-    const happening = {};
+    let happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name;
-    // let nameAndPoints = userPoints && happening;
-
-
-    if(happening.name ===  happeningsName){happeningExists == true};
-    if(happeningExists === true){alert('Du kan ikke legge til identiske happenings')}
-    else{for(let i = 0; i < users.length ; i++ ){
-        for(let u = 0; u < happeningsName.length; u++ ){
-          happenings[u].push(happening) && users[i].push(userPoints)
-        }
-    }
-        updateUserHappenings();
+    if(happening.name == null){happeningExists === true};
+    if(happening.name.value ===  happeningsName){happeningExists === true};
+    if(happeningExists == true){alert('Du kan ikke legge til identiske/blanke happenings :(')}
+    else(happenings.push(happening));
+        // updateUserHappenings();
         updateView()
 }
-}
+
 
 // function createNewHappening(){
-//     modelUsers.app.page='home'
-//     let allUsers = modelUsers.data.allUsers
+//     model.app.page='home'
+//     let allUsers = model.data.users
 //     let happening = {};
-//     happening.name = modelHappenings.inputs.newHappening.name
+//     happening.name = model.inputs.newHappening.name
 //     happening.id = getMaxHappeningId() + 1;
 //     happening.points = '0'; 
-//     modelHappenings.data.happenings.push(happening);
+//     model.data.happenings.push(happening);
 //     for(user of allUsers) {
-//     user.happeningArray.push(happening) //dette parameter gjør slik at vi får 2 arrangementer per 1-ny bruker, men hvis vi tar det bort får ingen "gamle brukere" det nye arrangementet
+//     model.data.happenings.push(happening) //dette parameter gjør slik at vi får 2 arrangementer per 1-ny bruker, men hvis vi tar det bort får ingen "gamle brukere" det nye arrangementet
 //     }
 //     updateView()
 // }

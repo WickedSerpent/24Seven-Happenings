@@ -8,6 +8,7 @@ const model = {
 
         newHappening: {
             name: '',
+            happeningExists: false,
             },
         
         editHappening: {
