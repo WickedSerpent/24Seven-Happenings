@@ -29,3 +29,19 @@ body{
     margin-top: -15px;
 }
 
+.btn--top {
+    text-transform: uppercase;
+    background-color: #4300c0;
+    color: #fff ;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin: 15px 0px 15px 15px;
+    cursor: pointer;
+  }
+  
+  .btn--top:hover,
+  .btn--top:active {
+    background-color: #4800ce;
+  }
