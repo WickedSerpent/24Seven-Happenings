@@ -5,7 +5,7 @@ function createNewUser() {
     user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
-    if (happening.name == '') {
+    if (user.name == '') {
         alert('Fyll ut navn på bruker')
     }
     else {
