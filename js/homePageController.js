@@ -13,7 +13,6 @@ function createNewUser() {
         newHappeningPointsObj()
         updateView()
     }
-    model.inputs.newUser.name = ''
 }
 
 function createNewHappening() {
@@ -30,7 +29,6 @@ function createNewHappening() {
         newUserPointsObj()
         updateView()
     }
-    model.inputs.newHappening.name = ''
 }
 
 function newUserPointsObj() {
