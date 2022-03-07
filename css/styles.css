@@ -12,6 +12,10 @@ body{
     padding: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
 .container{
     display: flex;
     margin-top: -20px;
