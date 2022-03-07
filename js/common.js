@@ -20,7 +20,7 @@ function getMaxUserId() {
 function getAllUserIds() {
     let userIds = []
     let users = model.data.users
-    for (user of users){
+    for (user of users) {
         userIds.push(user.id)
     }
     return userIds;

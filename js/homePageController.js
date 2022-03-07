@@ -5,14 +5,9 @@ function createNewUser() {
     user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
-    if (user.name == '') {
-        alert('Fyll ut navn på bruker')
-    }
-    else {
-        model.data.users.push(user);
-        newHappeningPointsObj()
-        updateView()
-    }
+    model.data.users.push(user);
+    newHappeningPointsObj()
+    updateView()
 }
 
 function createNewHappening() {
@@ -21,38 +16,32 @@ function createNewHappening() {
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
     happening.isSelected = false
-    happening.isSelected = false
-    if (happening.name == '') {
-        alert('Fyll ut navn på arrangement')
-    } else {
-        model.data.happenings.push(happening);
-        newUserPointsObj()
-        updateView()
-    }
+    model.data.happenings.push(happening);
+    newUserPointsObj()
+    updateView()
 }
 
-function newUserPointsObj() {
-    let allUsers = model.data.users
-    for (user of allUsers) {
-        let pointsObj = {}
-        pointsObj.points = ''
-        pointsObj.happeningId = getMaxHappeningId()
-        pointsObj.userId = user.id
+function newHappeningPointsObj() {
+    let happenings = model.data.happenings
+    for (happening of happenings) {
+        const userObj = {}
+        userObj.userId = getMaxUserId()
+        userObj.happeningId = happening.id
+        userObj.points = 1
         for (let j = 0; j < 1; j++) {
-            model.data.userPoints.push(pointsObj);
+            model.data.userPoints.push(userObj);
         }
     }
 
 }
 
-
 function newUserPointsObj() {
     let allUsers = model.data.users
-    let pointsObj = {}
-    pointsObj.points = ''
-    pointsObj.happeningId = getMaxHappeningId()
     for (user of allUsers) {
+        const pointsObj = {}
         pointsObj.userId = user.id
+        pointsObj.happeningId = getMaxHappeningId()
+        pointsObj.points = 1
         for (let j = 0; j < 1; j++) {
             model.data.userPoints.push(pointsObj);
         }
