@@ -11,11 +11,10 @@ function createNewUser(){
 
 function createNewHappening(){
     model.app.page='home'
-    let allUsers = model.data.users
     let happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
-    happening.isSelected = false 
+    happening.isSelected = false
     model.data.happenings.push(happening);
     updateView()
 }
