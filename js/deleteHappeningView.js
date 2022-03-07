@@ -14,7 +14,7 @@ function updateViewDeleteHappening(){
 
 function createDeleteHappeningHtml(){
     const happeningId = model.inputs.deleteHappening.id;
-    const happening = findHappeningById(happeningId);
+    const happening = getHappeningById(happeningId);
     return /*html*/`
         Navn: ${happening.name}<br>
     `;

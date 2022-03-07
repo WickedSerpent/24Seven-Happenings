@@ -1,7 +1,7 @@
 function updateViewHappeningEdit(){
     document.getElementById('app').innerHTML = /*html*/` 
     ${createMenuHtml()}
-    <div class="box--home">
+
     <p>Endre navn på arrangement <strong>${model.inputs.editHappening.name}</strong> 
     <br/><br/>
     <input 
@@ -11,7 +11,7 @@ function updateViewHappeningEdit(){
     >
     <br/>
     <br/>    
-    <button onclick="editHappening()">Endre</button>
-    </div>
+    <button 
+    onclick="editHappening()">Endre</button>
 `;
 }
