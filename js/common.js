@@ -199,3 +199,15 @@ function createUserPointsObj(){
     userObject.points = ''
     userPoints.push(userObject)
 }
+
+function getDateStringForDisplay(dato) {
+    return dato.toLocaleString('no-NO').replace(',', '');
+}
+
+function getDateStringForStorage(dato) {
+    return dato.toISOString().replace('T', ' ');
+}
+
+function getNowForStorage() {
+    return getDateStringForStorage(new Date());
+}
