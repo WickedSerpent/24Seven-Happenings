@@ -6,7 +6,7 @@ function createNewUser() {
     user.points = 0;
     user.isSelected = false;
     if (happening.name == '') {
-        alert('Fyll ut navn på arrangement')
+        alert('Fyll ut navn på bruker')
     }
     else {
         model.data.users.push(user);
