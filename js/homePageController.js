@@ -6,11 +6,13 @@ function createNewUser() {
     user.points = 0;
     user.isSelected = false;
     if (user.name == '') {
-        alert('Fyll ut navn på arrangement')
+        alert('Fyll inn navn')
     } else {
     model.data.users.push(user);
     newHappeningPointsObj()
+    
     updateView()
+    sum()
     }
     model.inputs.newUser.name = '';
 }
@@ -84,4 +86,13 @@ function goToEditHappeningPage(happeningId) {
     const happening = getHappeningById(happeningId);
     model.inputs.editHappening.name = happening.name;
     updateView();
+}
+
+function sum(){
+    userPoints = model.data.userPoints;
+    let sum = 0;
+    for(points in userPoints){
+        sum += userPoints[points];
+        // return points;
+    }
 }

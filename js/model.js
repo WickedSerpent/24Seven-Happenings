@@ -54,7 +54,7 @@ const model = {
         ],
 
         userPoints: [
-         
+            
         ],
         
         happenings: [
@@ -65,6 +65,7 @@ const model = {
         doneHappenings: [
             
         ],
+
     },
 
 }
