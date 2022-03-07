@@ -5,9 +5,16 @@ function createNewUser() {
     user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
+    if (user.name == '') {
+        alert('Fyll inn navn')
+    } else {
     model.data.users.push(user);
     newHappeningPointsObj()
+    
     updateView()
+    sum()
+    }
+    model.inputs.newUser.name = '';
 }
 
 function createNewHappening() {
@@ -16,9 +23,13 @@ function createNewHappening() {
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
     happening.isSelected = false
+    if (happening.name == '') {
+        alert('Fyll ut navn på arrangement')
+    } else {
     model.data.happenings.push(happening);
     newUserPointsObj()
-    updateView()
+    updateView()}
+    model.inputs.newHappening.name = '';
 }
 
 function newHappeningPointsObj() {
@@ -75,4 +86,16 @@ function goToEditHappeningPage(happeningId) {
     const happening = getHappeningById(happeningId);
     model.inputs.editHappening.name = happening.name;
     updateView();
+}
+
+function sum(){
+    userPoints = model.data.userPoints;
+    let sum = 0;
+    for(points in userPoints){
+            
+        // return points;
+    }
+    const summed = userPoints.reduce((points, userPoints) => points + (userPoints[points], 0));
+    return summed; 
+    console.log(summed);
 }
