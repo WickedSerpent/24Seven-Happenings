@@ -1,9 +1,9 @@
 function createMenuHtml() {
     return /*html*/`
         <div class="topMenu">
-        <button class="" onclick="model.app.page='home'; updateView()">Hjemmeside</button>
-        <button class="" onclick="model.app.page='happening'; updateView()">Trekningsside</button>
-        <button class="" onclick="model.app.page='resetHappenings'; updateView()">Tilbakestill trekninger</button>
+        <button class="btn--top" onclick="model.app.page='home'; updateView()">Hjemmeside</button>
+        <button class="btn--top" onclick="model.app.page='happening'; updateView()">Trekningsside</button>
+        <button class="btn--top" onclick="model.app.page='resetHappenings'; updateView()">Tilbakestill trekninger</button>
         </div>
 
     `;
@@ -198,4 +198,16 @@ function createUserPointsObj(){
     userObject.happeningId = getMaxHappeningId()
     userObject.points = ''
     userPoints.push(userObject)
+}
+
+function getDateStringForDisplay(dato) {
+    return dato.toLocaleString('no-NO').replace(',', '');
+}
+
+function getDateStringForStorage(dato) {
+    return dato.toISOString().replace('T', ' ');
+}
+
+function getNowForStorage() {
+    return getDateStringForStorage(new Date());
 }
