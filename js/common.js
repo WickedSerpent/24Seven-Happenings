@@ -211,3 +211,19 @@ function getDateStringForStorage(dato) {
 function getNowForStorage() {
     return getDateStringForStorage(new Date());
 }
+
+function getLowestPointFromEachHappening() {
+    let pointsInHappening = []
+    let happenings = model.data.userPoints
+    let happeningIds = getAllHappenings()
+    for (x in happeningIds) {
+        let pointsInEachHappening = []
+        for (y in happenings) {
+            if (happenings[y].happeningId === happeningIds[x].id) {
+                pointsInEachHappening.push(happenings[y].points)
+            }
+        }
+        pointsInHappening.push(pointsInEachHappening)
+    }
+    return pointsInHappening
+}
