@@ -1,17 +1,33 @@
-updateView()
+function createNewUser() {
+    model.app.page = 'home';
+    let user = {};
+    user.id = getMaxUserId() + 1;
+    user.name = model.inputs.newUser.name
+    user.points = 0;
+    user.isSelected = false;
+    if (happening.name == '') {
+        alert('Fyll ut navn på arrangement')
+    }
+    else {
+        model.data.users.push(user);
+        newHappeningPointsObj()
+        updateView()
+    }
+}
 
 function createNewHappening() {
     model.app.page = 'home'
     let happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
-    happening.isSelected = false 
     happening.isSelected = false
-    if(happening.name == ''){alert('tomt felt')
-    }else{
-    model.data.happenings.push(happening);
-    newUserPointsObj()
-    updateView()
+    happening.isSelected = false
+    if (happening.name == '') {
+        alert('Fyll ut navn på arrangement')
+    } else {
+        model.data.happenings.push(happening);
+        newUserPointsObj()
+        updateView()
     }
 }
 
@@ -41,7 +57,7 @@ function newUserPointsObj() {
             model.data.userPoints.push(pointsObj);
         }
     }
-    
+
 }
 
 function goToDeleteUserPage(userId) {
@@ -56,7 +72,7 @@ function goToDeleteHappeningPage(happeningId) {
     updateView()
 }
 
-function goToEditUserPage(userId){
+function goToEditUserPage(userId) {
     model.app.page = 'editUser';
     model.inputs.editUser.userId = userId;
     const user = getUserById(userId);
@@ -64,7 +80,7 @@ function goToEditUserPage(userId){
     updateView();
 }
 
-function goToEditHappeningPage(happeningId){
+function goToEditHappeningPage(happeningId) {
     model.app.page = 'editHappening';
     model.inputs.editHappening.happeningId = happeningId;
     const happening = getHappeningById(happeningId);
