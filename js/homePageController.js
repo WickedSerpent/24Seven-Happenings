@@ -5,9 +5,14 @@ function createNewUser() {
     user.name = model.inputs.newUser.name
     user.points = 0;
     user.isSelected = false;
+    if (user.name == '') {
+        alert('Fyll ut navn på arrangement')
+    } else {
     model.data.users.push(user);
     newHappeningPointsObj()
     updateView()
+    }
+    model.inputs.newUser.name = '';
 }
 
 function createNewHappening() {
@@ -16,9 +21,13 @@ function createNewHappening() {
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
     happening.isSelected = false
+    if (happening.name == '') {
+        alert('Fyll ut navn på arrangement')
+    } else {
     model.data.happenings.push(happening);
     newUserPointsObj()
-    updateView()
+    updateView()}
+    model.inputs.newHappening.name = '';
 }
 
 function newHappeningPointsObj() {
