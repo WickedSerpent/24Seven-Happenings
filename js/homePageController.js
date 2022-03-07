@@ -9,15 +9,29 @@ function createNewUser(){
     updateView()
 }
 
-function createNewHappening(){
-    model.app.page='home'
-    let allUsers = model.data.users
+function createNewHappening() {
+    model.app.page = 'home'
     let happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
-    happening.isSelected = false 
+    happening.isSelected = false
     model.data.happenings.push(happening);
+    newUserPointsObj()
     updateView()
+}
+
+function newUserPointsObj() {
+    let allUsers = model.data.users
+    let pointsObj = {}
+    pointsObj.points = ''
+    pointsObj.happeningId = getMaxHappeningId()
+    for (user of allUsers) {
+        pointsObj.userId = user.id
+        for (let j = 0; j < 1; j++) {
+            model.data.userPoints.push(pointsObj);
+        }
+    }
+    
 }
 
 function goToDeleteUserPage(userId) {
