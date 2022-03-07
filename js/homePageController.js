@@ -1,9 +1,5 @@
 updateView()
-}
 
-function createNewHappening(){
-    model.app.page='home'
-    let allUsers = model.data.users
 function createNewHappening() {
     model.app.page = 'home'
     let happening = {};
@@ -11,9 +7,12 @@ function createNewHappening() {
     happening.name = model.inputs.newHappening.name
     happening.isSelected = false 
     happening.isSelected = false
+    if(happening.name == ''){alert('tomt felt')
+    }else{
     model.data.happenings.push(happening);
     newUserPointsObj()
     updateView()
+    }
 }
 
 function newUserPointsObj() {
