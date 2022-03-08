@@ -2,17 +2,14 @@ function createNewUser() {
     model.app.page = 'home';
     let user = {};
     user.id = getMaxUserId() + 1;
-    user.name = model.inputs.newUser.name
-    user.points = 0;
+    user.name = model.inputs.newUser.name;
     user.isSelected = false;
     if (user.name == '') {
-        alert('Fyll inn navn')
+        alert('Fyll ut navn på bruker')
     } else {
-    model.data.users.push(user);
-    newHappeningPointsObj()
-    
-    updateView()
-    sum()
+        model.data.users.push(user);
+        newHappeningPointsObj()
+        updateView()
     }
     model.inputs.newUser.name = '';
 }
@@ -26,24 +23,33 @@ function createNewHappening() {
     if (happening.name == '') {
         alert('Fyll ut navn på arrangement')
     } else {
-    model.data.happenings.push(happening);
-    newUserPointsObj()
-    updateView()}
+        model.data.happenings.push(happening);
+        newUserPointsObj()
+        updateView()
+    }
     model.inputs.newHappening.name = '';
 }
 
 function newHappeningPointsObj() {
-    let happenings = model.data.happenings
-    for (happening of happenings) {
-        const userObj = {}
-        userObj.userId = getMaxUserId()
-        userObj.happeningId = happening.id
-        userObj.points = 1
-        for (let j = 0; j < 1; j++) {
-            model.data.userPoints.push(userObj);
+    const happenings = model.data.happenings
+    const points = getLowestPointsFromEachHappening()
+    const newObjsId = getMaxUserId()
+    const newObjs = model.data.userPoints.points
+    for (let i = 0; i < happenings.length;) {
+            for (point of points) { 
+            const userObj = {}
+            userObj.userId = getMaxUserId()
+            userObj.happeningId = happenings[i].id
+            userObj.points = point + 2 
+            if(point === Infinity){
+                userObj.points = 0
+            }
+            i++
+            for (let j = 0; j < 1; j++) {
+                model.data.userPoints.push(userObj);
+            }
         }
     }
-
 }
 
 function newUserPointsObj() {
@@ -52,7 +58,7 @@ function newUserPointsObj() {
         const pointsObj = {}
         pointsObj.userId = user.id
         pointsObj.happeningId = getMaxHappeningId()
-        pointsObj.points = 1
+        pointsObj.points = 0
         for (let j = 0; j < 1; j++) {
             model.data.userPoints.push(pointsObj);
         }
@@ -88,14 +94,3 @@ function goToEditHappeningPage(happeningId) {
     updateView();
 }
 
-function sum(){
-    userPoints = model.data.userPoints;
-    let sum = 0;
-    for(points in userPoints){
-        const summed = userPoints.reduce(
-        (points, userPoints) => points + (userPoints[points], 0)
-        );
-        console.log(summed);
-        // return points;
-    }
-}
