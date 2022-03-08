@@ -2,8 +2,8 @@ function updateViewHappenings() {
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
     <div class="container">
-        <div class="box1">
-            <h3>Velg <span style="color: red">en</span> trekning!</h3>
+        <div class="boxOne">
+            <h3>Velg <span style="color: #FF5733">en</span> trekning!</h3>
             ${getHappeningsHtml()}
             <h3>Velg personer som skal være med i trekningen!</h3>
             <input type="checkbox"
@@ -16,9 +16,9 @@ function updateViewHappenings() {
                 font-size: 20px;
                 font-weight: bold;"
                 onclick=drawUser()
+                </div>
                 >Trekk!</button>
-        </div>
-        <div class="box2">
+        <div class="boxTwo">
         <h3>Trekninger</h3>
             ${getDoneHappening()}
         </div>
@@ -54,16 +54,14 @@ function getHappeningsHtml() {
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
-
-        <input type="radio" name="checkboxliksom"
-        onchange="toggleHappeningSelected(happening.id)"
-        ${getChecked()}/>${happening.name}<br/>    
-        `
-        ;
-
+        <input type="checkbox"
+        onclick="toggleHappeningSelected(${happening.id})" 
+        ${getChecked(happening.isSelected)}/>
+        ${happening.name}<br/>    
+        `;
     }
     return html;
-}       
+}
 
 function getUsers() {
     let html = '';
