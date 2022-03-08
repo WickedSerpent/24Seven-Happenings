@@ -212,7 +212,7 @@ function getNowForStorage() {
     return getDateStringForStorage(new Date());
 }
 
-function getPointsFromEachHappening() {
+function getLowestPointsFromEachHappening() {
     let pointsInHappening = []
     let happenings = model.data.userPoints
     let happeningIds = getAllHappenings()
@@ -225,5 +225,6 @@ function getPointsFromEachHappening() {
         }
         pointsInHappening.push(pointsInEachHappening)
     }
-    return pointsInHappening
+    let lowestPoints = pointsInHappening.map( arr => Math.min(...arr))
+    return lowestPoints
 }
