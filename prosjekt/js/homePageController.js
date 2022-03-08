@@ -2,14 +2,17 @@ function createNewUser() {
     model.app.page = 'home';
     let user = {};
     user.id = getMaxUserId() + 1;
-    user.name = model.inputs.newUser.name;
+    user.name = model.inputs.newUser.name
+    user.points = 0;
     user.isSelected = false;
     if (user.name == '') {
-        alert('Fyll ut navn på bruker')
+        alert('Fyll inn navn')
     } else {
-        model.data.users.push(user);
-        newHappeningPointsObj()
-        updateView()
+    model.data.users.push(user);
+    newHappeningPointsObj()
+    
+    updateView()
+    sum()
     }
     model.inputs.newUser.name = '';
 }
@@ -23,10 +26,9 @@ function createNewHappening() {
     if (happening.name == '') {
         alert('Fyll ut navn på arrangement')
     } else {
-        model.data.happenings.push(happening);
-        newUserPointsObj()
-        updateView()
-    }
+    model.data.happenings.push(happening);
+    newUserPointsObj()
+    updateView()}
     model.inputs.newHappening.name = '';
 }
 
@@ -58,7 +60,7 @@ function newUserPointsObj() {
         const pointsObj = {}
         pointsObj.userId = user.id
         pointsObj.happeningId = getMaxHappeningId()
-        pointsObj.points = 0
+        pointsObj.points = 1
         for (let j = 0; j < 1; j++) {
             model.data.userPoints.push(pointsObj);
         }
@@ -94,3 +96,14 @@ function goToEditHappeningPage(happeningId) {
     updateView();
 }
 
+function sum(){
+    userPoints = model.data.userPoints;
+    let sum = 0;
+    for(points in userPoints){
+        const summed = userPoints.reduce(
+        (points, userPoints) => points + (userPoints[points], 0)
+        );
+        console.log(summed);
+        // return points;
+    }
+}

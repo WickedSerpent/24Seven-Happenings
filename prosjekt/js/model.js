@@ -74,6 +74,7 @@ const model = {
             {id: 22, name:'Espen', isSelected: false, },
             {id: 23, name:'Rune', isSelected: false, },
             {id: 24, name:'Steinar S', isSelected: false, },
+
         ],
 
         userPoints: [
@@ -81,39 +82,37 @@ const model = {
             {userId: 2, happeningId: 1, points: 8},
             {userId: 3, happeningId: 1, points: 8},
             {userId: 4, happeningId: 1, points: 8},
-            {userId: 5, happeningId: 1, points: 6},
-            {userId: 6, happeningId: 1, points: 6},
-            {userId: 7, happeningId: 1, points: 6},
-            {userId: 8, happeningId: 1, points: 6},
-            {userId: 9, happeningId: 1, points: 6},
-            {userId: 10, happeningId: 1, points: 6},
-            {userId: 11, happeningId: 1, points: 6},
-            {userId: 12, happeningId: 1, points: 6},
-            {userId: 13, happeningId: 1, points: 6},
-            {userId: 14, happeningId: 1, points: 6},
-            {userId: 15, happeningId: 1, points: 6},
-            {userId: 16, happeningId: 1, points: 6},
-            {userId: 17, happeningId: 1, points: 6},
-            {userId: 18, happeningId: 1, points: 6},
-            {userId: 19, happeningId: 1, points: 6},
-            {userId: 20, happeningId: 1, points: 6},
-            {userId: 21, happeningId: 1, points: 6},
-            {userId: 22, happeningId: 1, points: 6},
-            {userId: 23, happeningId: 1, points: 6},
-            {userId: 24, happeningId: 1, points: 6},
-            
+            {userId: 5, happeningId: 1, points: 7},
+            {userId: 6, happeningId: 1, points: 7},
+            {userId: 7, happeningId: 1, points: 7},
+            {userId: 8, happeningId: 1, points: 7},
+            {userId: 9, happeningId: 1, points: 7},
+            {userId: 10, happeningId: 1, points: 7},
+            {userId: 11, happeningId: 1, points: 7},
+            {userId: 12, happeningId: 1, points: 7},
+            {userId: 13, happeningId: 1, points: 7},
+            {userId: 14, happeningId: 1, points: 7},
+            {userId: 15, happeningId: 1, points: 7},
+            {userId: 16, happeningId: 1, points: 7},
+            {userId: 17, happeningId: 1, points: 7},
+            {userId: 18, happeningId: 1, points: 7},
+            {userId: 19, happeningId: 1, points: 7},
+            {userId: 20, happeningId: 1, points: 7},
+            {userId: 21, happeningId: 1, points: 7},
+            {userId: 22, happeningId: 1, points: 7},
+            {userId: 23, happeningId: 1, points: 7},
+            {userId: 24, happeningId: 1, points: 7},
         ],
         
-
         happenings: [
             {
                 id: 1, 
                 name:'Kahoot',
                 isSelected: false,
             }, 
-           
+
         ],
-        
+
         doneHappenings: [
             
         ],

@@ -1,14 +1,14 @@
-function updateViewHappenings() {
+function updateViewHappenings(){
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
     <div class="container">
         <div class="box1">
-            <h3>Velg <span style="color: red">en</span> trekning!</h3>
+            <h3>Velg en trekning!</h3>
             ${getHappeningsHtml()}
             <h3>Velg personer som skal være med i trekningen!</h3>
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+            ${getChecked(model.data.selectAll)}/> Velg alle<br/>
             ${getUsers()}<br/>
             <button style="
                 width: 200px; 
@@ -48,24 +48,23 @@ function getDoneHappening() {
     return html;
 }
 
-function getHappeningsHtml() {
+function getHappeningsHtml(){
     let html = '';
     const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
-
-        <input type="radio" name="checkboxliksom"
-        onchange="toggleHappeningSelected(happening.id)"
-        ${getChecked()}/>${happening.name}<br/>    
-        `
-        ;
-
+        <input type="checkbox"
+        onclick="toggleHappeningSelected(${happening.id})" 
+        ${getChecked(happening.isSelected)}
+        />
+        ${happening.name}<br/>    
+        `;
     }
     return html;
-}       
+}
 
-function getUsers() {
+function getUsers(){
     let html = '';
     const users = model.data.users;
     for (let i = 0; i < users.length; i++) {

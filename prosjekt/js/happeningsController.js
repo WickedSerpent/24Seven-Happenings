@@ -9,13 +9,6 @@ function selectAllOrNone(selectAll) {
 function getChecked(isSelected) {
     return isSelected ? 'checked="checked"' : '';
 }
-// function velgHappen(){
-//     const happening = getHappeningById(id);
-//     const isSelected = model.data.happenings.isSelected
-//     if(model.data.happenings = 'checked'){
-//         model.data.happenings.isSelected = true;
-//     }
-// }
 
 function togglePersonSelected(id) {
     const user = getUserById(id);
@@ -24,11 +17,10 @@ function togglePersonSelected(id) {
 }
 
 function toggleHappeningSelected(id) {
-    const happening = getHappeningById(id)
+    const happening = getHappeningById(id);
     happening.isSelected = !happening.isSelected;
     updateView();
 }
-
 
 function getCheckedUsers() {
     let users = model.data.users;
@@ -37,7 +29,6 @@ function getCheckedUsers() {
     })
     return checkedUsers;
 }
-
 
 function getCheckedUsersIds() {
     let userIds = []
@@ -85,14 +76,6 @@ function getAllHappeningIds(){
 function resetHappenings(){
     model.data.doneHappenings = []
     updateView()
-}
-
-function getCheckedHappenings() {
-    let happening = model.data.happenings;
-    let checkedhappenings = happening.filter(happening => {
-        return happening.isSelected === true
-    })
-    return checkedhappenings;
 }
 
 function getCheckedHappenings() {
