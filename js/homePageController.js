@@ -92,10 +92,10 @@ function sum(){
     userPoints = model.data.userPoints;
     let sum = 0;
     for(points in userPoints){
-            
+        const summed = userPoints.reduce(
+        (points, userPoints) => points + (userPoints[points], 0)
+        );
+        console.log(summed);
         // return points;
     }
-    const summed = userPoints.reduce((points, userPoints) => points + (userPoints[points], 0));
-    return summed; 
-    console.log(summed);
 }
