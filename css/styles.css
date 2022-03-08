@@ -49,3 +49,17 @@ ul {
   .btn--top:active {
     background-color: #4800ce;
   }
+  /* input[type=radio] {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  
+  input[type=radio]:checked {
+    background-color: 'black';
+    background-size: 0.5em;
+  }
+  
+  input[type=radio]:focus {
+    outline-color: transparent;
+  } */

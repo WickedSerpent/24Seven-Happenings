@@ -54,14 +54,16 @@ function getHappeningsHtml(){
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
-        <input type="checkbox"
-        onclick="toggleHappeningSelected(${happening.id})" 
-        ${getChecked(happening.isSelected)}/>
-        ${happening.name}<br/>    
-        `;
+
+        <input type="radio" name="checkboxliksom"
+        onchange="toggleHappeningSelected(happening.id)"
+        ${getChecked()}/>${happening.name}<br/>    
+        `
+        ;
+
     }
     return html;
-}
+}       
 
 function getUsers(){
     let html = '';
