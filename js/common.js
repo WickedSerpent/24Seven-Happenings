@@ -50,6 +50,15 @@ function getHappeningIndexById(id) {
     return null;
 }
 
+function getDoneHappeningIndexById(id) {
+    for (let i = 0; i < model.data.doneHappenings.length; i++) {
+        let happening = model.data.doneHappenings[i];
+        if (happening.id === id) return i;
+    }
+    return null;
+}
+
+
 function getUserById(id) {
     for (let user of model.data.users) {
         if (user.id === id) return user;

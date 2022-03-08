@@ -40,6 +40,10 @@ const model = {
             areYouSure: false,
         },
         
+        deleteDoneHappenings: {
+            id: null,
+        },
+
         resetDoneHappenings: {
             areYouSure: false,
         },

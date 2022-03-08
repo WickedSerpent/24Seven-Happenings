@@ -80,6 +80,13 @@ function resetHappenings(){
     updateView()
 }
 
+function deleteDoneHappening(id){
+    const index = getDoneHappeningIndexById(id);
+    model.data.doneHappenings.splice(index, 1);
+    model.app.page='happening';
+    updateView()
+}
+
 function getCheckedHappenings() {
     let happening = model.data.happenings;
     let checkedhappenings = happening.filter(happening => {
