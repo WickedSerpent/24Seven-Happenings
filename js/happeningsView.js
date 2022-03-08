@@ -16,8 +16,8 @@ function updateViewHappenings() {
                 font-size: 20px;
                 font-weight: bold;"
                 onclick=drawUser()
-                </div>
                 >Trekk!</button>
+        </div>
         <div class="boxTwo">
         <h3>Trekninger</h3>
             ${getDoneHappening()}
