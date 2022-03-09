@@ -26,6 +26,93 @@ ul {
     list-style: none;
 }
 
+.topMenu{
+  margin-top: -15px;
+  min-width: 620px;
+
+}
+
+.btn--top {
+  text-transform: uppercase;
+  background-color: #4300c0;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin: 15px 0px 15px 15px;
+  cursor: pointer;
+}
+
+.btn--top:hover,
+.btn--top:active {
+  background-color: #4800ce;
+}
+
+
+.containerHome{
+
+  display: grid;
+  margin-top: -20px;
+  position:absolute;
+  grid-template-columns: 2;
+  grid-template-rows: auto;
+  height: calc(60vh - 10px);
+  grid-auto-rows: max-content;
+  min-width: 357px;
+  grid-template-areas:  "headerHome,     headerHome"
+                        "boxOneHome, boxTwoHome"
+                        "addArrangementBox, addPersonBox";
+
+}
+.headerHome {
+position: relative;
+grid-column: 1;
+grid-row: 1;
+max-height: 10px;
+}
+.headerHome2 {
+position: relative;
+grid-column: 2;
+grid-row: 1;
+
+}
+
+.boxOneHome{
+  
+  padding-top: 1px;
+  margin-left: 20px;
+  height: 750px;
+  width: 500px;
+  max-height: 30vmax;
+  min-height: 1vmax;
+  grid-column: 1;
+  grid-row: 2;
+  max-height: 10px;
+}
+
+.boxTwoHome{
+  
+  padding-top: 5px;
+  margin-right: 20px;
+  height: 750px;
+  width:  500px;
+  overflow-y: scroll;
+  max-height: 30vmax;
+  min-height: 1vmax;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.addArrangementBox{
+  grid-column: 1;
+  grid-row: 3;
+}
+.addPersonBox{
+  grid-column: 2;
+  grid-row: 3;
+}
+
 .container{
 
     display: grid;
@@ -48,12 +135,6 @@ ul {
   grid-row:1
 }
 
-.boxOneHome{
-    padding: 15px;
-    margin: 20px;
-    height: 750px;
-    width: 500px;
-}
 
 .boxOne{
     overflow-y: scroll;
@@ -64,13 +145,7 @@ ul {
   
 }
 
-.boxTwoHome{
-    padding: 15px;
-    margin: 20px;
-    height: 750px;
-    width:  500px;
-    overflow-y: scroll;
-}
+
 
 .boxOne2{
   display: block;
@@ -123,25 +198,3 @@ ul {
 }
 
 
-.topMenu{
-    margin-top: -15px;
-    min-width: 620px;
-
-}
-
-.btn--top {
-    text-transform: uppercase;
-    background-color: #4300c0;
-    color: #fff ;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    margin: 15px 0px 15px 15px;
-    cursor: pointer;
-  }
-  
-  .btn--top:hover,
-  .btn--top:active {
-    background-color: #4800ce;
-  }
