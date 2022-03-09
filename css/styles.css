@@ -76,7 +76,7 @@ ul {
   display: block;
   position: relative;
   overflow-y: scroll;
-  max-height: 7vmax;
+  max-height: 14vmax;
   min-height: 1vmax;
   grid-column: 1;
   grid-row: 3;
@@ -87,7 +87,7 @@ ul {
   display: block;
   position: relative;
   overflow-y: scroll;
-  max-height: 20vmax;
+  max-height: 25vmax;
   min-height: 5vmax;
   grid-column: 1;
   grid-row: 4;
@@ -103,19 +103,11 @@ ul {
     grid-row: 2;
     max-height: 60vmax;
     min-height: 5vmax;
+    grid-column: 2;
+    grid-row: 2;
     overflow-y: scroll;
 }
-.botwo2{
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  max-height: 35vmax;
-  min-height: 5vmax;
-  grid-column: 2;
-  grid-row: 3;
-  overflow-y: scroll;
 
-}
 
 
 
@@ -153,17 +145,3 @@ ul {
   .btn--top:active {
     background-color: #4800ce;
   }
-  /* input[type=radio] {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 0.5em;
-    -webkit-appearance: none;
-  }
-  
-  input[type=radio]:checked {
-    background-color: 'black';
-    background-size: 0.5em;
-  }
-  
-  input[type=radio]:focus {
-    outline-color: transparent;
-  } */
