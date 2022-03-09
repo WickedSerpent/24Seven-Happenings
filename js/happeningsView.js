@@ -2,28 +2,42 @@ function updateViewHappenings() {
     document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtml()}
     <div class="container">
+    <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
         <div class="boxOne">
-            <div class="happeningAndUsers">
-                <h3>Velg <span style="color: #FF5733">en</span> trekning!</h3>
-                ${getHappeningsHtml()}
-                <h3>Velg personer som skal være med i trekningen!</h3>
-                <input type="checkbox"
-                onclick="selectAllOrNone(this.checked)"
-                ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-                ${getUsers()}<br/>
+
+            
+            <div class="boxOne2">
+            ${getHappeningsHtml()}
             </div>
-                <button style="
-                width: 200px; 
-                height: 40px; 
-                font-size: 20px;
-                font-weight: bold;"
-                onclick=drawUser()
-                >Trekk!</button>
-        </div>
+        
+            <h3>Velg personer som skal være med i trekningen!</h3>
+            <div class="boxOne3">
+            <input type="checkbox"
+            onclick="selectAllOrNone(this.checked)"
+            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+            ${getUsers()}<br/>
+            </div>
+
+            <div class="trekkBtn"><button style="
+            width: 200px; 
+            height: 40px; 
+            font-size: 20px;
+            font-weight: bold;"
+            onclick=drawUser()
+            >Trekk!</button>
+            
+
+        </div></div>
+
+            
+
         <div class="boxTwo">
-        <h3>Trekninger</h3>
+            <h3 class="boxtwo0">Trekninger</h3>
+            <div className="boxTwo2">
             ${getDoneHappening()}
+            </div>
         </div>
+
     </div>
     `;
 }
