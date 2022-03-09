@@ -22,21 +22,33 @@ ul {
     list-style: none;
 }
 
-.container{
+.containerHome{
     display: flex;
     margin-top: -20px;
 }
 
-.boxOne{
+.boxOneHome{
+    padding: 15px;
     margin: 20px;
     height: 750px;
+    width: 500px;
     overflow-y: scroll;
 }
 
-.boxTwo{
+.boxTwoHome{
+    padding: 15px;
     margin: 20px;
     height: 750px;
+    width:  500px;
     overflow-y: scroll;
+}
+
+.addPersonBox {
+  
+}
+
+.addArrangementBox {
+  
 }
 
 .topMenu{
