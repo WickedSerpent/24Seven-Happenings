@@ -1,29 +1,38 @@
 function updateViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
-    <div class="container">
+
+    <div class="containerHome">
         <div class="boxOneHome">
         <h3>Arrangementer</h3>
+        ${getAllHappeningsHome()}
+        </div>
+
+        <div class="addArrangementBox">
         <input 
         oninput="model.inputs.newHappening.name = this.value" 
-        value="Navn på arrangement" 
+        placeholder="Navn på arrangement"
         type="text"
         onfocus="this.value=''">
         <button onclick="createNewHappening()">Legg til nytt arrangement</button>
-        ${getAllHappeningsHome()}
         </div>
-        <div class="boxTwo">
+        
+        <div class="boxTwoHome">
         <h3>Personer</h3>
+        ${getusersHome()}
+        </div>
+
+        <div class="addPersonBox">
         <input 
         oninput="model.inputs.newUser.name = this.value" 
-        value="Navn på person" 
+        placeholder="Navn på person" 
         type="text"
         onfocus="this.value=''">
         <button onclick="createNewUser()">Legg til ny person</button>
-        ${getusersHome()}
         </div>
-    </div>
-    `; 
+
+        </div>
+        `; 
 }
 
 
