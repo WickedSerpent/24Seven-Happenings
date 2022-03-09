@@ -4,24 +4,40 @@ function updateViewHappenings() {
     <div class="container">
         <div class="boxOne">
             <h3>Velg <span style="color: #FF5733">en</span> trekning!</h3>
-            ${getHappeningsHtml()}
+                <div class="boxOne2">
+                ${getHappeningsHtml()}
+                </div>
+        
             <h3>Velg personer som skal være med i trekningen!</h3>
-            <input type="checkbox"
-            onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            ${getUsers()}<br/>
-            <button style="
-                width: 200px; 
-                height: 40px; 
-                font-size: 20px;
-                font-weight: bold;"
-                onclick=drawUser()
-                >Trekk!</button>
+                <div class="boxOne3">
+                    <input type="checkbox"
+                    onclick="selectAllOrNone(this.checked)"
+                    ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+                    ${getUsers()}<br/>
+
+                </div>
+
         </div>
+        
+        
+        
+        </div>        
         <div class="boxTwo">
-        <h3>Trekninger</h3>
+        <h3 >Trekninger</h3>
+            <div className="boxTwo2">
             ${getDoneHappening()}
+            </div>
         </div>
+        
+        <div class="trekkBtn"><button style="
+            width: 200px; 
+            height: 40px; 
+            font-size: 20px;
+            font-weight: bold;"
+            onclick=drawUser()
+            >Trekk!</button>
+        
+
     </div>
     `;
 }

@@ -7,6 +7,10 @@
     -ms-user-select: none; 
     user-select: none; 
 }
+::-webkit-scrollbar{
+  width: 0;
+  background: transparent;
+}
 
 body{
     padding: 20px;
@@ -19,14 +23,59 @@ ul {
 .container{
     display: flex;
     margin-top: -20px;
+    position:absolute;
+
+    overflow:hidden;
+    
 }
 
-.box1{
-    margin: 20px;
+.boxOne{
+    margin: 1px;
+    overflow-y: scroll;
+    max-width: 50%;
+    float: left;
+    
+    
 }
 
-.box2{
-    margin: 20px;
+.boxOne2{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 7vmax;
+  min-height: 1vmax;
+
+}
+.boxOne3{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 20vmax;
+  min-height: 5vmax;
+
+}
+.boxTwo{
+    margin: 1px;
+    height: 50vmax;
+    overflow-y: scroll;
+    float: right;
+    position: relative;
+}
+.botwo2{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 35vmax;
+  min-height: 5vmax;
+
+}
+
+.trekkBtn {
+  position: absolute;
+  bottom: 0;
+  float: bottom;
+  margin-bottom: 5vmin;
+  
 }
 
 .topMenu{
