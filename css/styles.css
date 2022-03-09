@@ -13,6 +13,10 @@
   width: 0; 
   background: transparent; 
 }
+::-webkit-scrollbar{
+  width: 0;
+  background: transparent;
+}
 
 body{
     padding: 20px;
@@ -22,9 +26,19 @@ ul {
     list-style: none;
 }
 
-.containerHome{
-    display: flex;
+.container{
+    display: grid;
     margin-top: -20px;
+    position:absolute;
+    grid-template-columns: 2;
+    grid-template-rows: 5;
+    height: calc(60vh - 10px);
+    grid-auto-rows: max-content;
+    min-width: 357px;
+}
+.boxOne0 {
+  grid-column:1;
+  grid-row:1
 }
 
 .boxOneHome{
@@ -32,7 +46,15 @@ ul {
     margin: 20px;
     height: 750px;
     width: 500px;
+}
+
+.boxOne{
     overflow-y: scroll;
+    max-width: 300PX;
+    float: left;
+    grid-column: 1;
+    grid-row: 2;
+  
 }
 
 .boxTwoHome{
@@ -43,16 +65,65 @@ ul {
     overflow-y: scroll;
 }
 
-.addPersonBox {
+.boxOne2{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 7vmax;
+  min-height: 1vmax;
+  grid-column: 1;
+  grid-row: 3;
   
+
+}
+.boxOne3{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 20vmax;
+  min-height: 5vmax;
+  grid-column: 1;
+  grid-row: 4;
 }
 
-.addArrangementBox {
-  
+.boxTwo0 {
+  grid-column: 2;
+  grid-row: 1;
 }
+.boxTwo{
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+}
+.botwo2{
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  max-height: 35vmax;
+  min-height: 5vmax;
+  grid-column: 2;
+  grid-row: 3;
+  overflow-y: scroll;
+
+}
+
+
+
+
+.trekkBtn {
+  padding-top: 4px;
+  position: relative;
+  grid-column: 1;
+  grid-row: 5;
+  
+  
+
+}
+
 
 .topMenu{
     margin-top: -15px;
+    min-width: 620px;
 }
 
 .btn--top {
