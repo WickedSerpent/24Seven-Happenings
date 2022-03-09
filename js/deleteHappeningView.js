@@ -1,20 +1,22 @@
 function updateViewDeleteHappening(){
     document.getElementById('app').innerHTML = /*html*/`
         ${createMenuHtml()}  
-        <h2> Slett </h2>
+        <div class="deleteAndEdit">
+        <h3> Slett </h3>
         ${createDeleteHappeningHtml()}
         <input
             type="checkbox"
-            oninput="modelHappenings.inputs.deleteHappening.areYouSure = this.checked"
-            ${modelHappenings.inputs.deleteHappening.areYouSure ? 'checked' : ''}
-            /> Er du sikker på at du vil slette?<br>
+            oninput="model.inputs.deleteHappening.areYouSure = this.checked"
+            ${model.inputs.deleteHappening.areYouSure ? 'checked' : ''}
+            /> Er du sikker på at du vil slette?<br><br />
         <button onclick="deleteHappening()"> Slett! </button>
+        </div>
        `;
 }
 
 function createDeleteHappeningHtml(){
-    const happeningId = modelHappenings.inputs.deleteHappening.id;
-    const happening = findHappeningById(happeningId);
+    const happeningId = model.inputs.deleteHappening.id;
+    const happening = getHappeningById(happeningId);
     return /*html*/`
         Navn: ${happening.name}<br>
     `;

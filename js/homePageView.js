@@ -2,32 +2,40 @@ function updateViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
     <div class="container">
-        <div class="boxOne">
-            <h2>Arrangementer</h2>
-            ${getAllHappeningsHome()}
-            <input oninput="modelHappenings.inputs.newHappening.name = this.value" type="text">
-            <button onclick="createNewHappening()">Legg til nytt arrangement</button>
+        <div class="boxOneHome">
+        <h3>Arrangementer</h3>
+        <input 
+        oninput="model.inputs.newHappening.name = this.value" 
+        value="Navn på arrangement" 
+        type="text"
+        onfocus="this.value=''">
+        <button onclick="createNewHappening()">Legg til nytt arrangement</button>
+        ${getAllHappeningsHome()}
         </div>
         <div class="boxTwo">
-            <h2>Personer</h2>
-            ${getAllUsersHome()}
-            <input oninput="modelUsers.inputs.newUser.name = this.value" type="text">
-            <button onclick="createNewUser()">Legg til ny person</button>
+        <h3>Personer</h3>
+        <input 
+        oninput="model.inputs.newUser.name = this.value" 
+        value="Navn på person" 
+        type="text"
+        onfocus="this.value=''">
+        <button onclick="createNewUser()">Legg til ny person</button>
+        ${getusersHome()}
         </div>
     </div>
     `; 
 }
 
 
-function getAllUsersHome(){
+function getusersHome(){
     let html = '';
-    const users = modelUsers.data.allUsers;
+    const users = model.data.users;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`
             <ul>
-            <li>Navn - ${user.name} 
-            <button onclick="">Endre</button> 
+            <li>${user.name} 
+            <button onclick="goToEditUserPage(${user.id})">Endre</button> 
             <button onclick="goToDeleteUserPage(${user.id})">Slett</button><br></li>
             </ul>
         `;
@@ -37,12 +45,13 @@ function getAllUsersHome(){
 
 function getAllHappeningsHome(){
     let html = '';
-    const happenings = modelHappenings.data.happenings;
+    const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} <button>Endre</button> <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
+            <li>${happening.name} <button onclick="goToEditHappeningPage(${happening.id})">Endre</button> 
+            <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
             </ul>      
         `;
     }
