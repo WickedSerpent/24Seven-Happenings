@@ -59,7 +59,8 @@ function getAllHappeningsHome(){
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} <button onclick="goToEditHappeningPage(${happening.id})">Endre</button> 
+            <li>${happening.name} 
+            <button onclick="goToEditHappeningPage(${happening.id})">Endre</button> 
             <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
             </ul>      
         `;
