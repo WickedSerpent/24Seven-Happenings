@@ -6,6 +6,12 @@
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
+    
+}
+
+::-webkit-scrollbar {
+  width: 0; 
+  background: transparent; 
 }
 
 body{
@@ -21,12 +27,16 @@ ul {
     margin-top: -20px;
 }
 
-.box1{
+.boxOne{
     margin: 20px;
+    height: 750px;
+    overflow-y: scroll;
 }
 
-.box2{
+.boxTwo{
     margin: 20px;
+    height: 750px;
+    overflow-y: scroll;
 }
 
 .topMenu{
