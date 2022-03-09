@@ -57,6 +57,7 @@ const model = {
             {id: 1, name:'Hans Victor', isSelected: false, },
             {id: 2, name:'Arild', isSelected: false, },
             {id: 3, name:'Richard', isSelected: false, },
+
             {id: 4, name:'Jens', isSelected: false, },
             {id: 5, name:'Sindre', isSelected: false, },
             {id: 6, name:'Anders H', isSelected: false, },
@@ -84,6 +85,7 @@ const model = {
             {userId: 1, happeningId: 1, points: 8},
             {userId: 2, happeningId: 1, points: 8},
             {userId: 3, happeningId: 1, points: 8},
+
             {userId: 4, happeningId: 1, points: 8},
             {userId: 5, happeningId: 1, points: 6},
             {userId: 6, happeningId: 1, points: 6},
@@ -105,7 +107,6 @@ const model = {
             {userId: 22, happeningId: 1, points: 6},
             {userId: 23, happeningId: 1, points: 6},
             {userId: 24, happeningId: 1, points: 6},
-            
         ],
         
 

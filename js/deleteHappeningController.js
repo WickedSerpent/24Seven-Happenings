@@ -6,3 +6,20 @@ function deleteHappening(){
     model.inputs.deleteHappening.areYouSure = false;
     updateView()
 }
+
+
+function deleteFilter(){
+    model.data.userPoints = model.data.userPoints.filter(happeningid => happeningid.happeningId !== 2)
+}
+
+
+function getIndexOfUserPoints(happeningId) {
+    let userPoints = model.data.userPoints
+    let indexes = [];
+    for (let i = 0; i < userPoints.length; i++) {
+        if(userPoints[i].happeningId === happeningId){
+        indexes.push(i);
+        }
+    }
+    return indexes;
+  }

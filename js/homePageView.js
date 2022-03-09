@@ -1,6 +1,7 @@
 function updateViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
+
     <div class="containerHome">
         <div class="boxOneHome">
         <h3>Arrangementer</h3>

@@ -47,7 +47,6 @@ function getHappeningById(id) {
         if (happening.id === id) return happening;
     }
     return null;
-
 }
 
 function getHappeningIndexById(id) {
