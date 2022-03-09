@@ -3,14 +3,16 @@ function updateViewHappenings() {
     ${createMenuHtml()}
     <div class="container">
         <div class="boxOne">
-            <h3>Velg <span style="color: #FF5733">en</span> trekning!</h3>
-            ${getHappeningsHtml()}
-            <h3>Velg personer som skal være med i trekningen!</h3>
-            <input type="checkbox"
-            onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            ${getUsers()}<br/>
-            <button style="
+            <div class="happeningAndUsers">
+                <h3>Velg <span style="color: #FF5733">en</span> trekning!</h3>
+                ${getHappeningsHtml()}
+                <h3>Velg personer som skal være med i trekningen!</h3>
+                <input type="checkbox"
+                onclick="selectAllOrNone(this.checked)"
+                ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+                ${getUsers()}<br/>
+            </div>
+                <button style="
                 width: 200px; 
                 height: 40px; 
                 font-size: 20px;
