@@ -7,7 +7,7 @@ function createNewUser() {
     if (user.name == '') {
         alert('Fyll ut navn på bruker')
     } else {
-        model.data.users.push(user);
+        model.data.users.unshift(user);
         newHappeningPointsObj()
         updateView()
     }
@@ -23,7 +23,7 @@ function createNewHappening() {
     if (happening.name == '') {
         alert('Fyll ut navn på arrangement')
     } else {
-        model.data.happenings.push(happening);
+        model.data.happenings.unshift(happening);
         newUserPointsObj()
         updateView()
     }
@@ -40,7 +40,7 @@ function newHappeningPointsObj() {
             const userObj = {}
             userObj.userId = getMaxUserId()
             userObj.happeningId = happenings[i].id
-            userObj.points = point + 2 
+            userObj.points = point 
             if(point === Infinity){
                 userObj.points = 0
             }

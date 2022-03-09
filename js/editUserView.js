@@ -1,7 +1,7 @@
 function updateViewUserEdit(){
     document.getElementById('app').innerHTML = /*html*/` 
     ${createMenuHtml()}
-
+    <div class="deleteAndEdit">
     <p>Endre navn på bruker <strong>${model.inputs.editUser.name}</strong> 
     <br/><br/>
     <input 
@@ -12,5 +12,6 @@ function updateViewUserEdit(){
     <br/>
     <br/>    
     <button onclick="editUser()">Endre</button>
+    </div>
 `;
 }
