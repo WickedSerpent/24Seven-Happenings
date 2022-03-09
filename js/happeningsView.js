@@ -31,9 +31,8 @@ function updateViewHappenings() {
         </div></div>
 
             
-
+        <h3 class="boxtwo0">Trekninger</h3>
         <div class="boxTwo">
-            <h3 class="boxtwo0">Trekninger</h3>
             <div className="boxTwo2">
             ${getDoneHappening()}
             </div>
