@@ -233,7 +233,6 @@ function getDateStringForStorage(dato) {
     return dato.toISOString().substr(0).replace('T', ' ');
 }
 
-
 function getNowForStorage() {
     return getDateStringForStorage(new Date());
 }

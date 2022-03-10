@@ -1,16 +1,23 @@
-function deleteHappening(){
+
+
+
+
+
+
+function deleteHappening(id){
     if (! model.inputs.deleteHappening.areYouSure) return;
     const index = getHappeningIndexById(model.inputs.deleteHappening.id);
     model.data.happenings.splice(index, 1);
     model.app.page='home';
     model.inputs.deleteHappening.areYouSure = false;
+    model.data.userPoints = model.data.userPoints.filter(happeningid => happeningid.happeningId !== id)
     updateView()
 }
 
 
-function deleteFilter(){
-    model.data.userPoints = model.data.userPoints.filter(happeningid => happeningid.happeningId !== 2)
-}
+// function deleteFilter(){
+//     model.data.userPoints = model.data.userPoints.filter(happeningid => happeningid.happeningId !== 2)
+// }
 
 
 function getIndexOfUserPoints(happeningId) {
