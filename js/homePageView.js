@@ -1,10 +1,11 @@
 function updateViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
-
+    
     <div class="containerHome">
+        <h3 class="headerHome">Arrangementer</h3>
         <div class="boxOneHome">
-        <h3>Arrangementer</h3>
+        
         ${getAllHappeningsHome()}
         </div>
 
@@ -16,9 +17,9 @@ function updateViewHome(){
         onfocus="this.value=''">
         <button onclick="createNewHappening()">Legg til nytt arrangement</button>
         </div>
-        
+        <h3 class="headerHome2">Personer</h3>
         <div class="boxTwoHome">
-        <h3>Personer</h3>
+        
         ${getusersHome()}
         </div>
 
