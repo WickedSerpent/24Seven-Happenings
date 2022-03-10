@@ -4,8 +4,10 @@ function updateViewHome(){
     
     <div class="containerHome">
         <h3 class="headerHome">Arrangementer</h3>
-        <div class="boxOneHome">
+
         
+        <div class="boxOneHome">
+
         ${getAllHappeningsHome()}
         </div>
         <div class="addArrangementBox">
@@ -14,11 +16,14 @@ function updateViewHome(){
         placeholder="Navn på arrangement"
         type="text"
         onfocus="this.value=''">
-        <button onclick="createNewHappening()">Legg til nytt arrangement</button>
+
+        <button class="addBtn" onclick="createNewHappening()">+</button>
         </div>
+
         <h3 class="headerHome2">Personer</h3>
-        <div class="boxTwoHome">
         
+        <div class="boxTwoHome">
+
         ${getusersHome()}
         </div>
         <div class="addPersonBox">
@@ -27,7 +32,9 @@ function updateViewHome(){
         placeholder="Navn på person" 
         type="text"
         onfocus="this.value=''">
-        <button onclick="createNewUser()">Legg til ny person</button>
+
+        <button class="addBtn" onclick="createNewUser()">+</button>
+
         </div>
         </div>
         `; 
@@ -42,8 +49,8 @@ function getusersHome(){
         html += /*html*/`
             <ul>
             <li>${user.name} 
-            <button onclick="goToEditUserPage(${user.id})">Endre</button> 
-            <button onclick="goToDeleteUserPage(${user.id})">Slett</button><br></li>
+            <button class="btn"onclick="goToEditUserPage(${user.id})">✎</button> 
+            <button class="btn"onclick="goToDeleteUserPage(${user.id})">🗑</button><br></li>
             </ul>
         `;
     }
@@ -57,9 +64,10 @@ function getAllHappeningsHome(){
         const happening = happenings[i];
         html += /*html*/`
             <ul>
-            <li>${happening.name} 
-            <button onclick="goToEditHappeningPage(${happening.id})">Endre</button> 
-            <button onclick="goToDeleteHappeningPage(${happening.id})">Slett</button></li>
+
+            <li>${happening.name} <button class="btn"onclick="goToEditHappeningPage(${happening.id})">✎</button> 
+            <button class="btn"onclick="goToDeleteHappeningPage(${happening.id})">🗑</button></li>
+
             </ul>      
         `;
     }
