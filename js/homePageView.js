@@ -36,7 +36,7 @@ function updateViewHome(){
         <button class="addBtn" onclick="createNewUser()">+</button>
 
         </div>
-        </div>
+    </div>
         `; 
 }
 
