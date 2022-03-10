@@ -26,9 +26,44 @@ ul {
     list-style: none;
 }
 
+.containerHome{
+
+  display: grid;
+  margin-top: -20px;
+  position:absolute;
+  grid-template-columns: 2;
+  grid-template-rows: auto;
+  height: calc(60vh - 10px);
+  grid-auto-rows: max-content;
+  min-width: 357px;
+  grid-template-areas:  "headerHome,     headerHome"
+                        "boxOneHome, boxTwoHome"
+                        "addArrangementBox, addPersonBox";
+
+}
+
+.container{
+
+  display: grid;
+  margin-top: -20px;
+  position:absolute;
+  grid-template-columns: 2;
+  grid-template-rows: auto;
+  height: calc(60vh - 10px);
+  grid-auto-rows: max-content;
+  min-width: 357px;
+  grid-template-areas: "boxOne,            boxTwo0"
+                        "boxOne,           boxTwo"
+                        "boxOne2,          boxTwo2"
+                        "boxOne3,          boxTwo2"
+                        "trekkBtn,         boxTwo2";
+
+}
+
 .topMenu{
   margin-top: -15px;
   min-width: 620px;
+  margin-bottom: 40px;
 
 }
 
@@ -49,28 +84,21 @@ ul {
   background-color: #4800ce;
 }
 
-
-.containerHome{
-
-  display: grid;
-  margin-top: -20px;
-  position:absolute;
-  grid-template-columns: 2;
-  grid-template-rows: auto;
-  height: calc(60vh - 10px);
-  grid-auto-rows: max-content;
-  min-width: 357px;
-  grid-template-areas:  "headerHome,     headerHome"
-                        "boxOneHome, boxTwoHome"
-                        "addArrangementBox, addPersonBox";
-
+.trekkBtn {
+  padding-top: 4px;
+  position: relative;
+  grid-column: 1;
+  grid-row: 5;
+  margin-top: 30px;
 }
+
 .headerHome {
 position: relative;
 grid-column: 1;
 grid-row: 1;
 max-height: 10px;
 }
+
 .headerHome2 {
 position: relative;
 grid-column: 2;
@@ -115,23 +143,7 @@ grid-row: 1;
   margin-top: 30px;
 }
 
-.container{
 
-    display: grid;
-    margin-top: -20px;
-    position:absolute;
-    grid-template-columns: 2;
-    grid-template-rows: auto;
-    height: calc(60vh - 10px);
-    grid-auto-rows: max-content;
-    min-width: 357px;
-    grid-template-areas: "boxOne,            boxTwo0"
-                          "boxOne,           boxTwo"
-                          "boxOne2,          boxTwo2"
-                          "boxOne3,          boxTwo2"
-                          "trekkBtn,         boxTwo2";
-  
-}
 .boxOne0 {
   grid-column:1;
   grid-row:1
@@ -183,14 +195,5 @@ grid-row: 1;
     overflow-y: scroll;
 }
 
-.trekkBtn {
-  padding-top: 4px;
-  position: relative;
-  grid-column: 1;
-  grid-row: 5;
-  margin-top: 30px;
-}
 
-.topMenu {
-  margin-bottom: 40px;
-}
+
