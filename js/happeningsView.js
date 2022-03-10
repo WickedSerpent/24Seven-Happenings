@@ -12,16 +12,25 @@ function updateViewHappenings() {
                 ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
                 ${getUsers()}<br/>
             </div>
-                <button style="
-                width: 200px; 
-                height: 40px; 
-                font-size: 20px;
-                font-weight: bold;"
-                onclick=drawUser()
-                >Trekk!</button>
-        </div>
+
+
+            <div class="trekkBtn"><button style="
+            width: 200px; 
+            height: 40px; 
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: bold;"
+            onclick=drawUser()
+            >Trekk!</button>
+            
+
+        </div></div>
+
+            
+        <h3 class="boxtwo0">Trekninger</h3>
         <div class="boxTwo">
-        <h3>Trekninger</h3>
+            <div className="boxTwo2">
+
             ${getDoneHappening()}
         </div>
     </div>
