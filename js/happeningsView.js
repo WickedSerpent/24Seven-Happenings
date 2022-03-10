@@ -23,6 +23,7 @@ function updateViewHappenings() {
             width: 200px; 
             height: 40px; 
             font-size: 20px;
+            cursor: pointer;
             font-weight: bold;"
             onclick=drawUser()
             >Trekk!</button>
