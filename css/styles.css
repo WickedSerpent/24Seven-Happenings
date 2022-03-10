@@ -1,134 +1,239 @@
 *{
-    font-family: 'Poppins', sans-serif;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none; 
-    -khtml-user-select: none;  
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-}
-::-webkit-scrollbar{
+  font-family: 'Poppins', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none;  
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  -webkit-scrollbar: transparent;
+
+ }
+ ::-webkit-scrollbar{
   width: 0;
   background: transparent;
-}
 
+}
 body{
-    padding: 20px;
+  padding: 20px;
 }
-
 ul {
-    list-style: none;
+  list-style: none;
 }
-
-.container{
-    display: grid;
-    margin-top: -20px;
-    position:absolute;
-    grid-template-columns: 2;
-    grid-template-rows: 5;
-    height: calc(60vh - 10px);
-    grid-auto-rows: max-content;
-    min-width: 357px;
-}
-.boxOne0 {
-  grid-column:1;
-  grid-row:1
-}
-.boxOne{
-    overflow-y: scroll;
-    max-width: 300PX;
-    float: left;
-    grid-column: 1;
-    grid-row: 2;
-  
-}
-
-.boxOne2{
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  max-height: 7vmax;
-  min-height: 1vmax;
-  grid-column: 1;
-  grid-row: 3;
-  
-
-}
-.boxOne3{
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  max-height: 20vmax;
-  min-height: 5vmax;
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.boxTwo0 {
-  grid-column: 2;
-  grid-row: 1;
-}
-.boxTwo{
-    position: relative;
-    grid-column: 2;
-    grid-row: 1;
-}
-.botwo2{
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  max-height: 35vmax;
-  min-height: 5vmax;
-  grid-column: 2;
-  grid-row: 3;
-  overflow-y: scroll;
-
-}
-
-
-
-
-.trekkBtn {
-  padding-top: 4px;
-  position: relative;
-  grid-column: 1;
-  grid-row: 5;
-  
-  
-}
-
 .topMenu{
-    margin-top: -15px;
-    min-width: 620px;
-}
-
-.btn--top {
-    text-transform: uppercase;
-    background-color: #4300c0;
-    color: #fff ;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    margin: 15px 0px 15px 15px;
-    cursor: pointer;
+  margin-top: -15px;
+  min-width: 620px;
+  margin-bottom: 40px;
+  
   }
+
+  .btn--top {
+  text-transform: uppercase;
+  background-color: #2266ff;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin: 15px 0px 15px 15px;
+  cursor: pointer;
+  }
+  
   
   .btn--top:hover,
   .btn--top:active {
-    background-color: #4800ce;
+  background-color: #000000;
   }
-  /* input[type=radio] {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 0.5em;
-    -webkit-appearance: none;
+
+.containerHome{
+
+display: grid;
+margin-top: -20px;
+position:absolute;
+grid-template-columns: 2;
+grid-template-rows: auto;
+height: calc(60vh - 10px);
+grid-auto-rows: max-content;
+min-width: 357px;
+grid-template-areas:  "headerHome,     headerHome"
+                      "boxOneHome, boxTwoHome"
+                      "addArrangementBox, addPersonBox";
+
+}
+.containerHome
+{
+  justify-content: center;
+  display: grid;
+  margin-top: -20px;
+  position:absolute;
+  grid-template-columns: 2;
+  grid-template-rows: 3;
+  height: calc(60vh - 10px);
+  grid-auto-rows: max-content, min-content;
+  min-width: 357px;
+  grid-template-areas:  "headerHome,     headerHome2"
+                        "boxOneHome, boxTwoHome"
+                        "addArrangementBox, addPersonBox";
+  
   }
   
-  input[type=radio]:checked {
-    background-color: 'black';
-    background-size: 0.5em;
+  .headerHome {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  max-height: 1,2em;
+  
   }
   
-  input[type=radio]:focus {
-    outline-color: transparent;
-  } */
+  .headerHome2 {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  max-height: 1,2em;
+  
+  }
+  
+  .boxOneHome{
+  
+    padding-top: 5px;
+    margin-right: 20px;
+    height: 750px;
+    width:  500px;
+    overflow-y: scroll;
+    max-height: 30vmax;
+    min-height: 1vmax;
+    max-width: 250px;
+    grid-column: 1;
+    grid-row: 2;
+    }
+  
+  .boxTwoHome{
+  
+  padding-top: 5px;
+  margin-right: 20px;
+  height: 750px;
+  width:  500px;
+  overflow-y: scroll;
+  max-height: 30vmax;
+  min-height: 1vmax;
+  max-width: 250px;
+  grid-column: 2;
+  grid-row: 2;
+  }
+
+  
+.btn{
+text-transform: uppercase;
+background-color: #2266ff;
+justify-content: center;
+height: 25px;
+width: 25px;
+color: #fff ;
+font-weight: bold;
+text-decoration: none;
+float: right;
+border:double;
+border-radius: 25%;
+margin: 2px;
+cursor: pointer;
+}
+.btn:hover,
+.btn:active {
+background-color: #4800ce;
+border:5px, double;
+transform: border;
+
+cursor: pointer;
+}
+
+
+.container{
+
+display: grid;
+margin-top: -20px;
+position:absolute;
+grid-template-columns: 2;
+grid-template-rows: auto;
+height: calc(60vh - 10px);
+grid-auto-rows: max-content;
+min-width: 357px;
+grid-template-areas: "boxOne,            boxTwo0"
+                      "boxOne,           boxTwo"
+                      "boxOne2,          boxTwo2"
+                      "boxOne3,          boxTwo2"
+                      "trekkBtn,         boxTwo2";
+
+}
+
+.addArrangementBox{
+grid-column: 1;
+grid-row: 3;
+margin-top: 30px;
+margin-right: 1em;
+}
+.addPersonBox{
+grid-column: 2;
+grid-row: 3;
+margin-top: 30px;
+
+}
+.addBtn
+{ 
+border: double;
+background-color: #2266ff;
+
+border-radius: 25%;
+cursor: pointer;
+}
+
+
+.boxOne0 {
+grid-column:1;
+grid-row:1;
+}
+
+
+.boxOne{
+  overflow-y: scroll;
+  max-width: 300PX;
+  float: left;
+  grid-column: 1;
+  grid-row: 2;
+
+}
+
+.boxOne2{
+display: block;
+position: relative;
+overflow-y: scroll;
+max-height: 14vmax;
+min-height: 1vmax;
+grid-column: 1;
+grid-row: 3;
+}
+
+.boxOne3{
+display: block;
+position: relative;
+overflow-y: scroll;
+max-height: 25vmax;
+min-height: 5vmax;
+grid-column: 1;
+grid-row: 4;
+}
+
+.boxTwo0 {
+grid-column: 2;
+grid-row: 1;
+}
+
+.boxTwo{
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  max-height: 60vmax;
+  min-height: 5vmax;
+  grid-column: 2;
+  grid-row: 2;
+  overflow-y: scroll;
+}

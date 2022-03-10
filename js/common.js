@@ -34,6 +34,14 @@ function getMaxHappeningId() {
     return id;
 }
 
+function getMaxDoneHappeningId() {
+    let id = 0;
+    for (let happening of model.data.doneHappenings) {
+        if (happening.id > id) id = happening.id;
+    }
+    return id;
+}
+
 function getHappeningById(id) {
     for (let happening of model.data.happenings) {
         if (happening.id === id) return happening;
@@ -49,6 +57,15 @@ function getHappeningIndexById(id) {
     }
     return null;
 }
+
+function getDoneHappeningIndexById(id) {
+    for (let i = 0; i < model.data.doneHappenings.length; i++) {
+        let happening = model.data.doneHappenings[i];
+        if (happening.id === id) return i;
+    }
+    return null;
+}
+
 
 function getUserById(id) {
     for (let user of model.data.users) {
@@ -76,6 +93,15 @@ function getUserPoints(userId, happeningId) {
     for (point of points) {
         if (point.userId === userId && point.happeningId === happeningId) {
             return point.points;
+        }
+    }
+}
+
+function getUserObjPoints(userId, happeningId) {
+    let users = model.data.userPoints;
+    for (user of users) {
+        if (user.userId === userId && user.happeningId === happeningId) {
+            return user;
         }
     }
 }
