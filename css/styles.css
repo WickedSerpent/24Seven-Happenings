@@ -1,4 +1,5 @@
 *{
+
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none; 
@@ -10,6 +11,7 @@
 
  }
  ::-webkit-scrollbar{
+
   width: 0;
   background: transparent;
 
@@ -58,6 +60,7 @@ min-width: 357px;
 grid-template-areas:  "headerHome,     headerHome"
                       "boxOneHome, boxTwoHome"
                       "addArrangementBox, addPersonBox";
+
 
 }
 .containerHome
@@ -114,6 +117,7 @@ grid-template-areas:  "headerHome,     headerHome"
   height: 750px;
   width:  500px;
   overflow-y: scroll;
+
   max-height: 30vmax;
   min-height: 1vmax;
   max-width: 250px;
@@ -163,6 +167,7 @@ grid-template-areas: "boxOne,            boxTwo0"
                       "boxOne3,          boxTwo2"
                       "trekkBtn,         boxTwo2";
 
+
 }
 
 .addArrangementBox{
@@ -171,6 +176,7 @@ grid-row: 3;
 margin-top: 30px;
 margin-right: 1em;
 }
+
 .addPersonBox{
 grid-column: 2;
 grid-row: 3;
@@ -184,6 +190,7 @@ background-color: #2266ff;
 
 border-radius: 25%;
 cursor: pointer;
+
 }
 
 
@@ -191,6 +198,7 @@ cursor: pointer;
 grid-column:1;
 grid-row:1;
 }
+
 
 
 .boxOne{
@@ -237,3 +245,4 @@ grid-row: 1;
   grid-row: 2;
   overflow-y: scroll;
 }
+

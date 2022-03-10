@@ -47,7 +47,6 @@ function getHappeningById(id) {
         if (happening.id === id) return happening;
     }
     return null;
-
 }
 
 function getHappeningIndexById(id) {
@@ -233,7 +232,6 @@ function getDateStringForDisplay(dato) {
 function getDateStringForStorage(dato) {
     return dato.toISOString().substr(0).replace('T', ' ');
 }
-
 
 function getNowForStorage() {
     return getDateStringForStorage(new Date());

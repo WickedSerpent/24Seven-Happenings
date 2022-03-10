@@ -17,29 +17,29 @@ function updateViewHappenings() {
             ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
             ${getUsers()}<br/>
             </div>
-
             <div class="trekkBtn"><button style="
             width: 200px; 
             height: 40px; 
             font-size: 20px;
+            cursor: pointer;
             font-weight: bold;"
             onclick=drawUser()
             >Trekk!</button>
             
-
         </div></div>
-
             
         <h3 class="boxtwo0">Trekninger</h3>
         <div class="boxTwo">
-            <div className="boxTwo2">
-            ${getDoneHappening()}
-            </div>
-        </div>
 
+            <div className="boxTwo2">
+
+            ${getDoneHappening()}
     </div>
     `;
 }
+
+
+
 
 
 
@@ -80,6 +80,7 @@ function createTextList(liste) {
     const indexSisteKomma = tekstListe.lastIndexOf(',');
     return tekstListe.substr(0, indexSisteKomma) +
         ' og ' + tekstListe.substr(indexSisteKomma + 1);
+
 }
 
 function getDoneHappening() {
@@ -131,4 +132,6 @@ function getAllCheckedHappeningIds() {
         checkedHappenings.push(happening.id)
     }
     return checkedHappenings
+
 }
+

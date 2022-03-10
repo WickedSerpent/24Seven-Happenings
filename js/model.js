@@ -18,6 +18,7 @@ const model = {
         deleteHappening: {
             happeningId: null,
             areYouSure: false,
+            id: null,
         },
       
         newUser: {
@@ -40,6 +41,10 @@ const model = {
             areYouSure: false,
         },
         
+        deleteDoneHappenings: {
+            id: null,
+        },
+
         resetDoneHappenings: {
             areYouSure: false,
         },
