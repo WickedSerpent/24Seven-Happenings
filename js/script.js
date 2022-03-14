@@ -8,4 +8,5 @@ updateView()
             else if(page === 'deleteUser') updateViewDeleteUser();
             else if(page === 'deleteHappening') updateViewDeleteHappening();
             else if(page === 'resetHappenings') resetHappeningsView();
+            else if(page === 'login') loginView();
         }

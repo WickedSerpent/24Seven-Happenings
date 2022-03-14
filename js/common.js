@@ -4,6 +4,7 @@ function createMenuHtml() {
         <button class="btn--top" onclick="model.app.page='home'; updateView()">Hjemmeside</button>
         <button class="btn--top" onclick="model.app.page='happening'; updateView()">Trekningsside</button>
         <button class="btn--top" onclick="model.app.page='resetHappenings'; updateView()">Tilbakestill trekninger</button>
+        <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
         </div>
 
     `;
