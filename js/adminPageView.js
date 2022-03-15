@@ -13,7 +13,7 @@ function updateAdminViewHome(){
         <div class="addArrangementBox">
         <input 
         oninput="model.inputs.newHappening.name = this.value" 
-        placeholder="Navn på arrangement"
+        placeholder="Legg til arrangement"
         type="text"
         onfocus="this.value=''">
 
@@ -29,7 +29,7 @@ function updateAdminViewHome(){
         <div class="addPersonBox">
         <input 
         oninput="model.inputs.newUser.name = this.value" 
-        placeholder="Navn på person" 
+        placeholder="Legg til person" 
         type="text"
         onfocus="this.value=''">
 
