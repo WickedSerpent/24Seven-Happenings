@@ -11,13 +11,14 @@ function updateAdminViewHome(){
         ${getAllHappeningsHome()}
         </div>
         <div class="addArrangementBox">
+        <form>
         <input 
         oninput="model.inputs.newHappening.name = this.value" 
         placeholder="Legg til arrangement"
         type="text"
         onfocus="this.value=''">
-
         <button class="addBtn" onclick="createNewHappening()">+</button>
+        </form>
         </div>
 
         <h3 class="headerHome2">Personer</h3>
@@ -27,13 +28,14 @@ function updateAdminViewHome(){
         ${getusersHome()}
         </div>
         <div class="addPersonBox">
+        <form>
         <input 
         oninput="model.inputs.newUser.name = this.value" 
         placeholder="Legg til person" 
         type="text"
         onfocus="this.value=''">
-
         <button class="addBtn" onclick="createNewUser()">+</button>
+        </form>
 
         </div>
     </div>
