@@ -10,5 +10,5 @@ function loginView(){
         />
         <input type="submit" onclick=validate() value="Logg inn">
     </form>
-        `; 
+        `; document.getElementById("password").focus();
 }
