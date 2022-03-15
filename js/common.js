@@ -177,7 +177,7 @@ function getHappeningUserIds() {
 }
 
 function getHappeningObj() {
-    let checkedHappening = getCheckedHappeningId()
+    let checkedHappening = getCheckedHappeningId()  
     let happeningObjList = []
     let allPoints = model.data.userPoints;
     for (obj of allPoints) {

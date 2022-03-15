@@ -144,3 +144,11 @@ function drawUser(){
     return winner
 }
 
+// bookmark
+
+  function goToDetailsPage(happeningId) {
+        model.app.page = 'details';
+        model.data.doneHappenings.id = doneId;
+        updateView()
+    }
+

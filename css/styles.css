@@ -1,4 +1,7 @@
+
 *{
+
+ 
 
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
@@ -7,14 +10,23 @@
   -moz-user-select: none; 
   -ms-user-select: none; 
   user-select: none; 
-  -webkit-scrollbar: transparent;
+
+  
 
  }
+
+ ::-webkit-scrollbar { display: none; }
  ::-webkit-scrollbar{
 
   width: 0;
   background: transparent;
 
+}
+.hide-scrollbar
+{
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
 }
 body{
   padding: 20px;
@@ -93,10 +105,12 @@ ul {
     overflow-y: scroll;
     max-height: 30vmax;
     min-height: 1vmax;
-    max-width: 250px;
+    max-height:31.25rem;
+    max-width: 18.75rem;
+    min-width: 18.75rem;
     grid-column: 1;
     grid-row: 2;
-    
+    scrollbar-width: none;
     }
   
   .boxTwoHome{
@@ -106,12 +120,13 @@ ul {
   height: 750px;
   width:  500px;
   overflow-y: scroll;
-
-  max-height: 30vmax;
-  min-height: 1vmax;
-  max-width: 250px;
+  max-height:31.25rem;
+  max-width: 18.75rem;
+  min-width: 18.75rem;
+  max-width: 300px;
   grid-column: 2;
   grid-row: 2;
+  scrollbar-width: none;
   }
 
   
@@ -131,6 +146,23 @@ border-radius: 25%;
 margin: 2px;
 cursor: pointer;
 }
+
+.btnDetails{
+  text-transform: uppercase;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  height: 35px;
+  width: 35px;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  
+  border:double;
+  border-radius: 25%;
+  margin: 2px;
+  cursor: pointer;
+  }
 .btn:hover,
 .btn:active {
 background-color: #000000;
@@ -150,6 +182,7 @@ grid-template-rows: auto;
 height: calc(60vh - 10px);
 grid-auto-rows: max-content;
 min-width: 357px;
+
 grid-auto-rows: minmax(min-content, max-content);
 grid-template-areas: "boxOne,            boxTwo0"
                       "boxOne,           boxTwo"
@@ -203,14 +236,17 @@ grid-row:1;
 
 .boxOne{
   overflow-y: scroll;
-  max-width: 300PX;
+  min-width: 300PX;
   float: left;
   grid-column: 1;
   grid-row: 2;
+  scrollbar-width: none;
+ 
 
 }
 
 .boxOne2{
+min-width: 300PX;
 display: block;
 position: relative;
 overflow-y: scroll;
@@ -218,38 +254,51 @@ max-height: 5vmax;
 min-height: 5vmax;
 grid-column: 1;
 grid-row: 3;
+scrollbar-width: none;
 }
 
 .boxOne3{
+min-width: 300PX;
 display: block;
 position: relative;
 overflow-y: scroll;
-max-height: 17vmax;
-min-height: 10vmax;
+max-height: 17rem;
+min-height: 10rem;
 grid-column: 1;
 grid-row: 4;
+scrollbar-width: none;
 }
 
 .boxTwo0 {
+min-width: 300PX;
 grid-column: 2;
 grid-row: 1;
 }
 
 .boxTwo{
+  min-width: 1000PX;  
   position: relative;
   grid-column: 2;
   grid-row: 2;
-  height: 30vmax;
+  min-height: 17rem;
+  max-height: 28rem;
   grid-column: 2;
   grid-row: 2;
   overflow-y: scroll;
 }
 
 .trekkBtn{
+  max-width: 300PX;  
   bottom:0;
   margin-top: 10px;
   margin-bottom: 10px;
   grid-column: 1;
   grid-row: 5;
 
+}
+
+.doneHappeningBtn{
+  width: 1.5em;
+  height: 1.5em;
+  justify-items: center;
 }

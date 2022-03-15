@@ -107,15 +107,18 @@ const model = {
             {userId: 23, happeningId: 1, points: 6},
             {userId: 24, happeningId: 1, points: 6},
             
+            
         ],
         
 
         happenings: [
+
             {
                 id: 1, 
-                name:'Kahoot',
-                isSelected: false,
-            }, 
+                name: 'Kahoot', 
+                isSelected: false
+            }
+             
            
         ],
         
