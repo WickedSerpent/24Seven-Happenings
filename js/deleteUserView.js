@@ -4,7 +4,6 @@ function updateViewDeleteUser(){
         ${createMenuHtmlAdmin()}  
         <div class="deleteAndEdit">
         <h3> Slett </h3>
-        ${createMenuHtmlAdmin()}
         <input
             type="checkbox"
             oninput="model.inputs.deleteUser.areYouSure = this.checked"
