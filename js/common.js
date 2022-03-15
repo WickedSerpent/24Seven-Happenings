@@ -4,7 +4,7 @@ function createMenuHtmlAdmin() {
         <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
         <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
         <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
-        <button class="btn--top" onclick="model.app.page='happening'; updateView()">Logg ut</button>
+        <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
         </div>
     `;
 }
@@ -18,6 +18,17 @@ function createMenuHtml() {
         </div>
 
     `;
+}
+
+
+function logout(){
+    if(confirm('Sikker på at du vil logge ut?')== true){
+        updateView()
+    }
+    else
+    {
+        updateAdminView()
+    }
 }
 
 function getMaxUserId() {
