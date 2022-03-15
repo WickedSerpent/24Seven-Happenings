@@ -1,7 +1,7 @@
 function loginView(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
-    <div>
+    <form>
         <input
         id="password"
         type="password"
@@ -9,6 +9,6 @@ function loginView(){
         required
         />
         <input type="submit" onclick=validate() value="Logg inn">
-    </div>
+    </form>
         `; 
 }

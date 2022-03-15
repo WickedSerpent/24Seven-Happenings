@@ -7,7 +7,7 @@ function createNewUser() {
     if (user.name == '') {
         alert('Fyll ut navn på bruker')
     } else {
-        model.data.users.unshift(user);
+        model.data.users.push(user);
         newHappeningPointsObj()
         updateAdminView()
     }
@@ -23,7 +23,7 @@ function createNewHappening() {
     if (happening.name == '') {
         alert('Fyll ut navn på arrangement')
     } else {
-        model.data.happenings.unshift(happening);
+        model.data.happenings.push(happening);
         newUserPointsObj()
         updateAdminView()
     }
