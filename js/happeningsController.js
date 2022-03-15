@@ -80,26 +80,6 @@ function resetHappenings(){
     updateView()
 }
 
-// function deleteDoneHappening(id){
-//     const doneHappenings = model.data.doneHappenings
-//     let userId = null
-//     let happeningId = null
-//     for(happening of doneHappenings){
-//         if(happening.id === id)
-//         userId = happening.userId
-//     }
-//     for(happening of doneHappenings){
-//         if(happening.id === id)
-//         happeningId = happening.happeningId
-//     }
-//     let userDrawn = getUserObjPoints(userId, happeningId)
-//     userDrawn.points = userDrawn.points - 2
-//     const index = getDoneHappeningIndexById(id);
-//     model.data.doneHappenings.splice(index, 1);
-//     model.app.page='happening';
-//     updateView()
-// }
-
 function getCheckedHappenings() {
     let happening = model.data.happenings;
     let checkedhappenings = happening.filter(happening => {
