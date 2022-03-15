@@ -81,6 +81,7 @@ function resetHappenings(){
 }
 
 function deleteDoneHappening(id){
+    if (confirm("Er du sikker?") == true){
     const doneHappenings = model.data.doneHappenings
     let userId = null
     let happeningId = null
@@ -98,6 +99,9 @@ function deleteDoneHappening(id){
     model.data.doneHappenings.splice(index, 1);
     model.app.page='happeningsAdmin';
     updateAdminView()
+    }else{
+    updateAdminView()
+    }
 }
 
 function adminGetCheckedHappenings() {
