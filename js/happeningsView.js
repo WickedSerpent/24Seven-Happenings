@@ -101,7 +101,7 @@ function getDoneHappening() {
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
-        <button class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
+        <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
         <hr>
         `;
     }
