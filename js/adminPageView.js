@@ -17,7 +17,7 @@ function updateAdminViewHome(){
         placeholder="Legg til arrangement"
         type="text"
         onfocus="this.value=''">
-        <button class="addBtn" onclick="createNewHappening()">+</button>
+        <button title="Legg til" class="addBtn" onclick="createNewHappening()">+</button>
         </form>
         </div>
 
@@ -34,7 +34,7 @@ function updateAdminViewHome(){
         placeholder="Legg til person" 
         type="text"
         onfocus="this.value=''">
-        <button class="addBtn" onclick="createNewUser()">+</button>
+        <button title="Legg til" class="addBtn" onclick="createNewUser()">+</button>
         </form>
 
         </div>
@@ -51,8 +51,8 @@ function getusersHome(){
         html += /*html*/`
             <ul>
             <li>${user.name} 
-            <button class="btn"onclick="goToEditUserPage(${user.id})">✎</button> 
-            <button class="btn"onclick="goToDeleteUserPage(${user.id})">🗑</button><br></li>
+            <button title="Rediger" class="btn"onclick="goToEditUserPage(${user.id})">✎</button> 
+            <button title="Slett" class="btn"onclick="goToDeleteUserPage(${user.id})">🗑</button><br></li>
             </ul>
         `;
     }
@@ -67,8 +67,9 @@ function getAllHappeningsHome(){
         html += /*html*/`
             <ul>
 
-            <li>${happening.name} <button class="btn"onclick="goToEditHappeningPage(${happening.id})">✎</button> 
-            <button class="btn"onclick="goToDeleteHappeningPage(${happening.id})">🗑</button></li>
+            <li>${happening.name} 
+            <button title="Rediger" class="btn"onclick="goToEditHappeningPage(${happening.id})">✎</button> 
+            <button title="Slett" class="btn"onclick="goToDeleteHappeningPage(${happening.id})">🗑</button></li>
 
             </ul>      
         `;
