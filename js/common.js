@@ -1,9 +1,19 @@
+function createMenuHtmlAdmin() {
+    return /*html*/`
+        <div class="topMenu">
+       <button class="btn--top" onclick="model.app.page='home'; updateAdminView()">Hjemmeside</button>
+        <button class="btn--top" onclick="model.app.page='happening'; updateAdminView()">Trekningsside</button>
+        <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
+        </div>
+    `;
+}
+
 function createMenuHtml() {
     return /*html*/`
         <div class="topMenu">
-        <button class="btn--top" onclick="model.app.page='home'; updateView()">Hjemmeside</button>
+       
         <button class="btn--top" onclick="model.app.page='happening'; updateView()">Trekningsside</button>
-        <button class="btn--top" onclick="model.app.page='resetHappenings'; updateView()">Tilbakestill trekninger</button>
+        <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
         </div>
 
     `;
