@@ -1,14 +1,13 @@
 updateView()
         function updateView(){
             const page = model.app.page;
-            if(page === 'home') updateViewHome();
-            else if(page === 'happening') updateViewHappenings();
+            if(page === 'happening') updateViewHappenings();
             else if(page === 'login') loginView();
         }
 
         function updateAdminView(){
             const page = model.app.page;
-            if(page === 'home') updateAdminViewHome();
+            if(page === 'admin') updateAdminViewHome();
             else if(page === 'happeningsAdmin') updateAdminViewHappenings();
             else if(page === 'editUser') updateViewUserEdit();
             else if(page === 'editHappening') updateViewHappeningEdit();

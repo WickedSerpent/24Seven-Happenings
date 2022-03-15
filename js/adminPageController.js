@@ -1,5 +1,5 @@
 function createNewUser() {
-    model.app.page = 'home';
+    model.app.page = 'admin';
     let user = {};
     user.id = getMaxUserId() + 1;
     user.name = model.inputs.newUser.name;
@@ -15,7 +15,7 @@ function createNewUser() {
 }
 
 function createNewHappening() {
-    model.app.page = 'home'
+    model.app.page = 'admin'
     let happening = {};
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
