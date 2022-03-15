@@ -1,11 +1,14 @@
 function loginView(){
     document.getElementById('app').innerHTML = /*html*/`
     ${createMenuHtml()}
-        <input 
+    <div>
+        <input
+        id="password"
         type="password"
         placeholder="Passord"
+        required
         />
-        <button>Logg inn</button>
-    
+        <input type="submit" onclick=validate() value="Logg inn">
+    </div>
         `; 
 }

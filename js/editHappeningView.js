@@ -1,6 +1,6 @@
 function updateViewHappeningEdit(){
     document.getElementById('app').innerHTML = /*html*/` 
-    ${createMenuHtml()}
+    ${createMenuHtmlAdmin()}
     <div class="deleteAndEdit">
     <p>Endre navn på arrangement <strong>${model.inputs.editHappening.name}</strong> 
     <br/><br/>

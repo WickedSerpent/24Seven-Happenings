@@ -1,7 +1,7 @@
 const model = {
 
     app: {
-        page: 'home',
+        page: 'happening',
     },
 
     inputs: {

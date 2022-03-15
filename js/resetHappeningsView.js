@@ -1,6 +1,6 @@
 function resetHappeningsView() {
     document.getElementById('app').innerHTML = /*html*/`
-            ${createMenuHtml()}  
+            ${createMenuHtmlAdmin()}  
             <div class="deleteAndEdit">
             <h3>Tilbakestill trekninger</h3>
             <input

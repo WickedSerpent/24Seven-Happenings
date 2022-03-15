@@ -1,6 +1,6 @@
-function updateViewHome(){
+function updateAdminViewHome(){
     document.getElementById('app').innerHTML = /*html*/`
-    ${createMenuHtml()}
+    ${createMenuHtmlAdmin()}
     
     <div class="containerHome">
         <h3 class="headerHome">Arrangementer</h3>
