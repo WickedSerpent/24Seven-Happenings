@@ -230,13 +230,16 @@ cursor: pointer;
 .boxOne0 {
 grid-column:1;
 grid-row:1;
+max-width: 300px;
+
 }
 
 
 
 .boxOne{
   overflow-y: scroll;
-  min-width: 300PX;
+  min-width: 200PX;
+  max-width: 300px;
   float: left;
   grid-column: 1;
   grid-row: 2;
@@ -246,10 +249,12 @@ grid-row:1;
 }
 
 .boxOne2{
-min-width: 300PX;
+min-width: 200px;
+max-width: 300px;
 display: block;
 position: relative;
 overflow-y: scroll;
+word-wrap: break-word;
 max-height: 5vmax;
 min-height: 5vmax;
 grid-column: 1;
@@ -259,6 +264,7 @@ scrollbar-width: none;
 
 .boxOne3{
 min-width: 300PX;
+max-width: 300px;
 display: block;
 position: relative;
 overflow-y: scroll;
