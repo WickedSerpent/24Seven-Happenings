@@ -8,8 +8,7 @@ function editUser() {
 function editPoints(userId, happeningId) {
     const obj = editPointsObj(userId, happeningId)
     obj.points = model.inputs.editUser.points;
-    alert("Du har endret poeng!")
-    updateAdminView();
+    // alert("Du har endret poeng!")   
 }
 
 function editPointsObj(userId, happeningId) {

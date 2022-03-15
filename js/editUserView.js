@@ -1,6 +1,6 @@
 function updateViewUserEdit(){
     document.getElementById('app').innerHTML = /*html*/` 
-    ${createMenuHtmlAdmin()}
+    ${createMenuHtml()}
     <div class="deleteAndEdit">
     <p>Endre navn på bruker <strong>${model.inputs.editUser.name}</strong> 
     <br/><br/>
@@ -31,7 +31,7 @@ function getAllHappeningsEditUser(){
     for (let i = 0; i < happenings.length; ) {
         for(let j = 0; j < userIds.length; j++) {
             if (userIds[j].userId === id) {
-
+                
             const happening = happenings[i];
             const userId = userIds[j];
         html += /*html*/`
@@ -42,15 +42,13 @@ function getAllHappeningsEditUser(){
                     type="text" 
                     value="${userId.points}"
                     oninput="model.inputs.editUser.points=parseInt(this.value)"
+                    onchange="editPoints(${userId.userId}, ${happening.id})"
                     >
-                    <button onclick="editPoints(${userId.userId}, ${happening.id})" >Endre poeng </button>
             </li>
             </ul> 
-
         `
         i++}
     }   
 };
-    
     return html;
 }
