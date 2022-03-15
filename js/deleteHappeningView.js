@@ -1,7 +1,7 @@
 function updateViewDeleteHappening(){
     let id = model.inputs.deleteHappening.id;
     document.getElementById('app').innerHTML = /*html*/`
-        ${createMenuHtml()}  
+        ${createMenuHtmlAdmin()}  
         <div class="deleteAndEdit">
         <h3> Slett </h3>
         ${createDeleteHappeningHtml()}

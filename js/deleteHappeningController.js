@@ -11,7 +11,7 @@ function deleteHappening(id){
     model.app.page='home';
     model.inputs.deleteHappening.areYouSure = false;
     model.data.userPoints = model.data.userPoints.filter(happeningid => happeningid.happeningId !== id)
-    updateView()
+    updateAdminView()
 }
 
 
