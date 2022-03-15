@@ -1,21 +1,21 @@
-function updateViewHappenings() {
+function updateAdminViewHappenings() {
     document.getElementById('app').innerHTML = /*html*/ `
-    ${createMenuHtml()}
+    ${createMenuHtmlAdmin()}
     <div class="container">
     <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
         <div class="boxOne">
 
             
             <div class="boxOne2">
-            ${getHappeningsHtml()}
+            ${adminGetHappeningsHtml()}
             </div>
         
             <h3>Velg personer som skal være med i trekningen!</h3>
             <div class="boxOne3">
             <input type="checkbox"
-            onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            ${getUsers()}<br/>
+            onclick="adminSelectAllOrNone(this.checked)"
+            ${adminGetChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+            ${adminGetUsers()}<br/>
             </div>
             <div class="trekkBtn"><button style="
             width: 200px; 
@@ -23,7 +23,7 @@ function updateViewHappenings() {
             font-size: 20px;
             cursor: pointer;
             font-weight: bold;"
-            onclick=drawUser()
+            onclick=adminDrawUser()
             >Trekk!</button>
             
         </div></div>
@@ -33,7 +33,7 @@ function updateViewHappenings() {
 
             <div className="boxTwo2">
 
-            ${getDoneHappening()}
+            ${adminGetDoneHappening()}
     </div>
     `;
 }
@@ -41,30 +41,31 @@ function updateViewHappenings() {
 
 
 
-function getHappeningsHtml() {
+
+function adminGetHappeningsHtml() {
     let html = '';
     const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
         <input type="checkbox"
-        onclick="toggleHappeningSelected(${happening.id})" 
-        ${getChecked(happening.isSelected)}/>
+        onclick="adminToggleHappeningSelected(${happening.id})" 
+        ${adminGetChecked(happening.isSelected)}/>
         ${happening.name}<br/>    
         `;
     }
     return html;
 }
 
-function getUsers() {
+function adminGetUsers() {
     let html = '';
     const users = model.data.users;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`
         <input type="checkbox" 
-        onclick="togglePersonSelected(${user.id})" 
-        ${getChecked(user.isSelected)}/> ${user.name} <br>
+        onclick="adminTogglePersonSelected(${user.id})" 
+        ${adminGetChecked(user.isSelected)}/> ${user.name} <br>
         `;
     }
     return html;
@@ -81,9 +82,9 @@ function createTextList(liste) {
 
 }
 
-function getDoneHappening() {
+function adminGetDoneHappening() {
     let html = '';
-    let happenings = getDoneHappeningsCheckedHappening()
+    let happenings = adminGetDoneHappeningsCheckedHappening()
     let doneHappenings = model.data.doneHappenings
     if (happenings.length === 0){
         happenings = doneHappenings
@@ -101,17 +102,18 @@ function getDoneHappening() {
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
-        <button class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
+        <button class="btnDetails" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
+        <button class="btnDetails" onclick="model.app.page='details'; updateAdminView()">🛈</button>
         <hr>
         `;
     }
     return html;
 }
 
-function getDoneHappeningsCheckedHappening() {
+function adminGetDoneHappeningsCheckedHappening() {
     let checkedDoneHappenings = []
     let happenings = model.data.doneHappenings
-    let happeningObj = getAllCheckedHappeningIds()
+    let happeningObj = adminGetAllCheckedHappeningIds()
     for (x in happenings) {
         for (y in happeningObj) {
             if (happenings[x].happeningId === happeningObj[y]) {
@@ -122,7 +124,7 @@ function getDoneHappeningsCheckedHappening() {
     return checkedDoneHappenings
 }
 
-function getAllCheckedHappeningIds() {
+function adminGetAllCheckedHappeningIds() {
     let checkedHappenings = []
     let happenings = model.data.happenings
     for (happening of happenings) {

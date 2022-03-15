@@ -5,5 +5,5 @@ function deleteUser(id){
     model.app.page='home';
     model.inputs.deleteUser.areYouSure = false;
     model.data.userPoints = model.data.userPoints.filter(userid => userid.userId !== id)
-    updateView()
+    updateAdminView()
 }

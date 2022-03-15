@@ -2,7 +2,7 @@ function createMenuHtmlAdmin() {
     return /*html*/`
         <div class="topMenu">
        <button class="btn--top" onclick="model.app.page='home'; updateAdminView()">Hjemmeside</button>
-        <button class="btn--top" onclick="model.app.page='happening'; updateAdminView()">Trekningsside</button>
+        <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
         <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
         </div>
     `;

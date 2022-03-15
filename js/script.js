@@ -9,7 +9,7 @@ updateView()
         function updateAdminView(){
             const page = model.app.page;
             if(page === 'home') updateAdminViewHome();
-            else if(page === 'happening') updateAdminViewHappenings();
+            else if(page === 'happeningsAdmin') updateAdminViewHappenings();
             else if(page === 'editUser') updateViewUserEdit();
             else if(page === 'editHappening') updateViewHappeningEdit();
             else if(page === 'deleteUser') updateViewDeleteUser();

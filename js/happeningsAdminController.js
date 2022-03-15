@@ -1,29 +1,29 @@
-function selectAllOrNone(selectAll) {
+function adminSelectAllOrNone(selectAll) {
     model.data.selectAll = selectAll;
     for (let user of model.data.users) {
         user.isSelected = selectAll;
     }
-    updateView();
+    updateAdminView();
 }
 
-function getChecked(isSelected) {
+function adminGetChecked(isSelected) {
     return isSelected ? 'checked="checked"' : '';
 }
 
-function togglePersonSelected(id) {
+function adminTogglePersonSelected(id) {
     const user = getUserById(id);
     user.isSelected = !user.isSelected;
-    updateView();
+    updateAdminView();
 }
 
-function toggleHappeningSelected(id) {
+function adminToggleHappeningSelected(id) {
     const happening = getHappeningById(id)
     happening.isSelected = !happening.isSelected;
-    updateView();
+    updateAdminView();
 }
 
 
-function getCheckedUsers() {
+function adminGetCheckedUsers() {
     let users = model.data.users;
     let checkedUsers = users.filter(user => {
         return user.isSelected === true
@@ -32,7 +32,7 @@ function getCheckedUsers() {
 }
 
 
-function getCheckedUsersIds() {
+function adminGetCheckedUsersIds() {
     let userIds = []
     let users = getCheckedUsers()
     for (user of users) {
@@ -41,7 +41,7 @@ function getCheckedUsersIds() {
         return userIds;
 }
 
-function getCheckedUsersNames() {
+function adminGetCheckedUsersNames() {
     let userNames = []
     let users = getCheckedUsers()
     for (user of users) {
@@ -50,7 +50,7 @@ function getCheckedUsersNames() {
         return userNames;
 }
 
-function getCheckedHappeningName() {
+function adminGetCheckedHappeningName() {
     let happenings = model.data.happenings
     for (happening of happenings) {
         if (happening.isSelected === true)
@@ -66,7 +66,7 @@ function getCheckedHappeningId() {
     }
 }
 
-function getAllHappeningIds(){
+function adminGetAllHappeningIds(){
     let happenings = []
     let allHappenings = model.data.happenings
     for (let i = 0; i < allHappenings.length; i++) {
@@ -77,30 +77,30 @@ function getAllHappeningIds(){
 
 function resetHappenings(){
     model.data.doneHappenings = []
-    updateView()
+    updateAdminView()
 }
 
-// function deleteDoneHappening(id){
-//     const doneHappenings = model.data.doneHappenings
-//     let userId = null
-//     let happeningId = null
-//     for(happening of doneHappenings){
-//         if(happening.id === id)
-//         userId = happening.userId
-//     }
-//     for(happening of doneHappenings){
-//         if(happening.id === id)
-//         happeningId = happening.happeningId
-//     }
-//     let userDrawn = getUserObjPoints(userId, happeningId)
-//     userDrawn.points = userDrawn.points - 2
-//     const index = getDoneHappeningIndexById(id);
-//     model.data.doneHappenings.splice(index, 1);
-//     model.app.page='happening';
-//     updateView()
-// }
+function deleteDoneHappening(id){
+    const doneHappenings = model.data.doneHappenings
+    let userId = null
+    let happeningId = null
+    for(happening of doneHappenings){
+        if(happening.id === id)
+        userId = happening.userId
+    }
+    for(happening of doneHappenings){
+        if(happening.id === id)
+        happeningId = happening.happeningId
+    }
+    let userDrawn = getUserObjPoints(userId, happeningId)
+    userDrawn.points = userDrawn.points - 2
+    const index = getDoneHappeningIndexById(id);
+    model.data.doneHappenings.splice(index, 1);
+    model.app.page='happeningsAdmin';
+    updateAdminView()
+}
 
-function getCheckedHappenings() {
+function adminGetCheckedHappenings() {
     let happening = model.data.happenings;
     let checkedhappenings = happening.filter(happening => {
         return happening.isSelected === true
@@ -108,10 +108,10 @@ function getCheckedHappenings() {
     return checkedhappenings;
 }
 
-function drawUser(){
-    let checkedHappenings = getCheckedHappenings()
-    let checkedHappeningName = getCheckedHappeningName()
-    let checkedHappeningIds = getCheckedUsers()
+function adminDrawUser(){
+    let checkedHappenings = adminGetCheckedHappenings()
+    let checkedHappeningName = adminGetCheckedHappeningName()
+    let checkedHappeningIds = adminGetCheckedUsers()
     if(checkedHappeningName === undefined){
         alert('Velg arrangement!')
         return
@@ -139,8 +139,8 @@ function drawUser(){
     winner.userDrawn = winnerUser.name
     winner.time = getNowForStorage()
     winners.unshift(winner)
-    model.app.page = 'happening'
-    updateViewHappenings()
+    model.app.page = 'happeningsAdmin'
+    updateAdminViewHappenings()
     return winner
 }
 
@@ -149,6 +149,6 @@ function drawUser(){
   function goToDetailsPage(happeningId) {
         model.app.page = 'details';
         model.data.doneHappenings.id = doneId;
-        updateView()
+        updateAdminView()
     }
 

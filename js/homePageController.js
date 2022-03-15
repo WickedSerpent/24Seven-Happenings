@@ -9,7 +9,7 @@ function createNewUser() {
     } else {
         model.data.users.unshift(user);
         newHappeningPointsObj()
-        updateView()
+        updateAdminView()
     }
     model.inputs.newUser.name = '';
 }
@@ -25,7 +25,7 @@ function createNewHappening() {
     } else {
         model.data.happenings.unshift(happening);
         newUserPointsObj()
-        updateView()
+        updateAdminView()
     }
     model.inputs.newHappening.name = '';
 }
@@ -69,13 +69,13 @@ function newUserPointsObj() {
 function goToDeleteUserPage(userId) {
     model.app.page = 'deleteUser';
     model.inputs.deleteUser.id = userId;
-    updateView()
+    updateAdminView()
 }
 
 function goToDeleteHappeningPage(happeningId) {
     model.app.page = 'deleteHappening';
     model.inputs.deleteHappening.id = happeningId;
-    updateView()
+    updateAdminView()
 }
 
 function goToEditUserPage(userId) {
@@ -83,7 +83,7 @@ function goToEditUserPage(userId) {
     model.inputs.editUser.userId = userId;
     const user = getUserById(userId);
     model.inputs.editUser.name = user.name;
-    updateView();
+    updateAdminView();
 }
 
 function goToEditHappeningPage(happeningId) {
@@ -91,6 +91,6 @@ function goToEditHappeningPage(happeningId) {
     model.inputs.editHappening.happeningId = happeningId;
     const happening = getHappeningById(happeningId);
     model.inputs.editHappening.name = happening.name;
-    updateView();
+    updateAdminView();
 }
 
