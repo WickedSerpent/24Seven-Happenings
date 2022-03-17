@@ -142,6 +142,7 @@ function adminDrawUser(){
     winner.name = getCheckedHappeningName()
     winner.userDrawn = winnerUser.name
     winner.time = getNowForStorage()
+    winner.comment = ''
     winners.unshift(winner)
     model.app.page = 'happeningsAdmin'
     updateAdminViewHappenings()

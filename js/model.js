@@ -49,6 +49,8 @@ const model = {
             areYouSure: false,
         },
 
+        comment: '',
+
     },
 
     data: {
