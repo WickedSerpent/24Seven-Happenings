@@ -17,6 +17,7 @@ function updateAdminViewHome() {
         placeholder="Legg til arrangement"
         type="text"
         onfocus="this.value=''"
+        oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
         required
         >
         
@@ -37,6 +38,7 @@ function updateAdminViewHome() {
         placeholder="Legg til person" 
         type="text"
         onfocus="this.value=''"
+        oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
         required
         >
         <button title="Legg til" class="addBtn" onclick="createNewUser()">+</button>
