@@ -93,7 +93,11 @@ ul {
   grid-row: 1;
   max-height: 1,2em;
   }
-  
+  .hidebtn{
+    color: white;
+    background-color: white;
+    border: white;
+  }
   .boxOneHome{
   
     padding-top: 5px;

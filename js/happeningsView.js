@@ -37,7 +37,7 @@ function updateViewHappenings() {
             
             </div>
             
-        </div><input id="kommentar"class="comment" value="" placeholder="                Kommentar/Tema">
+        </div>
     </div>
     `;
 }
@@ -105,7 +105,7 @@ function getDoneHappening() {
         <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
         <h4></h4>
         <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
-        <input type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
+        <form><input type="text" placeholder="legg til kommentar og enter" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> <button class="hidebtn"onclick=addComment(${doneHappening.id})>Legg til kommentar</button></form>
         <hr>
         `;
     }
