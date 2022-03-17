@@ -89,28 +89,38 @@ function getDoneHappening() {
     let html = '';
     let happenings = getDoneHappeningsCheckedHappening()
     let doneHappenings = model.data.doneHappenings
-    if (happenings.length === 0){
+    if (happenings.length === 0) {
         happenings = doneHappenings
     }
     for (let i = 0; i < happenings.length; i++) {
+        let comment = happenings[i].comments
         let drawTime = model.data.doneHappenings
-        const dayNames = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
         const time = new Date(drawTime[i].time);
+        const dayNames = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
         const dateText = getDateStringForDisplay(time);
         const dayName = dayNames[time.getDay()];
         const doneHappening = happenings[i];
         html += /*html*/`
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
-        <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
-        <h4></h4>
+        <h3>Kommentarer: <br/>
+    	`;        
+        for (let j = 0; j < comment.length; j++) {
+            html += /*html*/`
+            <br/><span style="font-weight: 500;">- ${comment[j].comment}</span> <button> Slett</button>
+        `;
+        }
+        html += /*html*/`
+        <br/><br/>
         <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
-        <input type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
+        <input type="text" oninput="model.inputs.comment=this.value + "/> <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
         <hr>
         `;
+
     }
     return html;
 }
+
 
 function getDoneHappeningsCheckedHappening() {
     let checkedDoneHappenings = []
