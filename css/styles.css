@@ -1,216 +1,235 @@
-* {
+
+*{
+
+ 
+
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+  -webkit-user-select: none; 
+  -khtml-user-select: none;  
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 
-::-webkit-scrollbar {
-  display: none;
-}
-::-webkit-scrollbar {
+  
+
+ }
+
+ ::-webkit-scrollbar { display: none; }
+ ::-webkit-scrollbar{
+
   width: 0;
   background: transparent;
+
 }
-.hide-scrollbar {
-  overflow: auto;
-  -ms-overflow-style: none; /* IE 11 */
-  scrollbar-width: none; /* Firefox 64 */
+.hide-scrollbar
+{
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
 }
-body {
+body{
   padding: 20px;
   /* background-color: #2266ff; */
 }
 ul {
   list-style: none;
 }
-.topMenu {
+.topMenu{
   margin-top: -15px;
   min-width: 47.5rem;
   margin-bottom: 40px;
   padding-bottom: 5px;
   margin-bottom: 0;
-}
+  
+  }
 
-.btn--top {
+  .btn--top {
   text-transform: uppercase;
   background-color: #2266ff;
-  color: #fff;
+  color: #fff ;
   font-weight: bold;
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 6px;
   margin: 1rem 0px 1rem 1rem;
   cursor: pointer;
-}
-
-.btn--top:hover,
-.btn--top:active {
+  }
+  
+  
+  .btn--top:hover,
+  .btn--top:active {
   background-color: #000000;
-}
+  }
 
-.button {
-  cursor: pointer;
-}
 
-.containerHome {
+.containerHome
+{
   justify-content: center;
   display: grid;
   margin-top: -20px;
-  position: absolute;
+  position:absolute;
   grid-template-columns: 2;
   grid-template-rows: 3;
   height: calc(60vh - 10px);
   grid-auto-rows: max-content, min-content;
   min-width: 357px;
-  grid-template-areas:
-    'headerHome,     headerHome2'
-    'boxOneHome, boxTwoHome'
-    'addArrangementBox, addPersonBox';
-}
-
-.headerHome {
+  grid-template-areas:  "headerHome,     headerHome2"
+                        "boxOneHome, boxTwoHome"
+                        "addArrangementBox, addPersonBox";
+  
+  }
+  
+  .headerHome {
   position: relative;
   grid-column: 1;
   grid-row: 1;
-  max-height: 1, 2em;
-}
-
-.headerHome2 {
+  max-height: 1,2em;
+  }
+  
+  .headerHome2 {
   position: relative;
   grid-column: 2;
   grid-row: 1;
-  max-height: 1, 2em;
-}
-
-.boxOneHome {
-  padding-top: 5px;
-  margin-right: 20px;
-  height: 46.875rem;
-  width: 31.25rem;
-  overflow-y: scroll;
-  max-height: 30vmax;
-  min-height: 1vmax;
-  max-height: 31.25rem;
-  max-width: 18.75rem;
-  min-width: 18.75rem;
-  grid-column: 1;
-  grid-row: 2;
-  scrollbar-width: none;
-}
-
-.boxTwoHome {
+  max-height: 1,2em;
+  }
+  
+  .boxOneHome{
+  
+    padding-top: 5px;
+    margin-right: 20px;
+    height: 46.875rem;
+    width:  31.25rem;
+    overflow-y: scroll;
+    max-height: 30vmax;
+    min-height: 1vmax;
+    max-height:31.25rem;
+    max-width: 18.75rem;
+    min-width: 18.75rem;
+    grid-column: 1;
+    grid-row: 2;
+    scrollbar-width: none;
+    }
+  
+  .boxTwoHome{
+  
   padding-top: 5px;
   margin-right: 20px;
   height: 750px;
-  width: 500px;
+  width:  500px;
   overflow-y: scroll;
-  max-height: 31.25rem;
+  max-height:31.25rem;
   max-width: 18.75rem;
   min-width: 18.75rem;
   max-width: 14.375rem;
   grid-column: 2;
   grid-row: 2;
   scrollbar-width: none;
+  }
+
+  
+.btn{
+text-transform: uppercase;
+background-color: #2266ff;
+justify-content: center;
+justify-items: center;
+height: 35px;
+width: 35px;
+color: #fff ;
+font-weight: bold;
+text-decoration: none;
+float: right;
+border:double;
+border-radius: 25%;
+margin: 2px;
+cursor: pointer;
 }
 
-.btn {
+.btnDetailsAndDel{
   text-transform: uppercase;
   background-color: #2266ff;
   justify-content: center;
   justify-items: center;
   height: 35px;
   width: 35px;
-  color: #fff;
+  color: #fff ;
   font-weight: bold;
   text-decoration: none;
-  float: right;
-  border: double;
+  
+  border:double;
   border-radius: 25%;
   margin: 2px;
   cursor: pointer;
-}
-
-.btnDetailsAndDel {
-  text-transform: uppercase;
-  background-color: #2266ff;
-  justify-content: center;
-  justify-items: center;
-  height: 35px;
-  width: 35px;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-
-  border: double;
-  border-radius: 25%;
-  margin: 2px;
-  cursor: pointer;
-}
+  }
 .btn:hover,
 .btn:active {
-  background-color: #000000;
-  border: 5px, double;
-  cursor: pointer;
+background-color: #000000;
+border:5px, double;
+cursor: pointer;
 }
 
-.container {
-  display: grid;
-  background-color: white;
-  margin-top: -20px;
-  position: absolute;
-  grid-template-columns: 2;
-  grid-template-rows: auto;
-  height: calc(60vh - 10px);
-  grid-auto-rows: max-content;
-  min-width: 357px;
 
-  grid-auto-rows: minmax(min-content, max-content);
-  grid-template-areas:
-    'boxOne,            boxTwo0'
-    'boxOne,           boxTwo'
-    'boxOne2,          boxTwo2'
-    'boxOne3,          boxTwo2'
-    'trekkBtn,         boxTwo2';
-}
+.container{
+display: grid;
+background-color: white;
+margin-top: -20px;
+position:absolute;
+grid-template-columns: 2;
+grid-template-rows: auto;
+height: calc(60vh - 10px);
+grid-auto-rows: max-content;
+min-width: 357px;
 
-.addArrangementBox {
-  grid-column: 1;
-  grid-row: 3;
-  margin-top: 30px;
-  margin-right: 1em;
+grid-auto-rows: minmax(min-content, max-content);
+grid-template-areas: "boxOne,            boxTwo0"
+                      "boxOne,           boxTwo"
+                      "boxOne2,          boxTwo2"
+                      "boxOne3,          boxTwo2"
+                      "trekkBtn,         boxTwo2";
 }
 
-.addPersonBox {
-  grid-column: 2;
-  grid-row: 3;
-  margin-top: 30px;
+.addArrangementBox{
+grid-column: 1;
+grid-row: 3;
+margin-top: 30px;
+margin-right: 1em;
+
 }
-.addBtn {
-  border: double;
-  background-color: #2266ff;
-  color: white;
-  border-radius: 25%;
-  cursor: pointer;
+
+.addPersonBox{
+grid-column: 2;
+grid-row: 3;
+margin-top: 30px;
+
 }
-.addBtn:hover {
-  border: double;
-  background-color: #000000;
-  color: white;
-  border-radius: 25%;
-  cursor: pointer;
+.addBtn
+{
+border: double;
+background-color: #2266ff;
+color:white;
+border-radius: 25%;
+cursor: pointer;
 }
+.addBtn:hover
+{ 
+border: double;
+background-color: #000000;
+color:white;
+border-radius: 25%;
+cursor: pointer;
+
+}
+
 
 .boxOne0 {
-  grid-column: 1;
-  grid-row: 1;
-  max-width: 14.375rem;
+grid-column:1;
+grid-row:1;
+max-width: 14.375rem;
 }
 
-.boxOne {
+
+
+.boxOne{
   overflow-y: scroll;
   min-width: 12.5rem;
   max-width: 14.375rem;
@@ -220,41 +239,41 @@ ul {
   scrollbar-width: none;
 }
 
-.boxOne2 {
-  min-width: 12.5rem;
-  max-width: 14.375rem;
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  word-wrap: break-word;
-  max-height: 5vmax;
-  min-height: 5vmax;
-  grid-column: 1;
-  grid-row: 3;
-  scrollbar-width: none;
+.boxOne2{
+min-width: 12.5rem;
+max-width: 14.375rem;
+display: block;
+position: relative;
+overflow-y: scroll;
+word-wrap: break-word;
+max-height: 5vmax;
+min-height: 5vmax;
+grid-column: 1;
+grid-row: 3;
+scrollbar-width: none;
 }
 
-.boxOne3 {
-  min-width: 12.5rem;
-  max-width: 14.375rem;
-  display: block;
-  position: relative;
-  overflow-y: scroll;
-  max-height: 17rem;
-  min-height: 10rem;
-  grid-column: 1;
-  grid-row: 4;
-  scrollbar-width: none;
+.boxOne3{
+min-width: 12.5rem;
+max-width: 14.375rem;
+display: block;
+position: relative;
+overflow-y: scroll;
+max-height: 17rem;
+min-height: 10rem;
+grid-column: 1;
+grid-row: 4;
+scrollbar-width: none;
 }
 
 .boxTwo0 {
-  min-width: 14.375rem;
-  grid-column: 2;
-  grid-row: 1;
+min-width: 14.375rem;
+grid-column: 2;
+grid-row: 1;
 }
 
-.boxTwo {
-  min-width: 37.5rem;
+.boxTwo{
+  min-width: 37.5rem;  
   position: relative;
   grid-column: 2;
   grid-row: 2;
@@ -275,16 +294,17 @@ ul {
   bottom: 0;
 }
 
-.trekkBtn {
-  max-width: 14.375rem;
-  bottom: 0;
+.trekkBtn{
+  max-width: 14.375rem;  
+  bottom:0;
   margin-top: 10px;
   margin-bottom: 10px;
   grid-column: 1;
   grid-row: 5;
+
 }
 
-.doneHappeningBtn {
+.doneHappeningBtn{
   width: 1.5em;
   height: 1.5em;
   justify-items: center;
