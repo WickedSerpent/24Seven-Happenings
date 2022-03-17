@@ -3,6 +3,7 @@ updateView()
             const page = model.app.page;
             if(page === 'happening') updateViewHappenings();
             else if(page === 'login') loginView();
+            else if(page === 'details') updateDetailsView(); 
         }
 
         function updateAdminView(){
@@ -15,4 +16,5 @@ updateView()
             else if(page === 'deleteHappening') updateViewDeleteHappening();
             else if(page === 'resetHappenings') resetHappeningsView();
             else if(page === 'login') loginView();
+            else if(page === 'details') updateDetailsView(); 
         }

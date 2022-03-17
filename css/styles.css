@@ -85,7 +85,6 @@ ul {
   grid-column: 1;
   grid-row: 1;
   max-height: 1,2em;
-  
   }
   
   .headerHome2 {
@@ -93,15 +92,14 @@ ul {
   grid-column: 2;
   grid-row: 1;
   max-height: 1,2em;
-  
   }
   
   .boxOneHome{
   
     padding-top: 5px;
     margin-right: 20px;
-    height: 750px;
-    width:  500px;
+    height: 46.875rem;
+    width:  31.25rem;
     overflow-y: scroll;
     max-height: 30vmax;
     min-height: 1vmax;
@@ -123,7 +121,7 @@ ul {
   max-height:31.25rem;
   max-width: 18.75rem;
   min-width: 18.75rem;
-  max-width: 300px;
+  max-width: 14.375rem;
   grid-column: 2;
   grid-row: 2;
   scrollbar-width: none;
@@ -147,7 +145,7 @@ margin: 2px;
 cursor: pointer;
 }
 
-.btnDetails{
+.btnDetailsAndDel{
   text-transform: uppercase;
   background-color: #2266ff;
   justify-content: center;
@@ -172,7 +170,6 @@ cursor: pointer;
 
 
 .container{
-
 display: grid;
 background-color: white;
 margin-top: -20px;
@@ -189,8 +186,6 @@ grid-template-areas: "boxOne,            boxTwo0"
                       "boxOne2,          boxTwo2"
                       "boxOne3,          boxTwo2"
                       "trekkBtn,         boxTwo2";
-
-
 }
 
 .addArrangementBox{
@@ -208,13 +203,12 @@ margin-top: 30px;
 
 }
 .addBtn
-{ 
+{
 border: double;
 background-color: #2266ff;
 color:white;
 border-radius: 25%;
 cursor: pointer;
-
 }
 .addBtn:hover
 { 
@@ -230,27 +224,24 @@ cursor: pointer;
 .boxOne0 {
 grid-column:1;
 grid-row:1;
-max-width: 300px;
-
+max-width: 14.375rem;
 }
 
 
 
 .boxOne{
   overflow-y: scroll;
-  min-width: 200PX;
-  max-width: 300px;
+  min-width: 12.5rem;
+  max-width: 14.375rem;
   float: left;
   grid-column: 1;
   grid-row: 2;
   scrollbar-width: none;
- 
-
 }
 
 .boxOne2{
-min-width: 200px;
-max-width: 300px;
+min-width: 12.5rem;
+max-width: 14.375rem;
 display: block;
 position: relative;
 overflow-y: scroll;
@@ -263,8 +254,8 @@ scrollbar-width: none;
 }
 
 .boxOne3{
-min-width: 300PX;
-max-width: 300px;
+min-width: 12.5rem;
+max-width: 14.375rem;
 display: block;
 position: relative;
 overflow-y: scroll;
@@ -276,25 +267,35 @@ scrollbar-width: none;
 }
 
 .boxTwo0 {
-min-width: 300PX;
+min-width: 14.375rem;
 grid-column: 2;
 grid-row: 1;
 }
 
 .boxTwo{
-  min-width: 1000PX;  
+  min-width: 37.5rem;  
   position: relative;
   grid-column: 2;
   grid-row: 2;
-  min-height: 17rem;
+  min-height: 30.625rem;
   max-height: 30.625rem;
   grid-column: 2;
   grid-row: 2;
   overflow-y: scroll;
 }
 
+.comment {
+  position: absolute;
+  height: 35px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  grid-column: 2;
+  grid-row: 3;
+  bottom: 0;
+}
+
 .trekkBtn{
-  max-width: 300PX;  
+  max-width: 14.375rem;  
   bottom:0;
   margin-top: 10px;
   margin-bottom: 10px;

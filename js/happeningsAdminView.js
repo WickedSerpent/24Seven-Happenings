@@ -102,13 +102,14 @@ function adminGetDoneHappening() {
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
-        <button title="Slett happening" class="btnDetails" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
-        <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateAdminView()">🛈</button>
+        <button title="Slett happening" class="btnDetailsAndDel" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
+        <button title="Detaljer (coming soon)" class="btnDetailsAndDel" onclick=updateDetailsView()">🛈</button>
         <hr>
         `;
     }
     return html;
 }
+
 
 function adminGetDoneHappeningsCheckedHappening() {
     let checkedDoneHappenings = []

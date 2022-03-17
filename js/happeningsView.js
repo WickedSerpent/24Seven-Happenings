@@ -17,7 +17,7 @@ function updateViewHappenings() {
             ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
             ${getUsers()}<br/>
             </div>
-            <div class="trekkBtn"><button style="
+            <div class="trekkBtn" ><button style="
             width: 200px; 
             height: 40px; 
             font-size: 20px;
@@ -34,6 +34,10 @@ function updateViewHappenings() {
             <div className="boxTwo2">
 
             ${getDoneHappening()}
+            
+            </div>
+            
+        </div><input id="kommentar"class="comment" value="" placeholder="                Kommentar/Tema">
     </div>
     `;
 }
@@ -98,9 +102,7 @@ function getDoneHappening() {
         html += /*html*/`
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
-        <h3>Trukket fra disse personene med færrest poeng:<br> 
-        <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
-        <h4>Trukket: ${dayName} ${dateText}</h4>
+        <h4></h4>
         <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
         <hr>
         `;
