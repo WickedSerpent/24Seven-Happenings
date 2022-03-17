@@ -67,6 +67,13 @@ function getHappeningById(id) {
     return null;
 }
 
+function getDoneHappeningById(id) {
+    for (let happening of model.data.doneHappenings) {
+        if (happening.id === id) return happening;
+    }
+    return null;
+}
+
 function getHappeningIndexById(id) {
     for (let i = 0; i < model.data.happenings.length; i++) {
         let happening = model.data.happenings[i];
