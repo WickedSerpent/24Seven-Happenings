@@ -18,7 +18,6 @@ function updateAdminViewHome() {
         type="text"
         onfocus="this.value=''"
         oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
-        title="Skriv navn på arrangement"
         required
         >
         
@@ -40,7 +39,6 @@ function updateAdminViewHome() {
         type="text"
         onfocus="this.value=''"
         oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
-        title="Skriv navn på person"
         required
         >
         <button title="Legg til" class="addBtn" onclick="createNewUser()">+</button>
