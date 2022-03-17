@@ -136,7 +136,18 @@ function addComment(id){
         updateView()
     }
 }
-
+function remComment(id){
+obj = model.data.doneHappenings
+delete obj.comment;
+}
+// function remComment(id){
+//     let filtered = {}
+//     for (const comment in model.data.doneHappenings){
+//         if(comment !== 'comment'){
+//             filtered[comment] = model.inputs.comment[comment]
+//         }
+//     }
+// }
 // bookmark
 
   function goToDetailsPage(happeningId) {

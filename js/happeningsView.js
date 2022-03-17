@@ -105,12 +105,13 @@ function getDoneHappening() {
         <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
         <h4></h4>
         <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
-        <form><input type="text" placeholder="legg til kommentar og enter" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> <button class="hidebtn"onclick=addComment(${doneHappening.id})>Legg til kommentar</button></form>
+        <form><input type="text" placeholder="legg til kommentar og enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remComment(${doneHappening.id})>x</button>'" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})>Legg til kommentar</button></form>
         <hr>
         `;
     }
     return html;
 }
+
 
 function getDoneHappeningsCheckedHappening() {
     let checkedDoneHappenings = []
