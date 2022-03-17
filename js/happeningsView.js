@@ -37,7 +37,7 @@ function updateViewHappenings() {
             
             </div>
             
-        </div><input id="kommentar"class="comment" value="" placeholder="                Kommentar/Tema">
+        </div>
     </div>
     `;
 }
