@@ -124,6 +124,18 @@ function drawUser(){
     return winner
 }
 
+function addComment(id){
+    if (model.inputs.comment === '') {
+        return
+    }
+    else {
+        let happening = getDoneHappeningById(id)
+        happening.comment += model.inputs.comment;
+        model.inputs.comment = ''
+        updateView()
+    }
+}
+
 // bookmark
 
   function goToDetailsPage(happeningId) {

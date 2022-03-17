@@ -102,8 +102,10 @@ function getDoneHappening() {
         html += /*html*/`
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
+        <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
         <h4></h4>
         <button title="Detaljer (coming soon)" class="btnDetails" onclick="model.app.page='details'; updateView()">🛈</button>
+        <input type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
         <hr>
         `;
     }
