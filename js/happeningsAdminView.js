@@ -1,6 +1,6 @@
 function updateAdminViewHappenings() {
     document.getElementById('app').innerHTML = /*html*/ `
-    ${createMenuHtmlAdmin()}
+    ${happenMenuHtmlAdmin()}
     <div class="container">
     <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
         <div class="boxOne">
@@ -135,4 +135,15 @@ function adminGetAllCheckedHappeningIds() {
     return checkedHappenings
 
 }
+function happenMenuHtmlAdmin() {
+    return /*html*/ `
+          <div class="topMenu">
+          <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
+          <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
+          <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
+          <button title="Detaljer (coming soon)" class="btn--top" onclick="model.app.page='details'; updateAdminView()">🛈</button>
+          <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
+          </div>
+      `;
+  }
 

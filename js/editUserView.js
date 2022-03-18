@@ -9,6 +9,9 @@ function updateViewUserEdit(){
         type="text" 
         value="${model.inputs.editUser.name}"
         oninput="model.inputs.editUser.name=this.value"
+        oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
+        required
+        
     >
     <br/>
     ${getAllHappeningsEditUser()}

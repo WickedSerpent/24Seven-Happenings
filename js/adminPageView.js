@@ -84,3 +84,5 @@ function getAllHappeningsHome() {
   }
   return html;
 }
+
+

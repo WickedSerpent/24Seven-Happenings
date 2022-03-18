@@ -52,6 +52,7 @@ ul {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 6px;
+  max-height: 3.5em;
   margin: 1rem 0px 1rem 1rem;
   cursor: pointer;
   }
@@ -148,6 +149,19 @@ border-radius: 25%;
 margin: 2px;
 cursor: pointer;
 }
+.btnL {
+background-color: #2266ff;
+justify-content: center;
+justify-items: center;
+color: #fff ;
+font-weight: bold;
+text-decoration: none;
+border:solid;
+height: 2.4em;
+border-radius:6px;
+margin: 2px;
+cursor: pointer;
+}
 
 .btnDetailsAndDel{
   text-transform: uppercase;
@@ -159,7 +173,6 @@ cursor: pointer;
   color: #fff ;
   font-weight: bold;
   text-decoration: none;
-  
   border:double;
   border-radius: 25%;
   margin: 2px;
@@ -298,18 +311,99 @@ grid-row: 1;
   bottom: 0;
 }
 
-.trekkBtn{
+.trekkBtn{  
+
   max-width: 14.375rem;  
   bottom:0;
   margin-top: 10px;
   margin-bottom: 10px;
   grid-column: 1;
   grid-row: 5;
+  width: 200px; 
+  height: 40px; 
+  color:white;
+  background-color:#2266ff;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
 
+}
+.trekkBtn:hover,
+.trekkBtn:active {
+background-color: #000000;
+border:5px, double;
+cursor: pointer;
 }
 
 .doneHappeningBtn{
   width: 1.5em;
   height: 1.5em;
   justify-items: center;
+}
+
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  margin-top: 1em;
+  width: 3.3em;
+  height: 3.1em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 26px;
+  top: 0;
+  margin-left: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 4em;
+  height: 3em;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: relative;
+  content: "🛈";
+  height: 50%;
+  text-align: center;
+  width: 1.6em;
+  float:left;
+  margin-top: 0.7em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  margin-bottom: 0.5em;
+  background-color: #2266ff;
+  border: 2px double #2266ff;
+  border-radius: 50%;
+  color: white; 
+  translate:(-50%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:clicked + .slider {
+  background-color: #2266ff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2266ff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #000000;
 }

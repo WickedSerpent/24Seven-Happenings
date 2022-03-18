@@ -1,8 +1,11 @@
 function editUser() {
     const user = getUserById(model.inputs.editUser.userId);
-    user.name = model.inputs.editUser.name;
+    const name = model.inputs.editUser.name;
+    if(name == ''){alert('Bruker trenger et navn!')}else{
+    user.name = name;
     model.app.page = 'admin';
     updateAdminView();
+}
 }
 
 function editPoints(userId, happeningId) {

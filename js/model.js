@@ -6,7 +6,7 @@ const model = {
 
     inputs: {
 
-        newHappening: {
+            newHappening: {
             name: '',
             },
         
@@ -49,8 +49,9 @@ const model = {
             areYouSure: false,
         },
 
-        comment: '',
-
+        comment: {
+            comment: '',
+        }
     },
 
     data: {

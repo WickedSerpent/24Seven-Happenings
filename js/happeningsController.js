@@ -22,6 +22,10 @@ function toggleHappeningSelected(id) {
     updateView();
 }
 
+function toggleDetails() {
+    
+    updateView();
+}
 
 function getCheckedUsers() {
     let users = model.data.users;
@@ -136,23 +140,6 @@ function addComment(id){
         updateView()
     }
 }
-function remComment(id){
-obj = model.data.doneHappenings
-delete obj.comment;
-}
-// function remComment(id){
-//     let filtered = {}
-//     for (const comment in model.data.doneHappenings){
-//         if(comment !== 'comment'){
-//             filtered[comment] = model.inputs.comment[comment]
-//         }
-//     }
-// }
-// bookmark
 
-  function goToDetailsPage(happeningId) {
-        model.app.page = 'details';
-        model.data.doneHappenings.id = doneId;
-        updateView()
-    }
+
 
