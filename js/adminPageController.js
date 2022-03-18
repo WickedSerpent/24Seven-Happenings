@@ -4,9 +4,7 @@ function createNewUser() {
     user.id = getMaxUserId() + 1;
     user.name = model.inputs.newUser.name;
     user.isSelected = false;
-    if (user.name == '') {
-        alert('Fyll ut navn på bruker')
-    } else {
+    if (user.name !== '') {
         model.data.users.push(user);
         newHappeningPointsObj()
         updateAdminView()
@@ -20,9 +18,7 @@ function createNewHappening() {
     happening.id = getMaxHappeningId() + 1;
     happening.name = model.inputs.newHappening.name
     happening.isSelected = false
-    if (happening.name == '') {
-        alert('Fyll ut navn på arrangement')
-    } else {
+    if (happening.name !== '') {
         model.data.happenings.push(happening);
         newUserPointsObj()
         updateAdminView()
