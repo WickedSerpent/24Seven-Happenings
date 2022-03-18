@@ -11,6 +11,7 @@ function updateViewHappeningEdit(){
     >
     <br/><br/>  
     <button 
+    style="cursor: pointer;"
     onclick="editHappening()">Endre</button>
     </div>
 `;
