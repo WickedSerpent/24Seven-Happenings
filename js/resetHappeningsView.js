@@ -8,7 +8,7 @@ function resetHappeningsView() {
                 oninput="model.inputs.resetDoneHappenings.areYouSure = this.checked"
                 ${model.inputs.resetDoneHappenings.areYouSure ? 'checked' : ''}
                 /> Er du sikker på at du vil tilbakestille?<br><br/>
-                <button onclick="resetHappenings()">Tilbakestill! </button>
+                <button style="cursor: pointer;" onclick="resetHappenings()">Tilbakestill! </button>
             </div>
            `;
 }
