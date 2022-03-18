@@ -7,6 +7,7 @@ function updateViewUserEdit(){
 
     <input 
         type="text" 
+        title="Endre navn på bruker"
         value="${model.inputs.editUser.name}"
         oninput="model.inputs.editUser.name=this.value"
     >
@@ -14,7 +15,7 @@ function updateViewUserEdit(){
     ${getAllHappeningsEditUser()}
 
     <br/>    
-    <button onclick="editUser()">Endre navn og gå tilbake til hjemmesiden</button>
+    <button style="cursor: pointer;" onclick="editUser()">Endre navn og gå tilbake til hjemmesiden</button>
     </div>
     
     
@@ -39,7 +40,8 @@ function getAllHappeningsEditUser(){
             <li>
                 ${happening.name}
                     <input 
-                    type="text" 
+                    type="text"
+                    title="Endre poeng til bruker"
                     value="${userId.points}"
                     oninput="model.inputs.editUser.points=parseInt(this.value)"
                     onchange="editPoints(${userId.userId}, ${happening.id})"
