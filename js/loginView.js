@@ -1,6 +1,6 @@
 function loginView() {
   document.getElementById('app').innerHTML = /*html*/ `
-    ${createMenuHtml()}
+    ${loginMenuHtml()}
     <form>
         <input
         id="password"
@@ -13,4 +13,12 @@ function loginView() {
     </form>
         `;
   document.getElementById('password').focus();
+}
+
+function loginMenuHtml() {
+  return /*html*/ `
+        <div class="topMenu">
+        <button class="btn--top" onclick="model.app.page='happening'; updateView()">Tilbake</button>
+        </div>
+    `;
 }
