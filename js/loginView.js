@@ -9,7 +9,7 @@ function loginView() {
         title="Skriv inn passord"
         required
         />
-        <input type="submit" onclick=validate() value="Logg inn">
+        <input style="cursor: pointer;" type="submit" onclick=validate() value="Logg inn">
     </form>
         `;
   document.getElementById('password').focus();
