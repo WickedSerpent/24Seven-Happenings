@@ -413,3 +413,4 @@ input:checked + .slider:before {
   background-color: #2266ff;
   -webkit-transition: .4s;
 }
+

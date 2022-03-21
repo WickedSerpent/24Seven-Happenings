@@ -110,7 +110,6 @@ function adminGetDoneHappening() {
         <h3>Kommentar: <span style="font-weight: 300;">${doneHappening.comment}</span><br> 
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <button title="Slett happening" class="btnDetailsAndDel" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
-        <button title="Detaljer (coming soon)" class="btnDetailsAndDel" onclick=updateDetailsView()>🛈</button> 
         `;
   }
   return html;
@@ -144,7 +143,7 @@ function happenMenuHtmlAdmin() {
           <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
           <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
           <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
-          <button title="Detaljer (coming soon)" class="btn--top" onclick="model.app.page='details'; updateAdminView()">🛈</button>
+
           <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
           </div>
       `;

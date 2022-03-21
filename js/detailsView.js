@@ -98,7 +98,7 @@ function getDoneHappeningDetails() {
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
-        <button onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
+        <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
         <form><input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remcom(this)>x</button>'" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})></button></form>
         <hr>
         `;

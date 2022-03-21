@@ -119,7 +119,6 @@ function happenMenuHtml() {
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
           <label class="switch">
           <input type="checkbox" id="cb1" onclick="goToDetailsPage(),check()">
-          
           <span class="slider"></span>
           </label>
           </div>
