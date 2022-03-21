@@ -1,6 +1,4 @@
-
-updateViewDetails()
-function updateViewDetails() {
+function updateDetailsView() {
     document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtml()}
     <div class="container">
@@ -114,7 +112,7 @@ function happenDetailsMenuHtml() {
         <div class="topMenu">
         <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
         <label class="switch">
-        <input type="checkbox" id="cd1" onclick="goToDetailsPage()">
+        <input type="checkbox" id="cb1"  onclick="uncheck(),goToHappeningPage()">
     
         <span class="slider"></span>
         </label>
@@ -163,9 +161,13 @@ function getAllCheckedHappeningIds() {
 
 function goToHappeningPage(happeningId) {
     model.app.page = 'happening';
+    document.getElementById("cb1").checked = false;
     // model.data.doneHappenings.id = doneId;
     updateView()
 }
+
+
+
 
 // function updateDetailsView() {
 //     let html = '';

@@ -99,7 +99,8 @@ function getDoneHappening() {
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
         <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
-        <form><input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remcom(this)>x</button>'" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})></button></form>
+        <form><input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})></button></form>
+        
         <hr>
         `;
     }
@@ -113,7 +114,7 @@ function happenMenuHtml() {
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
           <label class="switch">
-          <input type="checkbox" id="cd1" onclick="goToDetailsPage()">
+          <input type="checkbox" id="cb1" onclick="goToDetailsPage(),check()">
           
           <span class="slider"></span>
           </label>
@@ -149,6 +150,7 @@ function getAllCheckedHappeningIds() {
 
 function goToDetailsPage(happeningId) {
     model.app.page = 'details';
-    // model.data.doneHappenings.id = doneId;
+    document.getElementById("cb1").checked = true;
     updateDetailsView()
 }
+

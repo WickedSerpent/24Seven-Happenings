@@ -19,9 +19,9 @@ updateView()
             else if(page === 'details') updateDetailsView(); 
         }
 
-            function updateDetailsView(){
-                const page = model.app.page;
-                if(page === 'happening') updateViewHappenings();
-                else if(page === 'login') loginView();
-            }
+            // function updateDetailsView(){
+            //     const page = model.app.page;
+            //     if(page === 'happening') updateViewHappenings();
+            //     else if(page === 'login') loginView();
+            // }
 

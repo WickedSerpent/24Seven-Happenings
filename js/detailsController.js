@@ -140,3 +140,7 @@ function addComment(id){
         updateDetailsView()
     }
 }
+
+// function uncheck() {
+//     document.getElementById("cb1").checked = false;
+// }

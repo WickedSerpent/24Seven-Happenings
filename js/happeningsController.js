@@ -22,10 +22,6 @@ function toggleHappeningSelected(id) {
     updateView();
 }
 
-function toggleDetails() {
-    
-    updateView();
-}
 
 function getCheckedUsers() {
     let users = model.data.users;
@@ -143,3 +139,6 @@ function addComment(id){
 
 
 
+function check() {
+    document.getElementById("cb1").checked = true;
+}
