@@ -141,6 +141,13 @@ function addComment(id){
     }
 }
 
+function goToHappeningPage(happeningId) {
+    model.app.page = 'happening';
+    document.getElementById("cb1").checked = false;
+    // model.data.doneHappenings.id = doneId;
+    updateView()
+}
+
 // function uncheck() {
 //     document.getElementById("cb1").checked = false;
 // }

@@ -126,14 +126,14 @@ function drawUser(){
 }
 
 function addComment(id){
-    if (model.inputs.comment === '') {
-        return
-    }
-    else {
+    if (model.inputs.comment !== '') {
         let happening = getDoneHappeningById(id)
         happening.comment += model.inputs.comment;
         model.inputs.comment = ''
         updateView()
+    }
+    else {
+       updateView();
     }
 }
 

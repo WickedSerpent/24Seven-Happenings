@@ -112,7 +112,7 @@ function happenDetailsMenuHtml() {
         <div class="topMenu">
         <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
         <label class="switch">
-        <input type="checkbox" id="cb1"  onclick="uncheck(),goToHappeningPage()">
+        <input type="checkbox" id="cb1"  onchange="goToHappeningPage(),uncheck()">
     
         <span class="slider"></span>
         </label>
@@ -159,12 +159,7 @@ function getAllCheckedHappeningIds() {
     return checkedHappenings
 }
 
-function goToHappeningPage(happeningId) {
-    model.app.page = 'happening';
-    document.getElementById("cb1").checked = false;
-    // model.data.doneHappenings.id = doneId;
-    updateView()
-}
+
 
 
 
