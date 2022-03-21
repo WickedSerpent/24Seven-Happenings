@@ -112,7 +112,7 @@ function adminGetDoneHappening() {
         <button title="Slett happening" class="btnDetailsAndDel" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
         <button title="Detaljer (coming soon)" class="btnDetailsAndDel" onclick=updateDetailsView()>🛈</button> 
         <form>
-        <input type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
+        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
         <button onclick=addCommentAdmin(${doneHappening.id})>Legg til kommentar</button>
         </form>
         <hr>
