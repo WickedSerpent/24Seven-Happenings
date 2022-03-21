@@ -149,7 +149,7 @@ function deleteComments(id){
         let happening = getDoneHappeningById(id)
         happening.comment = '';
         happening.comment = model.inputs.comment;
-        updateAdminView()
+        updateView()
     }
     }
 

@@ -135,6 +135,13 @@ function getDoneHappening() {
         html += /*html*/`
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
+        <h3>Kommentar: <span style="font-weight: 300;">${doneHappening.comment}</span><br>
+        <hr>
+        <form>
+        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
+        <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
+        </form>
+        <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
         <hr>
         `;
     }
@@ -163,7 +170,10 @@ function getDoneHappeningDetails() {
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <button onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
-        <form><input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remcom(this)>x</button>'" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})></button></form>
+        <form>
+        <input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remcom(this)>x</button>'" /> 
+        <button class="hidebtn"onclick=addComment(${doneHappening.id})></button>
+        </form>
         <hr>
         `;
     }
