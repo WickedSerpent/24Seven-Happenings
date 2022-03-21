@@ -106,8 +106,7 @@ function adminGetDoneHappening() {
     const doneHappening = happenings[i];
     html += /*html*/ `
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
-        <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
-        <h3>Kommentar: <span style="font-weight: 300;">${doneHappening.comment}</span><br> 
+        <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3> 
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <button title="Slett happening" class="btnDetailsAndDel" onclick="deleteDoneHappening(${doneHappening.id})">🗑</button>
         <button title="Detaljer (coming soon)" class="btnDetailsAndDel" onclick=updateDetailsView()>🛈</button> 
