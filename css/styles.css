@@ -72,7 +72,7 @@ ul {
   position:absolute;
   grid-template-columns: 2;
   grid-template-rows: 3;
-  height: calc(60vh - 10px);
+  height: calc(50vh - 10px);
   grid-auto-rows: max-content, min-content;
   min-width: 357px;
   grid-template-areas:  "headerHome,     headerHome2"
@@ -103,12 +103,12 @@ ul {
   
     padding-top: 5px;
     margin-right: 20px;
-    height: 46.875rem;
+    /* height: 46.875rem; */
     width:  31.25rem;
     overflow-y: scroll;
     max-height: 30vmax;
     min-height: 1vmax;
-    max-height:31.25rem;
+    max-height:25.25rem;
     max-width: 18.75rem;
     min-width: 18.75rem;
     grid-column: 1;
@@ -123,7 +123,7 @@ ul {
   height: 750px;
   width:  500px;
   overflow-y: scroll;
-  max-height:31.25rem;
+  max-height:25.25rem;
   max-width: 18.75rem;
   min-width: 18.75rem;
   max-width: 14.375rem;
