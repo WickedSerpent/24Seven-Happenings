@@ -115,6 +115,7 @@ function adminGetDoneHappening() {
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
         <button onclick=addCommentAdmin(${doneHappening.id})>Legg til kommentar</button>
         </form>
+        <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
         <hr>
         `;
   }

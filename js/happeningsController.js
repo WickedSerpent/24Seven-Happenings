@@ -141,5 +141,15 @@ function addComment(id){
     }
 }
 
-
+function deleteComments(id){ 
+    if (model.inputs.comment = '') {
+        return
+    }
+    else {
+        let happening = getDoneHappeningById(id)
+        happening.comment = '';
+        happening.comment = model.inputs.comment;
+        updateAdminView()
+    }
+    }
 
