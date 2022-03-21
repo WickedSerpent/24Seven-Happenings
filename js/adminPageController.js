@@ -90,3 +90,10 @@ function goToEditHappeningPage(happeningId) {
     updateAdminView();
 }
 
+function sletteKommentar() {
+    if (confirm('Sikker på at du vil logge ut?') == true) {
+      updateView();
+    } else {
+      updateView();
+    }
+  }

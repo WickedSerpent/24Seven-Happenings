@@ -142,6 +142,9 @@ function addComment(id){
 }
 
 function deleteComments(id){ 
+    if (confirm('Sikker på at du vil slette ALLE kommentarene') == false) {
+        return;
+        }
     if (model.inputs.comment = '') {
         return
     }
@@ -153,3 +156,11 @@ function deleteComments(id){
     }
     }
 
+    function logout() {
+        if (confirm('Sikker på at du vil logge ut?') == true) {
+          updateView();
+        } else {
+          updateAdminView();
+        }
+      }
+    
