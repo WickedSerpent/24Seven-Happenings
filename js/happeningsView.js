@@ -58,7 +58,8 @@ function getHappeningsHtml() {
 
 function getUsers() {
     let html = '';
-    const users = model.data.users;
+    let users = model.data.users;
+    users.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         html += /*html*/`

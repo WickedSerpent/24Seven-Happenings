@@ -52,6 +52,7 @@ function getHappeningsDetailHtml() {
     return html;
 }
 
+<<<<<<< Updated upstream
 function getUsersForDetails() {
     let html = '';
     const users = model.data.users;
@@ -65,6 +66,21 @@ function getUsersForDetails() {
     }
     return html;
 }
+=======
+// function getUsers() {
+//     let html = '';
+//     const users = model.data.users;
+//     for (let i = 0; i < users.length; i++) {
+//         const user = users[i];
+//         html += /*html*/`
+//         <input type="checkbox" 
+//         onclick="togglePersonSelected(${user.id})" 
+//         ${getChecked(user.isSelected)}/> ${user.name} <br>
+//         `;
+//     }
+//     return html;
+// }
+>>>>>>> Stashed changes
 
 function createTextList(liste) {
     if (liste.length === 0) return '';
