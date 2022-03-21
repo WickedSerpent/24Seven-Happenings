@@ -1,24 +1,24 @@
 function updateDetailsView() {
     document.getElementById('app').innerHTML = /*html*/ `
-    ${happenMenuHtml()}
+    ${happenDetailsMenuHtml()}
     <div class="container">
     <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
         <div class="boxOne">
 
             
             <div class="boxOne2">
-            ${getHappeningsHtml()}
+            ${getHappeningsDetailHtml()}
             </div>
         
             <h3>Velg personer som skal være med i trekningen!</h3>
             <div class="boxOne3">
             <input type="checkbox"
-            onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            ${getUsers()}<br/>
+            onclick="selectAllOrNoneDetails(this.checked)"
+            ${getCheckedDetails(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+            ${getUsersForDetails()}<br/>
             </div>
             <div  ><button class="trekkBtn"
-            onclick=drawUser()
+            onclick=drawDetailedUser()
             >Trekk!</button>
             
         </div></div>
@@ -37,14 +37,14 @@ function updateDetailsView() {
     `;
 }
 
-function getHappeningsHtml() {
+function getHappeningsDetailHtml() {
     let html = '';
     const happenings = model.data.happenings;
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
         <input type="checkbox"
-        onclick="toggleHappeningSelected(${happening.id})" 
+        onclick="toggleHappeningSelectedDetails(${happening.id})" 
         ${getChecked(happening.isSelected)}/>
         ${happening.name}<br/>    
         `;
@@ -52,7 +52,7 @@ function getHappeningsHtml() {
     return html;
 }
 
-function getUsers() {
+function getUsersForDetails() {
     let html = '';
     const users = model.data.users;
     for (let i = 0; i < users.length; i++) {
@@ -98,8 +98,11 @@ function getDoneHappeningDetails() {
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
+        <form>
+        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
+        <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
+        </form>
         <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
-        <form><input type="text" placeholder="legg til kommentar og trykk enter" oninput="model.inputs.comment='<br>' + '- ' + this.value + '<button onclick=remcom(this)>x</button>'" /> <button class="hidebtn"onclick=addComment(${doneHappening.id})></button></form>
         <hr>
         `;
     }
@@ -112,7 +115,7 @@ function happenDetailsMenuHtml() {
         <div class="topMenu">
         <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
         <label class="switch">
-        <input type="checkbox" id="cb1"  onchange="goToHappeningPage(),uncheck()">
+        <input type="checkbox" id="cb1"  onclick="goToHappeningPage(),uncheck()">
     
         <span class="slider"></span>
         </label>

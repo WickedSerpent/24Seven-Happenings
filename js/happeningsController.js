@@ -121,7 +121,7 @@ function drawUser(){
     winner.comment = ''
     winners.unshift(winner)
     model.app.page = 'happening'
-    updateViewHappenings()
+    updateView()
     return winner
 }
 
@@ -156,3 +156,10 @@ function deleteComments(id){
 function check() {
     document.getElementById("cb1").checked = true;
 }
+
+function goToDetailsPage(happeningId) {
+    model.app.page = 'details';
+    document.getElementById("cb1").checked = true;
+    updateDetailsView()
+}
+

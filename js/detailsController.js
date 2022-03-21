@@ -1,4 +1,4 @@
-function selectAllOrNone(selectAll) {
+function selectAllOrNoneDetails(selectAll) {
     model.data.selectAll = selectAll;
     for (let user of model.data.users) {
         user.isSelected = selectAll;
@@ -6,7 +6,7 @@ function selectAllOrNone(selectAll) {
     updateDetailsView();
 }
 
-function getChecked(isSelected) {
+function getCheckedDetails(isSelected) {
     return isSelected ? 'checked="checked"' : '';
 }
 
@@ -16,7 +16,7 @@ function togglePersonSelected(id) {
     updateDetailsView();
 }
 
-function toggleHappeningSelected(id) {
+function toggleHappeningSelectedDetails(id) {
     const happening = getHappeningById(id)
     happening.isSelected = !happening.isSelected;
     updateDetailsView();
@@ -92,7 +92,7 @@ function getCheckedHappenings() {
     return checkedhappenings;
 }
 
-function drawUser(){
+function drawDetailedUser(){
     let checkedHappenings = getCheckedHappenings()
     let checkedHappeningName = getCheckedHappeningName()
     let checkedHappeningIds = getCheckedUsers()
@@ -125,7 +125,7 @@ function drawUser(){
     winner.comment = ''
     winners.unshift(winner)
     model.app.page = 'happening'
-    updateDetailsViewHappenings()
+    updateDetailsView()
     return winner
 }
 

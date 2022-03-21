@@ -65,7 +65,7 @@ function getUsers() {
         <input type="checkbox" 
         onclick="togglePersonSelected(${user.id})" 
         ${getChecked(user.isSelected)}/> ${user.name} <br>
-        `;
+        `; 
     }
     return html;
 }
@@ -150,10 +150,3 @@ function getAllCheckedHappeningIds() {
     return checkedHappenings
 
 }
-
-function goToDetailsPage(happeningId) {
-    model.app.page = 'details';
-    document.getElementById("cb1").checked = true;
-    updateDetailsView()
-}
-
