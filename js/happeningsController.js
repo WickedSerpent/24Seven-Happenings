@@ -22,10 +22,6 @@ function toggleHappeningSelected(id) {
     updateView();
 }
 
-function toggleDetails() {
-    
-    updateView();
-}
 
 function getCheckedUsers() {
     let users = model.data.users;
@@ -142,7 +138,7 @@ function addComment(id){
 }
 
 function deleteComments(id){ 
-    if (confirm('Sikker på at du vil slette ALLE kommentarene') == false) {
+    if (confirm('Sikker på at du vil slette ALLE kommentarene ovenfor?') == false) {
         return;
         }
     if (model.inputs.comment = '') {
@@ -156,11 +152,7 @@ function deleteComments(id){
     }
     }
 
-    function logout() {
-        if (confirm('Sikker på at du vil logge ut?') == true) {
-          updateView();
-        } else {
-          updateAdminView();
-        }
-      }
-    
+
+function check() {
+    document.getElementById("cb1").checked = true;
+}

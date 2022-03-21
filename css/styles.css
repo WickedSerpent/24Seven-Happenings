@@ -362,11 +362,12 @@ cursor: pointer;
   border-radius: 26px;
   top: 0;
   margin-left: 5px;
+  margin-top:0.4em;
   left: 0;
   right: 0;
   bottom: 0;
   width: 4em;
-  height: 3em;
+  height: 2em;
   background-color: rgb(0, 0, 0);
   color: white;
   -webkit-transition: .4s;
@@ -374,17 +375,17 @@ cursor: pointer;
 }
 
 .slider:before {
-  position: relative;
+  position: absolute;
   content: "🛈";
-  height: 50%;
+  height: 70%;
   text-align: center;
   width: 1.6em;
   float:left;
-  margin-top: 0.7em;
+  margin-top: 0.2em;
   margin-left: 0.1em;
   margin-right: 0.1em;
   margin-bottom: 0.5em;
-  background-color: #2266ff;
+  background-color: #000000;
   border: 2px double #2266ff;
   border-radius: 50%;
   color: white; 
@@ -394,16 +395,21 @@ cursor: pointer;
 }
 
 input:clicked + .slider {
-  background-color: #2266ff;
+  background-color: #000000;
+  color: #000000;
+  
 }
 
 input:focus + .slider {
   box-shadow: 0 0 1px #2266ff;
+  color:#000000;
+  -webkit-transition: .4s;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-  background-color: #000000;
+  -webkit-transform: translateX(31px);
+  -ms-transform: translateX(31px);
+  transform: translateX(31px);
+  background-color: #2266ff;
+  -webkit-transition: .4s;
 }
