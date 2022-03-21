@@ -43,7 +43,8 @@ function updateViewHappenings() {
 
 function getHappeningsHtml() {
     let html = '';
-    const happenings = model.data.happenings;
+    let happenings = model.data.happenings;
+    happenings.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
     for (let i = 0; i < happenings.length; i++) {
         let happening = happenings[i];
         html += /*html*/`
