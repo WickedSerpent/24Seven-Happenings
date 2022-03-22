@@ -122,7 +122,8 @@ function getDoneHappening() {
         <span class="slider"></span>
         </label>
 
-        </h3>
+
+
         <h3>Trukket person - <span style="color: #6AB334;">${
           doneHappening.userDrawn
         }</span></h3>
