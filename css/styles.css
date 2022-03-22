@@ -403,21 +403,26 @@ cursor: pointer;
 
 input:clicked + .slider {
   background-color: #ffffff;
-  color: #000000;
+  /* color: #000000; */
 }
 
-input:focus + .slider {
+input:hover + .slider {
   box-shadow: 0 0 1px #2266ff;
-  color:#000000;
-  background-color: #000000;
   -webkit-transition: .4s;
-  
+  background-color: #000000;
 }
+input:checked + .slider {
+  box-shadow: 0 0 1px #2266ff;
+  -webkit-transition: .4s;
+  background-color: hsl(0, 0%, 0%);
+}
+
 
 input:checked + .slider:before {
   -webkit-transform: translateX(31px);
   -ms-transform: translateX(31px);
   transform: translateX(31px);
   -webkit-transition: .4s;
+  
 }
 
