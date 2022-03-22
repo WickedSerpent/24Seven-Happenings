@@ -1,5 +1,5 @@
 function updateViewHappenings() {
-    document.getElementById('app').innerHTML = /*html*/ `
+  document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtml()}
     <div class="container">
     <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
@@ -14,7 +14,9 @@ function updateViewHappenings() {
             <div class="boxOne3">
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
-            ${getChecked(model.data.selectAll)}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+            ${getChecked(
+              model.data.selectAll
+            )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
             ${getUsers()}<br/>
             </div>
             <div  ><button class="trekkBtn"
@@ -37,135 +39,156 @@ function updateViewHappenings() {
     `;
 }
 
-
-
-
-
 function getHappeningsHtml() {
-    let html = '';
-    let happenings = model.data.happenings;
-    happenings.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
-    for (let i = 0; i < happenings.length; i++) {
-        let happening = happenings[i];
-        html += /*html*/`
+  let html = '';
+  let happenings = model.data.happenings;
+  happenings.sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+  );
+  for (let i = 0; i < happenings.length; i++) {
+    let happening = happenings[i];
+    html += /*html*/ `
         <input type="checkbox"
         onclick="toggleHappeningSelected(${happening.id})" 
         ${getChecked(happening.isSelected)}/>
         ${happening.name}<br/>    
         `;
-    }
-    return html;
+  }
+  return html;
 }
 
 function getUsers() {
-    let html = '';
-    let users = model.data.users;
-    users.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
-    for (let i = 0; i < users.length; i++) {
-        const user = users[i];
-        html += /*html*/`
+  let html = '';
+  let users = model.data.users;
+  users.sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+  );
+  for (let i = 0; i < users.length; i++) {
+    const user = users[i];
+    html += /*html*/ `
         <input type="checkbox" 
         onclick="togglePersonSelected(${user.id})" 
         ${getChecked(user.isSelected)}/> ${user.name} <br>
-        `; 
-    }
-    return html;
+        `;
+  }
+  return html;
 }
 
 function createTextList(liste) {
-    if (liste.length === 0) return '';
-    if (liste.length === 1) return liste[0];
+  if (liste.length === 0) return '';
+  if (liste.length === 1) return liste[0];
 
-    const tekstListe = liste.join(', ');
-    const indexSisteKomma = tekstListe.lastIndexOf(',');
-    return tekstListe.substr(0, indexSisteKomma) +
-        ' og ' + tekstListe.substr(indexSisteKomma + 1);
-
+  const tekstListe = liste.join(', ');
+  const indexSisteKomma = tekstListe.lastIndexOf(',');
+  return (
+    tekstListe.substr(0, indexSisteKomma) +
+    ' og ' +
+    tekstListe.substr(indexSisteKomma + 1)
+  );
 }
 
 function getDoneHappening() {
-    let html = '';
-    let happenings = getDoneHappeningsCheckedHappening()
-    let doneHappenings = model.data.doneHappenings
-    if (happenings.length === 0){
-        happenings = doneHappenings
-    }
-    for (let i = 0; i < happenings.length; i++) {
-        let drawTime = model.data.doneHappenings
-        const dayNames = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
-        const time = new Date(drawTime[i].time);
-        const dateText = getDateStringForDisplay(time);
-        const dayName = dayNames[time.getDay()];
-        const doneHappening = happenings[i];
-        html += /*html*/`
-        <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span>
+  let html = '';
+  let happenings = getDoneHappeningsCheckedHappening();
+  let doneHappenings = model.data.doneHappenings;
+  if (happenings.length === 0) {
+    happenings = doneHappenings;
+  }
+  for (let i = 0; i < happenings.length; i++) {
+    let drawTime = model.data.doneHappenings;
+    const dayNames = [
+      'Søndag',
+      'Mandag',
+      'Tirsdag',
+      'Onsdag',
+      'Torsdag',
+      'Fredag',
+      'Lørdag',
+    ];
+    const time = new Date(drawTime[i].time);
+    const dateText = getDateStringForDisplay(time);
+    const dayName = dayNames[time.getDay()];
+    const doneHappening = happenings[i];
+    html += /*html*/ `
+        <h3>Trekning - <span style="color: #FF5733;">${
+          doneHappening.name
+        }</span>
 
         </h3>
         <label class="switch">
-        <input type="checkbox" id="cb1" onclick="showDetails(${doneHappening.id})">
+        <input type="checkbox" id="cb1" onclick="showDetails(${
+          doneHappening.id
+        })">
         <span class="slider"></span>
         </label>
- 
-        <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
-        <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
+
+        </h3>
+        <h3>Trukket person - <span style="color: #6AB334;">${
+          doneHappening.userDrawn
+        }</span></h3>
+        <h3>Kommentar: <span style="font-weight: 500;">${
+          doneHappening.comment
+        }</span></h3>
 
         <div id="details--${doneHappening.id}" style="display: none;">
         <h3>Trukket fra disse personene med færrest poeng:<br> 
-        <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
+        <span style="color: #0075ff;">${createTextList(
+          doneHappening.participants
+        )}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
         </div> 
 
+        <form>
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
-        <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
-        <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
+        <button onclick=addComment(${
+          doneHappening.id
+        })>Legg til kommentar</button>
+        <button id="slette" onclick="deleteComments(${
+          doneHappening.id
+        })">Slette alle kommentarer</button>
         <hr>
-
+        </form>
         `;
-    }
-    return html;
+  }
+  return html;
 }
 
 function showDetails(id) {
-    let details = document.getElementById('details--' + id)
-    if(details.style.display === "none"){
-        details.style.display = "block"        
-    } else {
-        details.style.display = "none"
-    }
+  let details = document.getElementById('details--' + id);
+  if (details.style.display === 'none') {
+    details.style.display = 'block';
+  } else {
+    details.style.display = 'none';
+  }
 }
 
-
-
 function happenMenuHtml() {
-    return /*html*/ `
+  return /*html*/ `
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
           </div>
       `;
-  }
-
+}
 
 function getDoneHappeningsCheckedHappening() {
-    let checkedDoneHappenings = []
-    let happenings = model.data.doneHappenings
-    let happeningObj = getAllCheckedHappeningIds()
-    for (x in happenings) {
-        for (y in happeningObj) {
-            if (happenings[x].happeningId === happeningObj[y]) {
-                checkedDoneHappenings.push(happenings[x]);
-            }
-        }
+  let checkedDoneHappenings = [];
+  let happenings = model.data.doneHappenings;
+  let happeningObj = getAllCheckedHappeningIds();
+  for (x in happenings) {
+    for (y in happeningObj) {
+      if (happenings[x].happeningId === happeningObj[y]) {
+        checkedDoneHappenings.push(happenings[x]);
+      }
     }
-    return checkedDoneHappenings
+  }
+  return checkedDoneHappenings;
 }
 
 function getAllCheckedHappeningIds() {
-    let checkedHappenings = []
-    let happenings = model.data.happenings
-    for (happening of happenings) {
-        if (happening.isSelected === true)
-        checkedHappenings.push(happening.id)
-    }
-    return checkedHappenings
-
+  let checkedHappenings = [];
+  let happenings = model.data.happenings;
+  for (happening of happenings) {
+    if (happening.isSelected === true) checkedHappenings.push(happening.id);
+  }
+  return checkedHappenings;
 }

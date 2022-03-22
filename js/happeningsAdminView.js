@@ -71,7 +71,7 @@ function adminGetDoneHappening() {
       <h3>Trukket fra disse personene med færrest poeng:<br> 
       <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3><br> 
       <h4>Trukket: ${dayName} ${dateText}</h4>
-      <button class="slettDoneHappen" onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
+      <button onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
       <hr>
       `;
   }
