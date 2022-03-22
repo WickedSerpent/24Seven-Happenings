@@ -143,8 +143,6 @@ function getDoneHappening() {
         })">Slette alle kommentarer</button>
         <hr>
         </div> 
-
-        </form>
         `;
   }
   return html;
