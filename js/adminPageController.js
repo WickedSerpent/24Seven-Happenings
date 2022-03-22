@@ -6,10 +6,10 @@ function createNewUser() {
     user.isSelected = false;
     if (user.name !== '') {
         model.data.users.push(user);
-        model.inputs.newUser.name = '';
         newHappeningPointsObj()
         updateAdminView()
     }
+    model.inputs.newUser.name = '';
 }
 
 
