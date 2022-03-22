@@ -7,9 +7,9 @@ function createNewUser() {
     if (user.name !== '') {
         model.data.users.push(user);
         model.inputs.newUser.name = '';
+        newHappeningPointsObj()
+        updateAdminView()
     }
-    newHappeningPointsObj()
-    updateAdminView()
 }
 
 
