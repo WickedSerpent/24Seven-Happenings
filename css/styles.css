@@ -42,8 +42,10 @@ ul {
 .topMenu{
   margin-top: -15px;
   min-width: 47.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding-bottom: 5px;
+  max-height: 20vh;
+  min-height: fit-content;
   margin-bottom: 0;
   
   }
@@ -56,7 +58,7 @@ ul {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 6px;
-  max-height: 3.5em;
+  
   margin: 1rem 0px 1rem 1rem;
   cursor: pointer;
   }
@@ -68,31 +70,33 @@ ul {
   }
 
 
-.containerHome
+.containerAdmin
 {
   justify-content: center;
   display: grid;
+  max-height: 70vh;
   margin-top: -20px;
   position:absolute;
   grid-template-columns: 2;
   grid-template-rows: 3;
-  height: calc(90vh - 10px);
+  height: calc(70vh - 10px);
   grid-auto-rows: max-content, min-content;
   min-width: 357px;
+  border-bottom: 5px double #2266ff;
   grid-template-areas:  "headerHome,     headerHome2"
-                        "boxOneHome, boxTwoHome"
+                        "adminBoxOne,    adminBoxTwo"
                         "addArrangementBox, addPersonBox";
   
   }
   
-  .headerHome {
+  .headerAdmin {
   position: relative;
   grid-column: 1;
   grid-row: 1;
   max-height: 1,2em;
   }
   
-  .headerHome2 {
+  .headerAdmin2 {
   position: relative;
   grid-column: 2;
   grid-row: 1;
@@ -103,7 +107,7 @@ ul {
     background-color: white;
     border: white;
   }
-  .boxOneHome{
+  .adminBoxOne{
   
     padding-top: 5px;
     margin-right: 20px;
@@ -120,14 +124,13 @@ ul {
     scrollbar-width: none;
     }
   
-  .boxTwoHome{
+  .adminBoxTwo{
   
   padding-top: 5px;
   margin-right: 20px;
-  height: 750px;
-  width:  500px;
+
   overflow-y: scroll;
-  max-height:25.25em;
+  max-height:70vh;
   max-width: 18.75em;
   min-width: 18.75em;
 
@@ -197,18 +200,17 @@ margin-top: -20px;
 position:absolute;
 grid-template-columns: 2;
 /* height: calc(60vh - 10em); */
-min-height: 0.1fr;
+min-height: 1fr;
 max-height: 3fr;
 grid-auto-rows: dense;
 min-width: 22.3;
 border-bottom: 5px double #2266ff;
-border-right: 5px double #2266ff;
 grid-auto-rows: minmax(min-content, max-content);
-grid-template-areas: "boxOne,            boxTwo0"
-                      "boxOne,           boxTwo"
-                      "boxOne2,          boxTwo2"
-                      "boxOne3,          boxTwo2"
-                      "trekkBtn,         boxTwo2";
+grid-template-areas: "HeaderAboveOne,    HeaderAboveTwo"
+                      "HappeningList,    DoneHappeningList"
+                      "boxOne2,          DoneHappeningList"
+                      "UserList,         DoneHappeningList"
+                      "trekkBtn,         DoneHappeningList";
 }
 
 .addArrangementBox{
@@ -216,6 +218,7 @@ grid-column: 1;
 grid-row: 3;
 margin-top: 30px;
 margin-right: 1em;
+margin-bottom: 1em;
 
 }
 
@@ -244,7 +247,7 @@ cursor: pointer;
 }
 
 /*total høyde 44.25*/
-.boxOne0 {
+.HeaderAboveOne {
 grid-column:1;
 grid-row:1;
 max-width: 20vw;
@@ -260,16 +263,16 @@ min-width: 11.25rem;
   min-width: 11.25rem;
   max-width: 20vw;
   max-height: 80vh;
-  min-height: 10rem;
+  /* min-height: 10rem; */
   float: left;
   grid-column: 1;
   grid-row: 2;
   scrollbar-width: none;
 }
 
-.boxOne2{
-min-width: 11.25em;
-max-width: 14.375em;
+.HappeningList{
+min-width: 8em;
+max-width: 8em;
 display: block;
 position: relative;
 overflow-y: scroll;
@@ -279,22 +282,23 @@ min-height: 7vh;
 grid-column: 1;
 grid-row: 3;
 scrollbar-width: none;
+/* background-color: #dde7ff; */
 }
 
-.boxOne3{
-min-width: 12.5rem;
-max-width: 14.375rem;
+.UserList{
+min-width: 8em;
+max-width: 8em;
 display: block;
-position: relative;
+margin-bottom: 5px;
 overflow-y: scroll;
-max-height: 40vh;
-min-height: 10vh;
+max-height: 30vh;
 grid-column: 1;
 grid-row: 4;
 scrollbar-width: none;
+/* background-color: #dde7ff; */
 }
 
-.boxTwo0 {
+.HeaderAboveTwo {
 min-width: 14.375rem;
 grid-column: 2;
 grid-row: 1;
@@ -325,14 +329,13 @@ grid-row: 1;
 
 
 .trekkBtn{  
-
-  max-width: 14.375rem;  
+  position: relative;
   bottom:0;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   grid-column: 1;
   grid-row: 5;
-  width: 200px; 
+  width: 8em; 
   height: 40px;
   max-height: 40px; 
   color:white;
@@ -357,11 +360,12 @@ cursor: pointer;
 
 
 .switch {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  top: 0.5em;
   width: 3.3em;
   height: 3.3em;
+  margin-left:260px;
+
 }
 
 .switch input {
@@ -376,7 +380,7 @@ cursor: pointer;
   border-radius: 26px;
   top: 0;
   margin-left: 5px;
-  margin-top:0.4em;
+  margin-right: 5px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -394,12 +398,11 @@ cursor: pointer;
   content: "🛈";
   height: 70%;
   text-align: center;
-  width: 1.6em;
+  width: 20px;
   float:left;
-  margin-top: 0.2em;
-  margin-left: 0.1em;
-  margin-right: 0.1em;
-  margin-bottom: 0.5em;
+  margin-top: 3px;
+  margin-left: 1px;
+  margin-bottom: 1px;
   background-color: #2266ff;
   border: 2px double #2266ff;
   border-radius: 50%;
@@ -416,12 +419,10 @@ input:clicked + .slider {
 
 input:hover + .slider {
   box-shadow: 0 0 1px #2266ff;
-  -webkit-transition: .4s;
   background-color: #b0c7fd;
 }
 input:checked + .slider {
   box-shadow: 0 0 1px #2266ff;
-  -webkit-transition: .4s;
   background-color: hsl(0, 0%, 0%);
 }
 
@@ -430,7 +431,9 @@ input:checked + .slider:before {
   -webkit-transform: translateX(31px);
   -ms-transform: translateX(31px);
   transform: translateX(31px);
-  -webkit-transition: .4s;
   
 }
 
+hr{
+  background-color:#2266ff;
+}

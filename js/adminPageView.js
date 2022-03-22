@@ -2,11 +2,11 @@ function updateAdminViewHome() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${createMenuHtmlAdmin()}
     
-    <div class="containerHome">
-        <h3 class="headerHome">Arrangementer</h3>
+    <div class="containerAdmin">
+        <h3 class="headerAdmin">Arrangementer</h3>
 
         
-        <div class="boxOneHome">
+        <div class="adminBoxOne">
 
         ${getAllHappeningsHome()}
         </div>
@@ -26,9 +26,9 @@ function updateAdminViewHome() {
         </form>
         </div>
 
-        <h3 class="headerHome2">Personer</h3>
+        <h3 class="headerAdmin2">Personer</h3>
         
-        <div class="boxTwoHome">
+        <div class="adminBoxTwo">
 
         ${getusersHome()}
         </div>

@@ -2,16 +2,14 @@ function updateViewHappenings() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtml()}
     <div class="container">
-    <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
+    <h4 class="HeaderAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
         <div class="boxOne">
 
-            
-            <div class="boxOne2">
+            <div class="HappeningList">
             ${getHappeningsHtml()}
             </div>
-        
-            <h3>Velg personer som skal være med i trekningen!</h3>
-            <div class="boxOne3">
+            <h4>Velg personer som skal være med i trekningen!</h4>
+            <div class="UserList">
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
             ${getChecked(
@@ -25,10 +23,10 @@ function updateViewHappenings() {
             
         </div></div>
             
-        <h3 class="boxtwo0">Trekninger</h3>
+        <h4 class="HeaderAboveTwo">Trekninger</h4>
         <div class="boxTwo">
 
-            <div id="box2"className="boxTwo2">
+            <div id="box2"className="DoneHappeningList">
 
             ${getDoneHappening()}
             
@@ -111,19 +109,24 @@ function getDoneHappening() {
     const dayName = dayNames[time.getDay()];
     const doneHappening = happenings[i];
     html += /*html*/ `
-        <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name
-      }</span>
-
-        </h3>
-        <label class="switch">
-        <input type="checkbox" id="cb1" onclick="toggleDetailsSelected(${doneHappening.id
-      })"${getChecked(doneHappening.detailsShown)}>
+        <h4>Trekning - <span style="color: #FF5733;">${
+          doneHappening.name
+        }</span>
+        </h4> <label class="switch">
+        <input type="checkbox" class="cb1" onclick="toggleDetailsSelected(${
+          doneHappening.id
+        })"${getChecked(doneHappening.detailsShown)}>
         <span class="slider"></span>
         </label>
-        <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn
-      }</span></h3>`
-    if (doneHappening.detailsShown === true) {
-      html += /*html*/`
+       
+        <h3>Trukket person - <span style="color: #6AB334;">${
+          doneHappening.userDrawn
+        }</span></h3>`
+
+        
+        if (doneHappening.detailsShown === true){
+          html += /*html*/`
+        <div>
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <h3>Kommentarer</h3>`
       for (let j = 0; j < comments.length; j++) {
@@ -147,8 +150,8 @@ function getDoneHappening() {
         <button id="slette" onclick="goToDeleteCommentPage(${doneHappening.id
         })">Slette en kommentar</button>
         <hr>
-        `;
-    }
+        </div> 
+        `;}else{html +=`<hr>`}
   }
   return html;
 }
