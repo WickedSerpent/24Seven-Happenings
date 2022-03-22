@@ -98,18 +98,24 @@ function getDoneHappening() {
         const dayName = dayNames[time.getDay()];
         const doneHappening = happenings[i];
         html += /*html*/`
-        <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
+        <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span>
+
+        <label class="switch">
+        <input type="checkbox" id="cb1" onclick="showDetails(${doneHappening.id})">
+        <span class="slider"></span>
+        </label>
+
+        </h3>
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
         <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
+
+
         <div id="details--${doneHappening.id}" style="display: none;">
         <h3>Trukket fra disse personene med færrest poeng:<br> 
         <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
         <h4>Trukket: ${dayName} ${dateText}</h4>
         </div> 
-        <label class="switch">
-        <input type="checkbox" id="cb1" onclick="showDetails(${doneHappening.id})">
-        <span class="slider"></span>
-        </label>
+
 
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
         <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
@@ -135,10 +141,6 @@ function happenMenuHtml() {
     return /*html*/ `
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
-          <label class="switch">
-          <input type="checkbox" id="cb1" onclick="goToDetailsPage(),check()">
-          <span class="slider"></span>
-          </label>
           </div>
       `;
   }
