@@ -124,21 +124,7 @@ const model = {
         ],
         
         doneHappenings: [
-            {
-                happeningId: 1,
-                id: 1,
-                name: "Kahoot",
-                userId: 8,
-                userDrawn: "Vegard",
-                participants: 
-                ['Sindre', 'Anders H', 'Bjørn', 
-                'Vegard', 'Matthias', 'Edgar', 
-                'Charlotte',],
-                comment: '<br>- Kommentarer kommer her',
-                time: "2022-03-17 09:35:46.230Z",
-                detailsShown: true,
-                
-            }
+           
         ],
     },
 
