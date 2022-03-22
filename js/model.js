@@ -50,6 +50,11 @@ const model = {
         },
 
         comment: '',
+
+        deleteComment: {
+            doneHappeningId: null,
+            areYouSure: false,
+        },
     },
 
     data: {
@@ -124,7 +129,7 @@ const model = {
         ],
         
         doneHappenings: [
-           
+
         ],
     },
 

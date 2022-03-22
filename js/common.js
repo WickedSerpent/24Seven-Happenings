@@ -16,6 +16,15 @@ function createMenuHtml() {
     `;
 }
 
+function createMenuDeleteCommentHtml() {
+  return /*html*/ `
+        <div class="topMenu">
+        <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
+        <button class="btn--top" onclick="model.app.page='happening'; updateView()">Tilbake</button>
+        </div>
+    `;
+}
+
 function logout() {
   if (confirm('Sikker på at du vil logge ut?') == true) {
     updateView();
@@ -260,19 +269,25 @@ function getNowForStorage() {
   return getDateStringForStorage(new Date());
 }
 
-function getLowestPointsFromEachHappening() {
-  let pointsInHappening = [];
-  let happenings = model.data.userPoints;
-  let happeningIds = getAllHappenings();
-  for (x in happeningIds) {
-    let pointsInEachHappening = [];
-    for (y in happenings) {
-      if (happenings[y].happeningId === happeningIds[x].id) {
-        pointsInEachHappening.push(happenings[y].points);
-      }
-    }
-    pointsInHappening.push(pointsInEachHappening);
+function getMaxCommentIdDoneHappening(id) {
+  let doneHappening = getDoneHappeningById(id)
+  let commentId = 0;
+  for (let comment of doneHappening.comments) {
+      if (comment.commentId > commentId) commentId = comment.commentId;
   }
-  let lowestPoints = pointsInHappening.map((arr) => Math.min(...arr));
-  return lowestPoints;
+  return commentId;
+}
+
+function getCommentIndexById(commentId, happeningId) {
+  let happening = getDoneHappeningById(happeningId)
+  for (let i = 0; i < happening.comments.length; i++) {
+      let comment = happening.comments[i];
+      if (comment.commentId === commentId) return i;
+  }
+  return null;
+}
+
+function getAllCommentsFromDoneHappening(id) {
+  let doneHappening = getDoneHappeningById(id)
+  return doneHappening.comments
 }

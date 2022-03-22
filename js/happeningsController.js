@@ -118,6 +118,7 @@ function drawUser(){
     drawnPerson.points += 2
     let winnerId = drawnPerson.userId
     let winnerUser = getUserById(winnerId)
+    winner.comments = []
     winner.id = getMaxDoneHappeningId() + 1
     winner.userId = winnerId
     winner.happeningId = getCheckedHappeningId()
@@ -133,31 +134,25 @@ function drawUser(){
 }
 
 function addComment(id){
-    if (model.inputs.comment !== '') {
-        let happening = getDoneHappeningById(id)
-        happening.comment += model.inputs.comment;
-        model.inputs.comment = ''
-        updateView()
-    }
-    else {
-       updateView();
-    }
-}
-
-function deleteComments(id){ 
-    if (confirm('Sikker på at du vil slette ALLE kommentarene ovenfor?') == false) {
-        return;
-        }
-    if (model.inputs.comment = '') {
+    let happening = getDoneHappeningById(id)
+    if (model.inputs.comment === '') {
         return
     }
     else {
-        let happening = getDoneHappeningById(id)
-        happening.comment = '';
-        happening.comment = model.inputs.comment;
+        let comment = {}
+        comment.commentId = getMaxCommentIdDoneHappening(id) + 1
+        comment.comment = model.inputs.comment
+        happening.comments.push(comment)
+        model.inputs.comment = ''
         updateView()
     }
-    }
+}
+
+function goToDeleteCommentPage(happeningId) {
+    model.app.page = 'deleteComment';
+    model.inputs.deleteComment.doneHappeningId = happeningId;
+    updateView()
+}
 
 
 function check() {
