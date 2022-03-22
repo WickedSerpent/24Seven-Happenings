@@ -1,7 +1,7 @@
 function deleteCommentView() {
     let id = model.inputs.deleteUser.id;
     document.getElementById('app').innerHTML = /*html*/`
-        ${createMenuHtml()}  
+        ${createMenuDeleteCommentHtml()}  
         <div class="deleteAndEdit">
         <h3> Slett kommentar</h3>
         ${createDeleteCommentHtml()}

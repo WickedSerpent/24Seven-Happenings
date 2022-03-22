@@ -16,6 +16,15 @@ function createMenuHtml() {
     `;
 }
 
+function createMenuDeleteCommentHtml() {
+  return /*html*/ `
+        <div class="topMenu">
+        <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
+        <button class="btn--top" onclick="model.app.page='happening'; updateView()">Tilbake</button>
+        </div>
+    `;
+}
+
 function logout() {
   if (confirm('Sikker på at du vil logge ut?') == true) {
     updateView();
