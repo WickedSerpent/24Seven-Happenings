@@ -134,10 +134,10 @@ function getDoneHappening() {
         }</span></h3>
         <form>
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
-        </form>
         <button onclick=addComment(${
           doneHappening.id
         })>Legg til kommentar</button>
+        </form>
         <button id="slette" onclick="deleteComments(${
           doneHappening.id
         })">Slette alle kommentarer</button>
