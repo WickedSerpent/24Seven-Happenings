@@ -50,6 +50,11 @@ const model = {
         },
 
         comment: '',
+
+        deleteComment: {
+            doneHappeningId: null,
+            areYouSure: false,
+        },
     },
 
     data: {
@@ -125,6 +130,23 @@ const model = {
         
         doneHappenings: [
            
+            {
+                comments: [
+                    {commentId: 1, comment: 'Kommentar 1'},
+                    {commentId: 2, comment: 'Kommentar 2'},
+                ],
+                happeningId: 1,
+                id: 1,
+                name: "Kahoot",
+                participants: ['Anders H', 'Bjørn', 'Charlotte', 'Edgar', 'Emil', 
+                'Espen', 'Fredrik', 'Helene', 'Jeanette', 'Jørn', 'Kay', 'Kjetil', 
+                'Matthias', 'Milad', 'Nicolai', 'Rune', 'Sindre', 'Steinar J', 
+                'Steinar S', 'Vegard'],
+                time: "2022-03-22 14:50:45.195Z",
+                userDrawn: "Nicolai",
+                userId: 17,
+            }
+
         ],
     },
 

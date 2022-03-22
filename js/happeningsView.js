@@ -15,8 +15,8 @@ function updateViewHappenings() {
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
             ${getChecked(
-              model.data.selectAll
-            )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+    model.data.selectAll
+  )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
             ${getUsers()}<br/>
             </div>
             <div  ><button class="trekkBtn"
@@ -95,6 +95,7 @@ function getDoneHappening() {
     happenings = doneHappenings;
   }
   for (let i = 0; i < happenings.length; i++) {
+    let comments = happenings[i].comments
     let drawTime = model.data.doneHappenings;
     const dayNames = [
       'Søndag',
@@ -110,41 +111,44 @@ function getDoneHappening() {
     const dayName = dayNames[time.getDay()];
     const doneHappening = happenings[i];
     html += /*html*/ `
-        <h3>Trekning - <span style="color: #FF5733;">${
-          doneHappening.name
-        }</span>
+        <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name
+      }</span>
 
         </h3>
         <label class="switch">
-        <input type="checkbox" id="cb1" onclick="toggleDetailsSelected(${
-          doneHappening.id
-        })"${getChecked(doneHappening.detailsShown)}>
+        <input type="checkbox" id="cb1" onclick="toggleDetailsSelected(${doneHappening.id
+      })"${getChecked(doneHappening.detailsShown)}>
         <span class="slider"></span>
         </label>
-        <h3>Trukket person - <span style="color: #6AB334;">${
-          doneHappening.userDrawn
-        }</span></h3>`
-
-        
-        if (doneHappening.detailsShown === true){
-          html += /*html*/`
-        <div>
+        <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn
+      }</span></h3>`
+    if (doneHappening.detailsShown === true) {
+      html += /*html*/`
         <h4>Trukket: ${dayName} ${dateText}</h4>
-        <h3>Kommentar: <span style="font-weight: 500;">${
-          doneHappening.comment
-        }</span></h3>
+        <h3>Kommentarer</h3>`
+      for (let j = 0; j < comments.length; j++) {
+        let comment = comments[j]
+        html += /*html*/`
+          <span style="font-weight: 500;">- ${comment.comment}</span><br />
+        `;
+      }
+
+      html += /*html*/ `
+        <br />
         <form>
-        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
-        <button onclick=addComment(${
-          doneHappening.id
+        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
+        title="Skriv kommentar" 
+        required type="text" 
+        oninput="model.inputs.comment=this.value"/> 
+        
+        <button onclick=addComment(${doneHappening.id
         })>Legg til kommentar</button>
         </form>
-        <button id="slette" onclick="deleteComments(${
-          doneHappening.id
-        })">Slette alle kommentarer</button>
+        <button id="slette" onclick="goToDeleteCommentPage(${doneHappening.id
+        })">Slette en kommentar</button>
         <hr>
-        </div> 
-        `;}
+        `;
+    }
   }
   return html;
 }
