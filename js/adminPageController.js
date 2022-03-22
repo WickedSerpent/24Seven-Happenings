@@ -91,7 +91,7 @@ function goToEditHappeningPage(happeningId) {
 }
 
 function sletteKommentar() {
-    if (confirm('Sikker på at du vil logge ut?') == true) {
+    if (confirm('Sikker på at du vil slette kommentar?') == true) {
       updateView();
     } else {
       updateView();
