@@ -1,8 +1,6 @@
 
 *{
 
- 
-
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none; 
@@ -10,8 +8,6 @@
   -moz-user-select: none; 
   -ms-user-select: none; 
   user-select: none; 
-
-  
 
  }
 
@@ -28,6 +24,7 @@
     -ms-overflow-style: none; /* IE 11 */
     scrollbar-width: none; /* Firefox 64 */
 }
+
 body{
   padding: 20px;
   /* background-color: #2266ff; */

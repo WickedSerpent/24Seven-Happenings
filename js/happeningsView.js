@@ -127,18 +127,11 @@ function getDoneHappening() {
         <h3>Trukket person - <span style="color: #6AB334;">${
           doneHappening.userDrawn
         }</span></h3>
+        <div id="details--${doneHappening.id}" style="display: none;">
+        <h4>Trukket: ${dayName} ${dateText}</h4>
         <h3>Kommentar: <span style="font-weight: 500;">${
           doneHappening.comment
         }</span></h3>
-
-        <div id="details--${doneHappening.id}" style="display: none;">
-        <h3>Trukket fra disse personene med færrest poeng:<br> 
-        <span style="color: #0075ff;">${createTextList(
-          doneHappening.participants
-        )}</span></h3>
-        <h4>Trukket: ${dayName} ${dateText}</h4>
-        </div> 
-
         <form>
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
         <button onclick=addComment(${
@@ -148,6 +141,8 @@ function getDoneHappening() {
           doneHappening.id
         })">Slette alle kommentarer</button>
         <hr>
+        </div> 
+
         </form>
         `;
   }
