@@ -409,7 +409,7 @@ input:clicked + .slider {
 input:hover + .slider {
   box-shadow: 0 0 1px #2266ff;
   -webkit-transition: .4s;
-  background-color: #000000;
+  background-color: #91e9ff;
 }
 input:checked + .slider {
   box-shadow: 0 0 1px #2266ff;
