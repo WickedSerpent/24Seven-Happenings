@@ -1,42 +1,9 @@
 function updateAdminViewHappenings() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtmlAdmin()}
-    <div class="container">
-    <h3 class="boxOne0">Velg <span style="color: #FF5733">en</span> trekning!</h3>
-        <div class="boxOne">
-
-            
-            <div class="boxOne2">
-            ${adminGetHappeningsHtml()}
-            </div>
-        
-            <h3>Velg personer som skal være med i trekningen!</h3>
-            <div class="boxOne3">
-            <input type="checkbox"
-            onclick="adminSelectAllOrNone(this.checked)"
-            ${adminGetChecked(
-              model.data.selectAll
-            )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            ${adminGetUsers()}<br/>
-            </div>
-            <div title="Trekk en person" class="trekkBtn"><button style="
-            width: 200px; 
-            height: 40px; 
-            font-size: 20px;
-            cursor: pointer;
-            font-weight: bold;"
-            
-            >Trekk!</button>
-            
-        </div></div>
-            
-        <h3 class="boxtwo0">Trekninger</h3>
-        <div class="boxTwo">
-
-            <div className="boxTwo2">
-
+        <div class="adminHappen">
             ${adminGetDoneHappening()}
-    </div>
+            </div>
     `;
 }
 
@@ -48,8 +15,7 @@ function adminGetHappeningsHtml() {
     let happening = happenings[i];
     html += /*html*/ `
         <input type="checkbox"
-        onclick="adminToggleHappeningSelected(${happening.id})" 
-        ${adminGetChecked(happening.isSelected)}/>
+        onclick="adminGetDoneHappening()" />
         ${happening.name}<br/>    
         `;
   }
@@ -99,16 +65,13 @@ function adminGetDoneHappening() {
     const dayName = dayNames[time.getDay()];
     const doneHappening = happenings[i];
     html += /*html*/`
-      <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3>
+      <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span></h3> 
       <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
       <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
-      <div id="details--${doneHappening.id}">
       <h3>Trukket fra disse personene med færrest poeng:<br> 
-      <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3>
+      <span style="color: #0075ff;">${createTextList(doneHappening.participants)}</span></h3><br> 
       <h4>Trukket: ${dayName} ${dateText}</h4>
-      </div> 
-      <button onclick="showDetails(${doneHappening.id})">Informasjon</button>
-      <button onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
+      <button class="slettDoneHappen" onclick="deleteDoneHappening(${doneHappening.id})">Slett</button>
       <hr>
       `;
   }
@@ -141,7 +104,6 @@ function happenMenuHtmlAdmin() {
   return /*html*/ `
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
-          <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
           <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
           </div>
       `;

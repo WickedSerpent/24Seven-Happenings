@@ -100,15 +100,14 @@ function getDoneHappening() {
         html += /*html*/`
         <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name}</span>
 
+        </h3>
         <label class="switch">
         <input type="checkbox" id="cb1" onclick="showDetails(${doneHappening.id})">
         <span class="slider"></span>
         </label>
-
-        </h3>
+ 
         <h3>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn}</span></h3>
         <h3>Kommentar: <span style="font-weight: 500;">${doneHappening.comment}</span></h3>
-
 
         <div id="details--${doneHappening.id}" style="display: none;">
         <h3>Trukket fra disse personene med færrest poeng:<br> 
@@ -116,11 +115,11 @@ function getDoneHappening() {
         <h4>Trukket: ${dayName} ${dateText}</h4>
         </div> 
 
-
         <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" title="Skriv kommentar" required type="text" oninput="model.inputs.comment='<br>' + '- ' + this.value"/> 
         <button onclick=addComment(${doneHappening.id})>Legg til kommentar</button>
         <button id="slette" onclick="deleteComments(${doneHappening.id})">Slette alle kommentarer</button>
         <hr>
+
         `;
     }
     return html;
