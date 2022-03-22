@@ -116,18 +116,19 @@ function getDoneHappening() {
 
         </h3>
         <label class="switch">
-        <input type="checkbox" id="cb1" onclick="showDetails(${
+        <input type="checkbox" id="cb1" onclick="toggleDetailsSelected(${
           doneHappening.id
-        })">
+        })"${getChecked(doneHappening.detailsShown)}>
         <span class="slider"></span>
         </label>
-
-
-
         <h3>Trukket person - <span style="color: #6AB334;">${
           doneHappening.userDrawn
-        }</span></h3>
-        <div id="details--${doneHappening.id}" style="display: none;">
+        }</span></h3>`
+
+        
+        if (doneHappening.detailsShown === true){
+          html += /*html*/`
+        <div>
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <h3>Kommentar: <span style="font-weight: 500;">${
           doneHappening.comment
@@ -143,7 +144,7 @@ function getDoneHappening() {
         })">Slette alle kommentarer</button>
         <hr>
         </div> 
-        `;
+        `;}
   }
   return html;
 }

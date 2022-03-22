@@ -16,6 +16,12 @@ function togglePersonSelected(id) {
     updateView();
 }
 
+function toggleDetailsSelected(id) {
+    const doneHappening = getDoneHappeningById(id);
+    doneHappening.detailsShown = !doneHappening.detailsShown;
+    updateView();
+}
+
 function toggleHappeningSelected(id) {
     const happening = getHappeningById(id)
     happening.isSelected = !happening.isSelected;
@@ -119,6 +125,7 @@ function drawUser(){
     winner.userDrawn = winnerUser.name
     winner.time = getNowForStorage()
     winner.comment = ''
+    winner.detailsShown = false,
     winners.unshift(winner)
     model.app.page = 'happening'
     updateView()
