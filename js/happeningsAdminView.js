@@ -25,7 +25,7 @@ function updateAdminViewHappenings() {
             font-size: 20px;
             cursor: pointer;
             font-weight: bold;"
-            onclick=adminDrawUser()
+            
             >Trekk!</button>
             
         </div></div>
@@ -144,8 +144,6 @@ function happenMenuHtmlAdmin() {
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
           <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekningsside</button>
-          <button class="btn--top" onclick="model.app.page='resetHappenings'; updateAdminView()">Tilbakestill trekninger</button>
-
           <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
           </div>
       `;
