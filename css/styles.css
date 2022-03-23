@@ -1,30 +1,28 @@
 
 *{
+font-family: 'Poppins', sans-serif;
+-webkit-touch-callout: none;
+-webkit-user-select: none; 
+-khtml-user-select: none;  
+-moz-user-select: none; 
+-ms-user-select: none; 
+user-select: none; 
+box-sizing: border-box;
 
-  font-family: 'Poppins', sans-serif;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none; 
-  -khtml-user-select: none;  
-  -moz-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-  box-sizing: border-box;
+}
 
+::-webkit-scrollbar { display: none; }
+::-webkit-scrollbar{
 
- }
-
- ::-webkit-scrollbar { display: none; }
- ::-webkit-scrollbar{
-
-  width: 0;
-  background: transparent;
+width: 0;
+background: transparent;
 
 }
 .hide-scrollbar
 {
-    overflow: auto;
-    -ms-overflow-style: none; /* IE 11 */
-    scrollbar-width: none; /* Firefox 64 */
+  overflow: auto;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 }
 
 
@@ -37,16 +35,16 @@ ul {
   list-style: none;
 }
 .topMenu{
-  margin-top: 15px;
-  min-width: 47.5rem;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
-  padding-bottom: 5px;
-  max-height: 24vh;
-  min-height: fit-content;
-  margin-bottom: 0;
-  
-  }
+margin-top: 15px;
+min-width: 47.5rem;
+margin-bottom: 0.5rem;
+margin-right: 0.5rem;
+padding-bottom: 5px;
+max-height: 24vh;
+min-height: fit-content;
+margin-bottom: 0;
+
+}
 
   .btn--top {
   text-transform: uppercase;
@@ -59,12 +57,12 @@ ul {
   margin-right: 0.5rem;
   margin-bottom: 1em;
   cursor: pointer;
-  }
+}
   
   
-  .btn--top:hover,
+.btn--top:hover,
   .btn--top:active {
-  background-color: #000000;
+    background-color: #000000;
   }
 
 
@@ -79,29 +77,29 @@ ul {
   max-width: 43em;
   margin-top: -20px;
   border-bottom: 5px double #2266ff;
-  }
+}
   
-  .headerAdmin {
+.headerAdmin {
   grid-area: headerAdmin;
   position: relative;
   grid-column: 1;
   grid-row: 1;
   max-height: 0.5em;
-  }
+}
   
-  .headerAdmin2 {
+.headerAdmin2 {
   grid-area: headerAdmin2;
   position: relative;
   grid-column: 2;
   grid-row: 1;
   max-height: 0.5em;
-  }
-  .hidebtn{
-    color: white;
-    background-color: white;
-    border: white;
-  }
-  .kolonne1Admin{
+}
+.hidebtn{
+  color: white;
+  background-color: white;
+  border: white;
+}
+.kolonne1Admin{
   padding-top: 5px;
   margin-right: 20px;
   /* height: 46.875rem; */
@@ -112,6 +110,7 @@ ul {
   min-width: 18.75em;
   scrollbar-width: none;
 }
+
 .kolonne2Admin{
   padding-top: 5px;
   margin-right: 20px;
@@ -122,96 +121,97 @@ ul {
   max-width: 18.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  }
+}
   
-  .adminBoxOne{
-    padding-top: 5px;
-    margin-right: 20px;
-    overflow-y: scroll;
-    max-height: 26em;
-    min-height: 10rem;
-    max-width: 30.75em;
-    min-width: 18.75em;
-    scrollbar-width: none;
-    }
-
-  .adminBoxTwo{
+.adminBoxOne{
   padding-top: 5px;
+  padding-bottom: 5em;
   margin-right: 20px;
   overflow-y: scroll;
-  max-height: 26em;
-  min-height: 10rem;
+  max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  }
+}
+.adminBoxTwo{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 20px;
+  overflow-y: scroll;
+  min-height: 0;
+  max-height: 26em;
+  min-height: 10em;
+  max-width: 30.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+}
+.adminHappen{
+  max-height: 78vh;
+  overflow-y: scroll;
+}
+.addArrangementBox{
+  position:absolute;
+  padding: 1em;
+  margin-top: 30px;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  bottom: 0;
 
-  .adminHappen{
-    max-height: 78vh;
-    overflow-y: scroll;
-  }
-  .addArrangementBox{
-    position:absolute;
-    margin-top: 30px;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    bottom: 0;
-    
-    }
-    
-    .addPersonBox{
-    position:absolute;
-    margin-top: 30px;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    bottom: 0;
-    }
-    .addBtn
-    {
-    border: double;
-    background-color: #2266ff;
-    color:white;
-    border-radius: 25%;
-    cursor: pointer;
-    }
-    .addBtn:hover
-    { 
-    border: double;
-    background-color: #000000;
-    color:white;
-    border-radius: 25%;
-    cursor: pointer;
-    
-    }
-  
+}
+
+.addPersonBox{
+  position:absolute;
+  padding: 1em;
+  margin-top: 2em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  bottom: 0;
+}
+.addBtn
+{
+  border: double;
+  background-color: #2266ff;
+  color:white;
+  border-radius: 25%;
+  cursor: pointer;
+}
+.addBtn:hover
+{ 
+  border: double;
+  background-color: #000000;
+  color:white;
+  border-radius: 25%;
+  cursor: pointer;
+
+}
 .btn{
-text-transform: uppercase;
-background-color: #2266ff;
-justify-content: center;
-justify-items: center;
-height: 35px;
-width: 35px;
-color: #fff ;
-font-weight: bold;
-text-decoration: none;
-float: right;
-border:double;
-border-radius: 25%;
-margin: 2px;
-cursor: pointer;
+  text-transform: uppercase;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  height: 35px;
+  width: 35px;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  border:double;
+  border-radius: 25%;
+  margin: 2px;
+  cursor: pointer;
 }
 .btnL {
-background-color: #2266ff;
-justify-content: center;
-justify-items: center;
-color: #fff ;
-font-weight: bold;
-text-decoration: none;
-border:solid;
-height: 2.4em;
-border-radius:6px;
-margin: 2px;
-cursor: pointer;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  border:solid;
+  height: 2.4em;
+  border-radius:6px;
+  margin: 2px;
+  cursor: pointer;
 }
 
 .btnDetailsAndDel{
@@ -228,26 +228,26 @@ cursor: pointer;
   border-radius: 25%;
   margin: 2px;
   cursor: pointer;
-  }
+}
 .btn:hover,
 .btn:active {
-background-color: #000000;
-border:5px, double;
-cursor: pointer;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
 }
 
 
 .container{
-display: flex;
-justify-content: flex-start;
-width: 100vw;
-position:absolute;
-height: 80vh;
-min-width: 30rem;
-max-width: 54rem;
-margin-top: -20px;
-/* height: calc(60vh - 10em); */
-border-bottom: 5px double #2266ff;
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  position:absolute;
+  height: 80vh;
+  min-width: 30rem;
+  max-width: 54rem;
+  margin-top: -20px;
+  /* height: calc(60vh - 10em); */
+  border-bottom: 5px double #2266ff; 
 }
 
 .kolonne1{
