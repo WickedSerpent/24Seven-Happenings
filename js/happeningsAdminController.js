@@ -84,6 +84,28 @@ function adminGetCheckedHappenings() {
     return checkedhappenings;
 }
 
+function addCommentAdmin(id){
+    let happening = getDoneHappeningById(id)
+    if (model.inputs.comment === '') {
+        return
+    }
+    else {
+        let comment = {}
+        comment.commentId = getMaxCommentIdDoneHappening(id) + 1
+        comment.comment = model.inputs.comment
+        happening.comments.push(comment)
+        model.inputs.comment = ''
+        updateAdminView()
+    }
+}
+
+function goToDeleteCommentPageAdmin(happeningId) {
+    model.app.page = 'deleteCommentAdmin';
+    model.inputs.deleteComment.doneHappeningId = happeningId;
+    updateAdminView()
+}
+
+
 // function resetHappenings(){
 //     model.data.doneHappenings = []
 //     updateAdminView()
