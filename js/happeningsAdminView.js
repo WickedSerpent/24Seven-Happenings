@@ -96,13 +96,10 @@ function adminGetDoneHappening() {
         title="Skriv kommentar" 
         required type="text" 
         oninput="model.inputs.comment=this.value"/> 
-        
-        <button onclick=addCommentAdmin(${doneHappening.id
-      })>Legg til kommentar</button>
-        </form>
-        <button id="slette" onclick="goToDeleteCommentPageAdmin(${doneHappening.id
-      })">Slette en kommentar</button>
+        <button onclick=addCommentAdmin(${doneHappening.id})>Legg til kommentar</button>
+        <button id="slette" onclick="goToDeleteCommentPageAdmin(${doneHappening.id})">Slette en kommentar</button>
         <button onclick="deleteDoneHappening(${doneHappening.id})">Slett Happening</button>
+        </form>
         <hr>
         </div> 
         `;
