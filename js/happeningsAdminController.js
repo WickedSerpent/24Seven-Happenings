@@ -43,48 +43,27 @@ function adminGetCheckedHappenings() {
     return checkedhappenings;
 }
 
-// function adminSelectAllOrNone(selectAll) {
-//     model.data.selectAll = selectAll;
-//     for (let user of model.data.users) {
-//         user.isSelected = selectAll;
-//     }
-//     updateAdminView();
-// }
+function addCommentAdmin(id){
+    let happening = getDoneHappeningById(id)
+    if (model.inputs.comment === '') {
+        return
+    }
+    else {
+        let comment = {}
+        comment.commentId = getMaxCommentIdDoneHappening(id) + 1
+        comment.comment = model.inputs.comment
+        happening.comments.push(comment)
+        model.inputs.comment = ''
+        updateAdminView()
+    }
+}
 
-// function adminGetChecked(isSelected) {
-//     return isSelected ? 'checked="checked"' : '';
-// }
+function goToDeleteCommentPageAdmin(happeningId) {
+    model.app.page = 'deleteCommentAdmin';
+    model.inputs.deleteComment.doneHappeningId = happeningId;
+    updateAdminView()
+}
 
-// function adminTogglePersonSelected(id) {
-//     const user = getUserById(id);
-//     user.isSelected = !user.isSelected;
-//     updateAdminView();
-// }
-
-// function adminToggleHappeningSelected(id) {
-//     const happening = getHappeningById(id)
-//     happening.isSelected = !happening.isSelected;
-//     updateAdminView();
-// }
-
-
-
-
-// function adminGetCheckedHappeningName() {
-//     let happenings = model.data.happenings
-//     for (happening of happenings) {
-//         if (happening.isSelected === true)
-//             return happening.name
-//     }
-// }
-
-// function getCheckedHappeningId() {
-//     let happenings = model.data.happenings
-//     for (happening of happenings) {
-//         if (happening.isSelected === true)
-//             return happening.id
-//     }
-// }
 
 // function resetHappenings(){
 //     model.data.doneHappenings = []

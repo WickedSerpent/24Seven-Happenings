@@ -17,7 +17,8 @@ updateView()
             else if(page === 'deleteHappening') updateViewDeleteHappening();
             else if(page === 'resetHappenings') resetHappeningsView();
             else if(page === 'login') loginView();
-            else if(page === 'details') updateDetailsView(); 
+            else if(page === 'details') updateDetailsView();
+            else if(page === 'deleteCommentAdmin') deleteCommentViewAdmin(); 
         }
 
             // function updateDetailsView(){
