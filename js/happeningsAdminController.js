@@ -1,45 +1,4 @@
-function adminSelectAllOrNone(selectAll) {
-    model.data.selectAll = selectAll;
-    for (let user of model.data.users) {
-        user.isSelected = selectAll;
-    }
-    updateAdminView();
-}
 
-function adminGetChecked(isSelected) {
-    return isSelected ? 'checked="checked"' : '';
-}
-
-function adminTogglePersonSelected(id) {
-    const user = getUserById(id);
-    user.isSelected = !user.isSelected;
-    updateAdminView();
-}
-
-function adminToggleHappeningSelected(id) {
-    const happening = getHappeningById(id)
-    happening.isSelected = !happening.isSelected;
-    updateAdminView();
-}
-
-
-
-
-function adminGetCheckedHappeningName() {
-    let happenings = model.data.happenings
-    for (happening of happenings) {
-        if (happening.isSelected === true)
-            return happening.name
-    }
-}
-
-function getCheckedHappeningId() {
-    let happenings = model.data.happenings
-    for (happening of happenings) {
-        if (happening.isSelected === true)
-            return happening.id
-    }
-}
 
 function adminGetAllHappeningIds(){
     let happenings = []
@@ -83,6 +42,49 @@ function adminGetCheckedHappenings() {
     })
     return checkedhappenings;
 }
+
+// function adminSelectAllOrNone(selectAll) {
+//     model.data.selectAll = selectAll;
+//     for (let user of model.data.users) {
+//         user.isSelected = selectAll;
+//     }
+//     updateAdminView();
+// }
+
+// function adminGetChecked(isSelected) {
+//     return isSelected ? 'checked="checked"' : '';
+// }
+
+// function adminTogglePersonSelected(id) {
+//     const user = getUserById(id);
+//     user.isSelected = !user.isSelected;
+//     updateAdminView();
+// }
+
+// function adminToggleHappeningSelected(id) {
+//     const happening = getHappeningById(id)
+//     happening.isSelected = !happening.isSelected;
+//     updateAdminView();
+// }
+
+
+
+
+// function adminGetCheckedHappeningName() {
+//     let happenings = model.data.happenings
+//     for (happening of happenings) {
+//         if (happening.isSelected === true)
+//             return happening.name
+//     }
+// }
+
+// function getCheckedHappeningId() {
+//     let happenings = model.data.happenings
+//     for (happening of happenings) {
+//         if (happening.isSelected === true)
+//             return happening.id
+//     }
+// }
 
 // function resetHappenings(){
 //     model.data.doneHappenings = []
