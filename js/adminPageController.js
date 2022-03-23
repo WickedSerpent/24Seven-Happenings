@@ -12,6 +12,7 @@ function createNewUser() {
     model.inputs.newUser.name = '';
 }
 
+
 function createNewHappening() {
     model.app.page = 'admin'
     let happening = {};
