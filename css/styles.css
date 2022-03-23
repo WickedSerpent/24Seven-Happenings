@@ -105,7 +105,7 @@ margin-bottom: 0;
   /* height: 46.875rem; */
   width:  35.25em;
   max-height:78vh;
-  min-height: 10rem;
+  min-height: 10em;
   max-width: 20.75em;
   min-width: 18.75em;
   scrollbar-width: none;
@@ -117,7 +117,7 @@ margin-bottom: 0;
   /* height: 46.875rem; */
   width:  35.25em;
   max-height:78vh;
-  min-height: 10rem;
+  min-height: 10em;
   max-width: 18.75em;
   min-width: 18.75em;
   scrollbar-width: none;
@@ -135,12 +135,10 @@ margin-bottom: 0;
 }
 .adminBoxTwo{
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 5em;
   margin-right: 20px;
   overflow-y: scroll;
-  min-height: 0;
-  max-height: 26em;
-  min-height: 10em;
+  max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
@@ -162,7 +160,7 @@ margin-bottom: 0;
 .addPersonBox{
   position:absolute;
   padding: 1em;
-  margin-top: 2em;
+  margin-top: 30px;
   margin-right: 1em;
   margin-bottom: 1em;
   bottom: 0;
@@ -309,23 +307,23 @@ white-space: pre-wrap;
 
 
 .happeningList{
-grid-area: HappeningList;
-min-width: 10em;
-max-width: 10em;
-overflow-y: scroll;
-max-height: 57vh;
-scrollbar-width: none;
+  grid-area: HappeningList;
+  min-width: 10em;
+  max-width: 10em;
+  overflow-y: scroll;
+  max-height: 57vh;
+  scrollbar-width: none;
 }
 
 
 .userList{
-min-width: 8em;
-max-width: 8em;
-display: block;
-margin-bottom: 5px;
-overflow-y: scroll;
-max-height: 60vh;
-scrollbar-width: none;
+  min-width: 8em;
+  max-width: 8em;
+  display: block;
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  max-height: 60vh;
+  scrollbar-width: none;
 }
 
 
@@ -356,9 +354,9 @@ scrollbar-width: none;
 }
 .trekkBtn:hover,
 .trekkBtn:active {
-background-color: #000000;
-border:5px, double;
-cursor: pointer;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
 }
 
 .doneHappeningBtn{
