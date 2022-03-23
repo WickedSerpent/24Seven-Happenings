@@ -9,7 +9,7 @@
   -ms-user-select: none; 
   user-select: none; 
   box-sizing: border-box;
-  
+
 
  }
 
@@ -27,10 +27,7 @@
     scrollbar-width: none; /* Firefox 64 */
 }
 
-body{
-  padding: 20px;
-  /* background-color: #2266ff; */
-}
+
 
 [id*=details] {
   display: none;
@@ -40,9 +37,10 @@ ul {
   list-style: none;
 }
 .topMenu{
-  margin-top: -15px;
+  margin-top: 15px;
   min-width: 47.5rem;
   margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
   padding-bottom: 5px;
   max-height: 24vh;
   min-height: fit-content;
@@ -58,7 +56,7 @@ ul {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 6px;
-  
+  margin-right: 0.5rem;
   margin-bottom: 1em;
   cursor: pointer;
   }
@@ -72,22 +70,15 @@ ul {
 
 .containerAdmin
 {
-  justify-content: center;
-  display: grid;
- 
-  margin-top: -20px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
   position:absolute;
-  grid-template-columns: 2;
-  grid-template-rows: 3;
-  grid-auto-rows: dense;
-  /* height: calc(70vh - 10px); */
-  grid-auto-rows: max-content, min-content;
-  min-width: 357px;
+  height: 80vh;
+  min-width: 30em;
+  max-width: 43em;
+  margin-top: -20px;
   border-bottom: 5px double #2266ff;
-  grid-template-areas:  "headerAdmin,     headerAdmin2"
-                        "adminBoxOne,    adminBoxTwo"
-                        "addArrangementBox, addPersonBox";
-  
   }
   
   .headerAdmin {
@@ -110,37 +101,88 @@ ul {
     background-color: white;
     border: white;
   }
+  .kolonne1Admin{
+  padding-top: 5px;
+  margin-right: 20px;
+  /* height: 46.875rem; */
+  width:  35.25em;
+  max-height:78vh;
+  min-height: 10rem;
+  max-width: 20.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+}
+.kolonne2Admin{
+  padding-top: 5px;
+  margin-right: 20px;
+  /* height: 46.875rem; */
+  width:  35.25em;
+  max-height:78vh;
+  min-height: 10rem;
+  max-width: 18.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+  }
+  
   .adminBoxOne{
-    grid-area: adminBoxOne;
     padding-top: 5px;
     margin-right: 20px;
-    /* height: 46.875rem; */
-    width:  31.25rem;
     overflow-y: scroll;
-
-    max-height:75vh;
+    max-height: 26em;
     min-height: 10rem;
-    max-width: 18.75rem;
-    min-width: 18.75rem;
-    grid-column: 1;
-    grid-row: 2;
+    max-width: 30.75em;
+    min-width: 18.75em;
     scrollbar-width: none;
     }
-  
+
   .adminBoxTwo{
-  grid-area: adminBoxTwo;
   padding-top: 5px;
   margin-right: 20px;
   overflow-y: scroll;
-  max-height:75vh;
+  max-height: 26em;
   min-height: 10rem;
   max-width: 30.75em;
   min-width: 18.75em;
-  grid-column: 2;
-  grid-row: 2;
   scrollbar-width: none;
   }
 
+  .adminHappen{
+    max-height: 78vh;
+    overflow-y: scroll;
+  }
+  .addArrangementBox{
+    position:absolute;
+    margin-top: 30px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    bottom: 0;
+    
+    }
+    
+    .addPersonBox{
+    position:absolute;
+    margin-top: 30px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    bottom: 0;
+    }
+    .addBtn
+    {
+    border: double;
+    background-color: #2266ff;
+    color:white;
+    border-radius: 25%;
+    cursor: pointer;
+    }
+    .addBtn:hover
+    { 
+    border: double;
+    background-color: #000000;
+    color:white;
+    border-radius: 25%;
+    cursor: pointer;
+    
+    }
   
 .btn{
 text-transform: uppercase;
@@ -196,138 +238,95 @@ cursor: pointer;
 
 
 .container{
-display: grid;
-background-color: white;
-margin-top: -20px;
+display: flex;
+justify-content: flex-start;
+width: 100vw;
 position:absolute;
-grid-template-columns: 2;
+height: 80vh;
+min-width: 30rem;
+max-width: 54rem;
+margin-top: -20px;
 /* height: calc(60vh - 10em); */
-min-height: 1fr;
-max-height: 3fr;
-grid-auto-rows: dense;
-min-width: 50rem;
-max-width: 50rem;
 border-bottom: 5px double #2266ff;
-grid-auto-rows: minmax(min-content, max-content);
-/* grid-template-areas: "HeaderAboveOne,    HeaderAboveTwo"
-                      "HappeningList,    DoneHappeningList"
-                      "boxOne2,          DoneHappeningList"
-                      "UserLisst,         DoneHappeningList"
-                      "trekkBtn,         DoneHappeningList"; */
 }
 
-.addArrangementBox{
-grid-area: addArrangementBox;
-grid-column: 1;
-grid-row: 3;
-margin-top: 30px;
-margin-right: 1em;
-margin-bottom: 1em;
-
+.kolonne1{
+  position:relative;
+  padding-right: 1em;
+  width: 15vw;
+  min-width: 10em;
+  height: 78vh;
+  word-wrap: break-word;
 }
 
-.addPersonBox{
-grid-area: addPersonBox;
-grid-column: 2;
-grid-row: 3;
-margin-top: 30px;
+.kolonne2{
+  position: relative;
+  width: 40vw;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left:1em;
+  padding-right:1em;
+  max-height: 78vh;
+  min-width: 30em;
+}
+.kolonne3{
+  padding-left: 1em;
+  position: relative;
+  max-height: 78vh;
+  min-width: 8em;
+  position: relative;
+}
+.checkboxWrap{
+  text-align: right;
+  word-wrap: break word;
 
 }
-.addBtn
-{
-border: double;
-background-color: #2266ff;
-color:white;
-border-radius: 25%;
-cursor: pointer;
+.checkboxWrap input{
+  float:right;
 }
-.addBtn:hover
-{ 
-border: double;
-background-color: #000000;
-color:white;
-border-radius: 25%;
-cursor: pointer;
 
+.doneHappenList{
+  max-height: 28em;
+  overflow-y: scroll;
 }
 
 /*total høyde 44.25*/
-.HeaderAboveOne {
-grid-area: HeaderAboveOne;
-grid-column:1;
-grid-row:1;
+.headerAboveOne {
 max-width: 20vw;
 min-width: 11.25rem;
-
+white-space: pre-wrap;
+}
+.headerAboveTwo {
+  
+  min-width: 14.375rem;
+  white-space: pre-wrap;
+}
+.headerAboveThree { 
+ min-width: 14.375rem;
+ white-space: pre-wrap;
 }
 
 
 
-.boxOne{
-  grid-area: boxOne;
-  overflow-y: scroll;
-  width: 25%;
-  float: left;
-  min-width: 11.25rem;
-  max-width: 20vw;
-  max-height: 75vh;
-  /* min-height: 10rem; */
-  float: left;
-  grid-column: 1;
-  grid-row: 2;
-  scrollbar-width: none;
-}
-
-.HappeningList{
+.happeningList{
 grid-area: HappeningList;
-min-width: 8em;
-max-width: 8em;
-display: block;
-position: relative;
+min-width: 10em;
+max-width: 10em;
 overflow-y: scroll;
-max-height: 10vh;
-min-height: 7vh;
-grid-column: 1;
-grid-row: 3;
 scrollbar-width: none;
-/* background-color: #dde7ff; */
 }
 
-.UserList{
-grid-area: UserList;
+
+.userList{
 min-width: 8em;
 max-width: 8em;
 display: block;
 margin-bottom: 5px;
 overflow-y: scroll;
-max-height: 40vh;
-min-height: 40vh;
-grid-column: 1;
-grid-row: 4;
+height: 50vh;
 scrollbar-width: none;
-/* background-color: #dde7ff; */
 }
 
-.HeaderAboveTwo {
-grid-area: HeaderAboveTwo;
-min-width: 14.375rem;
-grid-column: 2;
-grid-row: 1;
-}
-
-.boxTwo{
-  grid-area: boxTwo;
-  min-width: 37.5rem; 
-  position: relative;
-  grid-column: 2;
-  grid-row: 2;
-  width: 25%;
-  float: left;
-  max-height: 75vh;
-  grid-column: 2;
-  grid-row: 2;
-  overflow-y: scroll;
-}
 
 .comment {
   position: absolute;
@@ -342,12 +341,8 @@ grid-row: 1;
 
 .trekkBtn{  
   grid-area: trekkBtn;
-  position: relative;
-  bottom:0;
-  margin-top: 10px;
-  margin-bottom: 1px;
-  grid-column: 1;
-  grid-row: 5;
+  position:absolute;
+  bottom: 1rem;
   width: 8em; 
   height: 40px;
   max-height: 40px; 
@@ -373,12 +368,11 @@ cursor: pointer;
 
 
 .switch {
-  position: absolute;
-  display: inline-block;
+  position:relative;
+  display:  block;
   width: 3.3em;
   height: 3.3em;
   margin-left:260px;
-
 }
 
 .switch input {
@@ -392,8 +386,8 @@ cursor: pointer;
   cursor: pointer;
   border-radius: 26px;
   top: 0;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: -250px;
+ 
   left: 0;
   right: 0;
   bottom: 0;
@@ -447,6 +441,6 @@ input:checked + .slider:before {
   
 }
 
-hr{
+/* hr{
   background-color:#2266ff;
-}
+} */

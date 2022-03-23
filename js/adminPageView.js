@@ -3,6 +3,7 @@ function updateAdminViewHome() {
     ${createMenuHtmlAdmin()}
     
     <div class="containerAdmin">
+      <div class="kolonne1Admin">
         <h3 class="headerAdmin">Arrangementer</h3>
 
         
@@ -21,11 +22,14 @@ function updateAdminViewHome() {
         title="Skriv navn på arrangement"
         required
         >
-        
-        <button title="Legg til" class="addBtn" onclick="createNewHappening()">+</button>
+        <button 
+        title="Legg til" 
+        class="addBtn" 
+        onclick="createNewHappening()">+</button>
         </form>
         </div>
-
+      </div>
+      <div class="kolonne2Admin">
         <h3 class="headerAdmin2">Personer</h3>
         
         <div class="adminBoxTwo">
@@ -47,6 +51,7 @@ function updateAdminViewHome() {
         </form>
 
         </div>
+      </div>
     </div>
         `;
 }

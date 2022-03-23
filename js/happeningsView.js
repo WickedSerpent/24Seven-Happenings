@@ -2,14 +2,29 @@ function updateViewHappenings() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtml()}
     <div class="container">
-    <h4 class="HeaderAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
-        <div class="boxOne">
-
-            <div class="HappeningList">
+      
+      <div class="kolonne1">
+      <h4 class="headerAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
+            <div class="happeningList">
             ${getHappeningsHtml()}
             </div>
-            <h4>Velg personer som skal være med i trekningen!</h4>
-            <div class="UserList">
+            <div  ><button class="trekkBtn"
+            onclick=drawUser()
+            >Trekk!</button>
+            </div>
+      </div>
+
+
+      <div class="kolonne2">
+        <h4 class="headerAboveTwo">Trekninger</h4>
+           <div class="doneHappenList">
+            ${getDoneHappening()}
+            </div>
+      </div>
+
+      <div class="kolonne3">
+            <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
+            <div class="userList">
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
             ${getChecked(
@@ -17,23 +32,9 @@ function updateViewHappenings() {
   )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
             ${getUsers()}<br/>
             </div>
-            <div  ><button class="trekkBtn"
-            onclick=drawUser()
-            >Trekk!</button>
-            
-        </div></div>
-            
-        <h4 class="HeaderAboveTwo">Trekninger</h4>
-        <div class="boxTwo">
+      </div>
+  </div>
 
-            <div id="box2"className="DoneHappeningList">
-
-            ${getDoneHappening()}
-            
-            </div>
-            
-        </div>
-    </div>
     `;
 }
 
@@ -46,10 +47,12 @@ function getHappeningsHtml() {
   for (let i = 0; i < happenings.length; i++) {
     let happening = happenings[i];
     html += /*html*/ `
-        <input type="checkbox"
+      <div class="checkboxWrap">
+        <input type="checkbox" class="HappeningCheckbox"
         onclick="toggleHappeningSelected(${happening.id})" 
         ${getChecked(happening.isSelected)}/>
         ${happening.name}<br/>    
+        </div>
         `;
   }
   return html;
@@ -112,16 +115,17 @@ function getDoneHappening() {
         <h4>Trekning - <span style="color: #FF5733;">${
           doneHappening.name
         }</span>
-        </h4> <label class="switch">
+        </h4> 
+       
+        <h3>Trukket person - <span style="color: #6AB334;">${
+          doneHappening.userDrawn
+        }</span></h3>
+        <label class="switch">
         <input type="checkbox" class="cb1" onclick="toggleDetailsSelected(${
           doneHappening.id
         })"${getChecked(doneHappening.detailsShown)}>
         <span class="slider"></span>
-        </label>
-       
-        <h3>Trukket person - <span style="color: #6AB334;">${
-          doneHappening.userDrawn
-        }</span></h3>`
+        </label>`
 
         
         if (doneHappening.detailsShown === true){
