@@ -136,9 +136,13 @@ function getDoneHappening() {
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <h3>Kommentarer</h3>`
       for (let j = 0; j < comments.length; j++) {
+        const commentTime = new Date(comments[j].commentTime);
+        const commentTimeText = getDateStringForDisplay(commentTime);
+        const commentDayName = dayNames[time.getDay()]; 
         let comment = comments[j]
         html += /*html*/`
-          <span style="font-weight: 500;">- ${comment.comment}</span><br />
+          <span style="font-weight: 500;">- ${comment.comment} 
+          <span style="font-weight: 400; font-size: 10px;">(${commentDayName} ${commentTimeText})</span></span><br />
         `;
       }
 
