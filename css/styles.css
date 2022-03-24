@@ -1,30 +1,28 @@
 
 *{
+font-family: 'Poppins', sans-serif;
+-webkit-touch-callout: none;
+-webkit-user-select: none; 
+-khtml-user-select: none;  
+-moz-user-select: none; 
+-ms-user-select: none; 
+user-select: none; 
+box-sizing: border-box;
 
-  font-family: 'Poppins', sans-serif;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none; 
-  -khtml-user-select: none;  
-  -moz-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-  box-sizing: border-box;
+}
 
+::-webkit-scrollbar { display: none; }
+::-webkit-scrollbar{
 
- }
-
- ::-webkit-scrollbar { display: none; }
- ::-webkit-scrollbar{
-
-  width: 0;
-  background: transparent;
+width: 0;
+background: transparent;
 
 }
 .hide-scrollbar
 {
-    overflow: auto;
-    -ms-overflow-style: none; /* IE 11 */
-    scrollbar-width: none; /* Firefox 64 */
+  overflow: auto;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 }
 
 
@@ -37,16 +35,16 @@ ul {
   list-style: none;
 }
 .topMenu{
-  margin-top: 15px;
-  min-width: 47.5rem;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
-  padding-bottom: 5px;
-  max-height: 24vh;
-  min-height: fit-content;
-  margin-bottom: 0;
-  
-  }
+margin-top: 15px;
+min-width: 47.5rem;
+margin-bottom: 0.5rem;
+margin-right: 0.5rem;
+padding-bottom: 5px;
+max-height: 24vh;
+min-height: fit-content;
+margin-bottom: 0;
+
+}
 
   .btn--top {
   text-transform: uppercase;
@@ -59,12 +57,12 @@ ul {
   margin-right: 0.5rem;
   margin-bottom: 1em;
   cursor: pointer;
-  }
+}
   
   
-  .btn--top:hover,
+.btn--top:hover,
   .btn--top:active {
-  background-color: #000000;
+    background-color: #000000;
   }
 
 
@@ -80,29 +78,29 @@ ul {
   margin-top: -20px;
   margin-bottom: -3em;
   border-bottom: 5px double #2266ff;
-  }
+}
   
-  .headerAdmin {
+.headerAdmin {
   grid-area: headerAdmin;
   position: relative;
   grid-column: 1;
   grid-row: 1;
   max-height: 0.5em;
-  }
+}
   
-  .headerAdmin2 {
+.headerAdmin2 {
   grid-area: headerAdmin2;
   position: relative;
   grid-column: 2;
   grid-row: 1;
   max-height: 0.5em;
-  }
-  .hidebtn{
-    color: white;
-    background-color: white;
-    border: white;
-  }
-  .kolonne1Admin{
+}
+.hidebtn{
+  color: white;
+  background-color: white;
+  border: white;
+}
+.kolonne1Admin{
   padding-top: 5px;
   margin-right: 20px;
   /* height: 46.875rem; */
@@ -113,6 +111,7 @@ ul {
   scrollbar-width: none;
   overflow-y: scroll;
 }
+
 .kolonne2Admin{
   padding-top: 5px;
   margin-right: 20px;
@@ -138,6 +137,7 @@ ul {
   .userListAdmin{
   display:flexbox;
   padding-top: 5px;
+  padding-bottom: 5em;
   margin-right: 20px;
   overflow-y: scroll;
   max-height: 60vh;
@@ -188,33 +188,33 @@ ul {
     }
   
 .btn{
-text-transform: uppercase;
-background-color: #2266ff;
-justify-content: center;
-justify-items: center;
-height: 35px;
-width: 35px;
-color: #fff ;
-font-weight: bold;
-text-decoration: none;
-float: right;
-border:double;
-border-radius: 25%;
-margin: 2px;
-cursor: pointer;
+  text-transform: uppercase;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  height: 35px;
+  width: 35px;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  border:double;
+  border-radius: 25%;
+  margin: 2px;
+  cursor: pointer;
 }
 .btnL {
-background-color: #2266ff;
-justify-content: center;
-justify-items: center;
-color: #fff ;
-font-weight: bold;
-text-decoration: none;
-border:solid;
-height: 2.4em;
-border-radius:6px;
-margin: 2px;
-cursor: pointer;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  border:solid;
+  height: 2.4em;
+  border-radius:6px;
+  margin: 2px;
+  cursor: pointer;
 }
 
 .btnDetailsAndDel{
@@ -231,26 +231,26 @@ cursor: pointer;
   border-radius: 25%;
   margin: 2px;
   cursor: pointer;
-  }
+}
 .btn:hover,
 .btn:active {
-background-color: #000000;
-border:5px, double;
-cursor: pointer;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
 }
 
 
 .container{
-display: flex;
-justify-content: flex-start;
-width: 100vw;
-position:absolute;
-height: 80vh;
-min-width: 30rem;
-max-width: 54rem;
-margin-top: -20px;
-/* height: calc(60vh - 10em); */
-border-bottom: 5px double #2266ff;
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  position:absolute;
+  height: 80vh;
+  min-width: 30rem;
+  max-width: 54rem;
+  margin-top: -20px;
+  /* height: calc(60vh - 10em); */
+  border-bottom: 5px double #2266ff; 
 }
 
 .kolonne1{
@@ -260,7 +260,7 @@ border-bottom: 5px double #2266ff;
   min-width: 10em;
   height: 78vh;
   word-wrap: break-word;
-  overflow-y: scroll;
+
 }
 
 .kolonne2{
@@ -272,7 +272,7 @@ border-bottom: 5px double #2266ff;
   padding-right:1em;
   max-height: 78vh;
   min-width: 30em;
-  overflow-y: scroll;
+
 }
 .kolonne3{
   padding-left: 1em;
@@ -280,7 +280,7 @@ border-bottom: 5px double #2266ff;
   max-height: 78vh;
   min-width: 8em;
   position: relative;
-  overflow-y: scroll;
+
 }
 .checkboxWrap{
   text-align: right;
@@ -289,6 +289,14 @@ border-bottom: 5px double #2266ff;
 }
 .checkboxWrap input{
   float:right;
+}
+.checkboxWrap2{
+  text-align: left;
+  word-wrap: break word;
+
+}
+.checkboxWrap2 input{
+  float:left;
 }
 
 .doneHappenList{
@@ -315,7 +323,7 @@ white-space: pre-wrap;
 
 
 .happeningList{
-grid-area: HappeningList;
+margin-bottom: 20em;
 min-width: 10em;
 max-width: 15em;
 min-height: 1em;
@@ -326,13 +334,14 @@ scrollbar-width: none;
 
 
 .userList{
-min-width: 8em;
-max-width: 8em;
-display: block;
-margin-bottom: 5px;
-overflow-y: scroll;
-height: 50vh;
-scrollbar-width: none;
+  margin-top: -20px;
+  min-width: 8em;
+  max-width: 8em;
+  display: inline-block;
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  max-height: 60vh;
+  scrollbar-width: none;
 }
 
 
@@ -364,9 +373,9 @@ scrollbar-width: none;
 }
 .trekkBtn:hover,
 .trekkBtn:active {
-background-color: #000000;
-border:5px, double;
-cursor: pointer;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
 }
 
 .doneHappeningBtn{

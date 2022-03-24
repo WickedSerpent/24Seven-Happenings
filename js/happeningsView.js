@@ -67,9 +67,11 @@ function getUsers() {
   for (let i = 0; i < users.length; i++) {
     const user = users[i];
     html += /*html*/ `
+    <div class="checkboxWrap2">
         <input type="checkbox" 
         onclick="togglePersonSelected(${user.id})" 
         ${getChecked(user.isSelected)}/> ${user.name} <br>
+        </div>
         `;
   }
   return html;
