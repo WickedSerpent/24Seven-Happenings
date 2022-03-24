@@ -128,7 +128,6 @@ margin-bottom: 0;
 .happeningListAdmin{
   padding-top: 5px;
   margin-right: 20px;
-  
   max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
@@ -264,6 +263,7 @@ margin-bottom: 0;
   height: 78vh;
   word-wrap: break-word;
   overflow-y: hidden;
+  
 
 }
 
@@ -275,7 +275,7 @@ margin-bottom: 0;
   max-height: 78vh;
   min-width: 30em;
   overflow-y: hidden;
-
+ 
 }
 .kolonne3{
   padding-left: 1em;
@@ -284,11 +284,13 @@ margin-bottom: 0;
   min-width: 8em;
   position: relative;
   overflow-y: hidden;
+  
 
 }
 .checkboxWrap{
   text-align: right;
   word-wrap: break word;
+  margin-right: 1em;
 
 }
 .checkboxWrap input{
@@ -307,6 +309,7 @@ margin-bottom: 0;
   max-height: 80vh;
   min-height: 0.1em;
   overflow-y: scroll;
+  background-color: #f6f9ff;
 }
 
 /*total høyde 44.25*/
@@ -317,8 +320,8 @@ white-space: pre-wrap;
 }
 .headerAboveTwo {
   
-  min-width: 14.375rem;
-  white-space: pre-wrap;
+min-width: 14.375rem;
+white-space: pre-wrap;
 }
 .headerAboveThree { 
  min-width: 14.375rem;
@@ -335,7 +338,6 @@ min-height: 1em;
 max-height: 50vh;
 overflow-y: scroll;
 scrollbar-width: none;
-background-color: #f6f9ff;
 }
 
 
@@ -347,7 +349,7 @@ background-color: #f6f9ff;
   overflow-y: scroll;
   max-height: 50vh;
   scrollbar-width: none;
-  background-color: #f6f9ff;
+
 }
 
 
