@@ -11,6 +11,7 @@ function createNewUser() {
     updateAdminView();
   }
   model.inputs.newUser.name = '';
+  selectAllOrNone(this.unchecked);
 }
 
 function createNewHappening() {
