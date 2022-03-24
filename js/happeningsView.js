@@ -17,7 +17,7 @@ function updateViewHappenings() {
 
       <div class="kolonne2">
         <h4 class="headerAboveTwo">Trekninger</h4>
-           <div class="doneHappenList">
+           <div id="doneHappenListId" onscroll="getScrollPoistion()" class="doneHappenList">
             ${getDoneHappening()}
             </div>
       </div>
@@ -125,7 +125,7 @@ function getDoneHappening() {
         <label class="switch">
         <input type="checkbox" class="cb1" onclick="toggleDetailsSelected(${
           doneHappening.id
-        })"${getChecked(doneHappening.detailsShown)}>
+        })"${getChecked(doneHappening.detailsShown)}">
         <span class="slider"></span>
         </label>`
 

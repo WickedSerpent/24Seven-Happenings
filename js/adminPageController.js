@@ -23,6 +23,7 @@ function createNewHappening() {
   if (happening.name !== '') {
     model.data.happenings.push(happening);
     newUserPointsObj();
+    selectNone(this.unchecked);
     updateAdminView();
   }
   model.inputs.newHappening.name = '';

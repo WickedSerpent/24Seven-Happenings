@@ -6,6 +6,14 @@ function selectAllOrNone(selectAll) {
     updateView();
 }
 
+function selectNone(selectAll) {
+    model.data.selectAll = selectAll;
+    for (let user of model.data.happenings) {
+        user.isSelected = selectAll;
+    }
+    updateView();
+}
+
 function getChecked(isSelected) {
     return isSelected ? 'checked="checked"' : '';
 }
@@ -165,3 +173,13 @@ function goToDetailsPage(happeningId) {
     updateDetailsView()
 }
 
+function getScrollPoistion() {
+    const element = document.getElementById("doneHappenListId");
+    var y = element.scrollTop;
+    console.log(y);
+    
+  }
+
+
+  
+    

@@ -110,7 +110,14 @@ margin-bottom: 0;
   max-width: 20.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  overflow-y: hidden;
+    padding-top: 5px;
+  padding-bottom: 5em;
+  margin-right: 20px;
+  max-height: 60vh;
+  max-width: 30.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+  overflow-y: scroll;  
 }
 
 .kolonne2Admin{
@@ -122,7 +129,14 @@ margin-bottom: 0;
   max-width: 18.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  overflow-y: hidden;
+    padding-top: 5px;
+  padding-bottom: 5em;
+  margin-right: 20px;
+  max-height: 60vh;
+  max-width: 30.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+  overflow-y: scroll;  
   }
   
 .happeningListAdmin{
@@ -132,15 +146,12 @@ margin-bottom: 0;
   max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  overflow-y: scroll;
+  overflow-y: scroll;  
     }
 
   .userListAdmin{
-  display:flexbox;
   padding-top: 5px;
-  padding-bottom: 5em;
   margin-right: 20px;
-  
   max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
@@ -244,7 +255,6 @@ margin-bottom: 0;
 
 .container{
   display: flex;
-  justify-content: flex-start;
   width: 100vw;
   position:absolute;
   max-height: 80vh;
@@ -257,10 +267,11 @@ margin-bottom: 0;
 
 .kolonne1{
   position:relative;
+  display: inline-block;
   padding-right: 1em;
   width: 15em;
   min-width: 10em;
-  height: 78vh;
+  max-height: 78vh;
   word-wrap: break-word;
   overflow-y: hidden;
   
@@ -306,8 +317,7 @@ margin-bottom: 0;
 }
 
 .doneHappenList{
-  max-height: 80vh;
-  min-height: 0.1em;
+  max-height: 100%;
   overflow-y: scroll;
   background-color: #f6f9ff;
 }
