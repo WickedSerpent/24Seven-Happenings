@@ -7,7 +7,7 @@ function updateAdminViewHome() {
         <h3 class="headerAdmin">Arrangementer</h3>
 
         
-        <div class="adminBoxOne">
+        <div class="happeningListAdmin">
 
         ${getAllHappeningsHome()}
         </div>
@@ -17,6 +17,7 @@ function updateAdminViewHome() {
         oninput="model.inputs.newHappening.name = this.value" 
         placeholder="Legg til arrangement"
         type="text"
+        class="inputsAdmin"
         onfocus="this.value=''"
         oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
         title="Skriv navn på arrangement"
@@ -32,7 +33,7 @@ function updateAdminViewHome() {
       <div class="kolonne2Admin">
         <h3 class="headerAdmin2">Personer</h3>
         
-        <div class="adminBoxTwo">
+        <div class="userListAdmin">
 
         ${getusersHome()}
         </div>
@@ -42,6 +43,7 @@ function updateAdminViewHome() {
         oninput="model.inputs.newUser.name = this.value" 
         placeholder="Legg til person" 
         type="text"
+        class="inputsAdmin"
         onfocus="this.value=''"
         oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')"
         title="Skriv navn på person"
