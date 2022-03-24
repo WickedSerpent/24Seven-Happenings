@@ -42,11 +42,12 @@ function addCommentAdmin(id){
     }
     else {
         let comment = {}
+        comment.commentTime = getNowForStorage()
         comment.commentId = getMaxCommentIdDoneHappening(id) + 1
         comment.comment = model.inputs.comment
         happening.comments.push(comment)
         model.inputs.comment = ''
-        updateAdminView()
+        updateView()
     }
 }
 
