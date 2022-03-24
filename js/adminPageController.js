@@ -3,10 +3,11 @@ function createNewUser() {
   let user = {};
   user.id = getMaxUserId() + 1;
   user.name = model.inputs.newUser.name;
-  user.isSelected = true;
+  user.isSelected = false;
   if (user.name !== '') {
     model.data.users.push(user);
     newHappeningPointsObj();
+    selectAllOrNone(this.unchecked);
     updateAdminView();
   }
   model.inputs.newUser.name = '';
