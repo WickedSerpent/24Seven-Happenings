@@ -69,10 +69,11 @@ margin-bottom: 0;
 .containerAdmin
 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   width: 100vw;
   position:absolute;
   height: 80vh;
+  min-height: 1em;
   min-width: 30em;
   max-width: 43em;
   margin-top: -20px;
@@ -109,7 +110,7 @@ margin-bottom: 0;
   max-width: 20.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .kolonne2Admin{
@@ -121,17 +122,18 @@ margin-bottom: 0;
   max-width: 18.75em;
   min-width: 18.75em;
   scrollbar-width: none;
-  overflow-y: scroll;
+  overflow-y: hidden;
   }
   
 .happeningListAdmin{
   padding-top: 5px;
   margin-right: 20px;
-  overflow-y: scroll;
+  
   max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
+  overflow-y: scroll;
     }
 
   .userListAdmin{
@@ -139,11 +141,12 @@ margin-bottom: 0;
   padding-top: 5px;
   padding-bottom: 5em;
   margin-right: 20px;
-  overflow-y: scroll;
+  
   max-height: 60vh;
   max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
+  overflow-y: scroll;  
 
   }
 .inputsAdmin {
@@ -245,7 +248,7 @@ margin-bottom: 0;
   justify-content: flex-start;
   width: 100vw;
   position:absolute;
-  height: 80vh;
+  max-height: 80vh;
   min-width: 30rem;
   max-width: 54rem;
   margin-top: -20px;
@@ -260,6 +263,7 @@ margin-bottom: 0;
   min-width: 10em;
   height: 78vh;
   word-wrap: break-word;
+  overflow-y: hidden;
 
 }
 
@@ -268,10 +272,9 @@ margin-bottom: 0;
   width: 40vw;
   margin-left: 1em;
   margin-right: 1em;
-  padding-left:1em;
-  padding-right:1em;
   max-height: 78vh;
   min-width: 30em;
+  overflow-y: hidden;
 
 }
 .kolonne3{
@@ -280,6 +283,7 @@ margin-bottom: 0;
   max-height: 78vh;
   min-width: 8em;
   position: relative;
+  overflow-y: hidden;
 
 }
 .checkboxWrap{
@@ -300,7 +304,8 @@ margin-bottom: 0;
 }
 
 .doneHappenList{
-  max-height: 28em;
+  max-height: 80vh;
+  min-height: 0.1em;
   overflow-y: scroll;
 }
 
@@ -330,18 +335,19 @@ min-height: 1em;
 max-height: 50vh;
 overflow-y: scroll;
 scrollbar-width: none;
+background-color: #f6f9ff;
 }
 
 
 .userList{
   margin-top: -20px;
-  min-width: 8em;
-  max-width: 8em;
-  display: inline-block;
+  min-width: 10em;
+  max-width: 15em;
   margin-bottom: 5px;
   overflow-y: scroll;
-  max-height: 60vh;
+  max-height: 50vh;
   scrollbar-width: none;
+  background-color: #f6f9ff;
 }
 
 
@@ -357,9 +363,9 @@ scrollbar-width: none;
 
 
 .trekkBtn{  
-  grid-area: trekkBtn;
-  position:absolute;
-  bottom: 1rem;
+  display: inline-block;
+  position: absolute;
+  bottom: 1em;
   margin:10px;
   width: 8em; 
   height: 40px;
