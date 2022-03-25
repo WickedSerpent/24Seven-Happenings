@@ -3,7 +3,14 @@ function selectAllOrNone(selectAll) {
     for (let user of model.data.users) {
         user.isSelected = selectAll;
     }
-    updateView();
+    updateView()
+}
+function selectAllOrNoneCreateNew(selectAll) {
+    model.data.selectAll = selectAll;
+    for (let user of model.data.users) {
+        user.isSelected = selectAll;
+    }
+    
 }
 
 function selectNone(selectAll) {
@@ -11,7 +18,6 @@ function selectNone(selectAll) {
     for (let user of model.data.happenings) {
         user.isSelected = selectAll;
     }
-    updateView();
 }
 
 function getChecked(isSelected) {
@@ -177,12 +183,12 @@ function getScrollPoistion() {
     const element = document.getElementById("doneHappenListId");
     var y = element.scrollTop;
     console.log(y);
-    model.inputs.scrollPositionDoneHappen = y
+    model.inputs.scrollPositionDoneHappening = y
   }
   
   function setScrollDoneHappen(scrollPosition) {
     const element = document.getElementById("doneHappenListId");
-    scrollPosition = model.inputs.scrollPositionDoneHappen;
+    scrollPosition = model.inputs.scrollPositionDoneHappening;
     element.scrollTo(0, scrollPosition)
   }
  

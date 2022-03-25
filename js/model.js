@@ -5,9 +5,7 @@ const model = {
     },
 
     inputs: {
-        scrollPositionHappenings: {
-            scrollY: 0, 
-        },
+        scrollPositionDoneHappening: 0,
 
             newHappening: {
             name: '',
