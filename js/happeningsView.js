@@ -24,7 +24,7 @@ function updateViewHappenings() {
 
       <div class="kolonne3">
             <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
-            <div class="userList">
+            <div id="userColumn" onscroll="getScrollPoistion()" class="userList">
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
             ${getChecked(

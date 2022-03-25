@@ -175,12 +175,17 @@ function goToDetailsPage(happeningId) {
 }
 
 function getScrollPoistion() {
-    const element = document.getElementById("doneHappenListId");
+    const element = document.getElementById("userColumn");
     var y = element.scrollTop;
     console.log(y);
     
   }
 
+  function setScrollPositionUsers(scrollPosition) {
+    const element = document.getElementById("userColumn");
+    element.scrollTo(0, scrollPosition)
+  }
 
+  setScrollPositionUsers(model.inputs.scrollPosition.user)
   
     

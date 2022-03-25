@@ -5,8 +5,11 @@ const model = {
     },
 
     inputs: {
-        scrollPositionHappenings: {
-            scrollY: 0, 
+        
+        scrollPosition: {
+            happenings: 0,
+            user: 0,
+            doneHappenings: 0,  
         },
 
             newHappening: {
