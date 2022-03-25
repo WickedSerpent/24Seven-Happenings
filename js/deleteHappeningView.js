@@ -10,7 +10,7 @@ function updateViewDeleteHappening(){
             oninput="model.inputs.deleteHappening.areYouSure = this.checked"
             ${model.inputs.deleteHappening.areYouSure ? 'checked' : ''}
             /> Er du sikker på at du vil slette?<br><br />
-        <button style="cursor: pointer;" onclick="deleteHappening(${id})"> Slett! </button>
+        <button style="cursor: pointer;" class="btn--small" onclick="deleteHappening(${id})"> Slett! </button>
         </div>
        `;
 }

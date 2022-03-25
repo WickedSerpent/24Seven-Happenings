@@ -10,7 +10,10 @@ function updateViewDeleteUser(){
             oninput="model.inputs.deleteUser.areYouSure = this.checked"
             ${model.inputs.deleteUser.areYouSure ? 'checked' : ''}
             /> Er du sikker på at du vil slette?<br><br/>
-        <button onclick="deleteUser(${id})"> Slett! </button>
+        <button 
+        class="btn--small" 
+        onclick="deleteUser(${id})"
+        >Slett!</button>
         </div>
        `;
 }

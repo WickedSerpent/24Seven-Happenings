@@ -5,14 +5,17 @@ function updateViewHappeningEdit(){
     <p>Endre navn på arrangement <strong>${model.inputs.editHappening.name}</strong> 
     <br/><br/>
     <input 
+        class="inputFields"
         type="text" 
         value="${model.inputs.editHappening.name}"
         oninput="model.inputs.editHappening.name=this.value"
     >
     <br/><br/>  
-    <button 
+    <button
+    class="btn--small"
     style="cursor: pointer;"
-    onclick="editHappening()">Endre</button>
+    onclick="editHappening()"
+    >Endre</button>
     </div>
 `;
 }

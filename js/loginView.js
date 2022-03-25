@@ -3,13 +3,19 @@ function loginView() {
     ${loginMenuHtml()}
     <form>
         <input
+        class="inputFields"
         id="password"
         type="password"
         placeholder="Passord"
         title="Skriv inn passord"
         required
         />
-        <input style="cursor: pointer;" type="submit" onclick=validate() value="Logg inn">
+        <input
+        class="btn--small" 
+        style="cursor: pointer;" 
+        type="submit" 
+        onclick=validate() 
+        value="Logg inn">
     </form>
         `;
   document.getElementById('password').focus();

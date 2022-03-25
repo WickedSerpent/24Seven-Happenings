@@ -113,6 +113,7 @@ ul {
   color: white;
   border-radius: 6px;
   border: 2px solid #2266ff;
+  margin-left: 1em;
 }
 .btn--small:hover{
     background-color: #000000;
@@ -128,6 +129,7 @@ ul {
 .inputFields {
   border: 2px solid #2266ff;
   border-radius: 6px;
+  margin-left: 1em;
 }
 
 .btnDetailsAndDel{
