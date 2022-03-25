@@ -148,7 +148,6 @@ function addComment(id){
     }
     else {
         let comment = {}
-        comment.commentTime = getNowForStorage()
         comment.commentId = getMaxCommentIdDoneHappening(id) + 1
         comment.comment = model.inputs.comment
         happening.comments.push(comment)
@@ -175,17 +174,19 @@ function goToDetailsPage(happeningId) {
 }
 
 function getScrollPoistion() {
-    const element = document.getElementById("userColumn");
+    const element = document.getElementById("doneHappenListId");
     var y = element.scrollTop;
     console.log(y);
-    
+    model.inputs.scrollPositionDoneHappen = y
   }
-
-  function setScrollPositionUsers(scrollPosition) {
-    const element = document.getElementById("userColumn");
+  
+  function setScrollDoneHappen(scrollPosition) {
+    const element = document.getElementById("doneHappenListId");
+    scrollPosition = model.inputs.scrollPositionDoneHappen;
     element.scrollTo(0, scrollPosition)
   }
+ 
 
-  setScrollPositionUsers(model.inputs.scrollPosition.user)
+
   
     

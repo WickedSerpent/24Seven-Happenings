@@ -24,25 +24,10 @@ function createDeleteCommentHtml() {
     let html = ''
     const happeningId = model.inputs.deleteComment.doneHappeningId;
     let comments = getAllCommentsFromDoneHappening(happeningId);
-    for (let i = 0; i < comments.length; i++) {
-        let comment = comments[i]
-        const dayNames = [
-            'Søndag',
-            'Mandag',
-            'Tirsdag',
-            'Onsdag',
-            'Torsdag',
-            'Fredag',
-            'Lørdag',
-          ];
-        const commentTime = new Date(comments[i].commentTime);
-        const commentTimeText = getDateStringForDisplay(commentTime);
-        const commentDayName = dayNames[commentTime.getDay()];
+    for (comment of comments) {
         html +=/*html*/`
-        ${comment.comment} 
-        <span style="font-weight: 400; font-size: 10px;">(${commentDayName} ${commentTimeText})</span>
-        <button onclick="deleteComment(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
-        `;
+        ${comment.comment} <button onclick="deleteComment(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
+    `;
     }
     return html
 }
@@ -51,25 +36,10 @@ function createDeleteCommentHtmlAdmin() {
     let html = ''
     const happeningId = model.inputs.deleteComment.doneHappeningId;
     let comments = getAllCommentsFromDoneHappening(happeningId);
-    for (let i = 0; i < comments.length; i++) {
-        let comment = comments[i]
-        const dayNames = [
-            'Søndag',
-            'Mandag',
-            'Tirsdag',
-            'Onsdag',
-            'Torsdag',
-            'Fredag',
-            'Lørdag',
-          ];
-        const commentTime = new Date(comments[i].commentTime);
-        const commentTimeText = getDateStringForDisplay(commentTime);
-        const commentDayName = dayNames[commentTime.getDay()];
+    for (comment of comments) {
         html +=/*html*/`
-        ${comment.comment} 
-        <span style="font-weight: 400; font-size: 10px;">(${commentDayName} ${commentTimeText})</span>
-        <button onclick="deleteComment(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
-        `;
+        ${comment.comment} <button onclick="deleteCommentAdmin(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
+    `;
     }
     return html
 }

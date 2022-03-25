@@ -4,7 +4,8 @@ updateView()
             if(page === 'happening') updateViewHappenings();
             else if(page === 'login') loginView();
             else if(page === 'details') updateDetailsView(); 
-            else if(page === 'deleteComment') deleteCommentView(); 
+            else if(page === 'deleteComment') deleteCommentView();
+            setScrollDoneHappen(model.inputs.scrollPositionDoneHappen) 
         }
 
         function updateAdminView(){

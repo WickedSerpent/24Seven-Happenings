@@ -5,7 +5,7 @@ function updateViewHappenings() {
       
       <div class="kolonne1">
       <h4 class="headerAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
-            <div id="happeningColumn" onscroll="getScrollPoistion()" class="happeningList">
+            <div class="happeningList">
             ${getHappeningsHtml()}
             </div>
             <div  ><button class="trekkBtn"
@@ -24,7 +24,7 @@ function updateViewHappenings() {
 
       <div class="kolonne3">
             <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
-            <div id="userColumn" onscroll="getScrollPoistion()" class="userList">
+            <div class="userList">
             <input type="checkbox"
             onclick="selectAllOrNone(this.checked)"
             ${getChecked(
@@ -136,13 +136,9 @@ function getDoneHappening() {
         <h4>Trukket: ${dayName} ${dateText}</h4>
         <h3>Kommentarer</h3>`
       for (let j = 0; j < comments.length; j++) {
-        const commentTime = new Date(comments[j].commentTime);
-        const commentTimeText = getDateStringForDisplay(commentTime);
-        const commentDayName = dayNames[time.getDay()]; 
         let comment = comments[j]
         html += /*html*/`
-          <span style="font-weight: 500;">- ${comment.comment} 
-          <span style="font-weight: 400; font-size: 10px;">(${commentDayName} ${commentTimeText})</span></span><br />
+          <span style="font-weight: 500;">- ${comment.comment}</span><br />
         `;
       }
 
