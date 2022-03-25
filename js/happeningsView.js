@@ -5,7 +5,7 @@ function updateViewHappenings() {
       
       <div class="kolonne1">
       <h4 class="headerAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
-            <div class="happeningList">
+            <div id="happeningColumn" onscroll="getScrollPoistion()" class="happeningList">
             ${getHappeningsHtml()}
             </div>
             <div  ><button class="trekkBtn"
