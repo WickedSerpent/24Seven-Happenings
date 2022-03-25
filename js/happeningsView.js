@@ -8,18 +8,6 @@ function updateViewHappenings() {
             <div class="happeningList">
             ${getHappeningsHtml()}
             </div>
-            <div  ><button class="trekkBtn"
-            onclick=drawUser()
-            >Trekk!</button>
-            </div>
-      </div>
-
-
-      <div class="doneHappeningsColumn">
-        <h4 class="headerAboveTwo">Trekninger</h4>
-           <div id="doneHappenListId" onscroll="getScrollPoistion()" class="doneHappenList">
-            ${getDoneHappening()}
-            </div>
       </div>
 
       <div class="userColumn">
@@ -33,7 +21,15 @@ function updateViewHappenings() {
             ${getUsers()}<br/>
             </div>
       </div>
-  </div>
+      <div class="doneHappeningsColumn">
+      <h4 class="headerAboveTwo">Trekninger</h4>
+         <div id="doneHappenListId" onscroll="getScrollPoistion()" class="doneHappenList">
+          ${getDoneHappening()}
+          </div>
+    </div>
+  
+
+    </div>
 
     `;
 }
@@ -169,7 +165,7 @@ function getDoneHappening() {
         let comment = comments[j]
         if(comment.comment === 'Utført' || comment.comment === 'utført'){
           html += /*html*/`
-          <img src="img/greenCheck.png" alt=""/> <br />
+          <img src="img/greenCheck.png" class="checkmark" alt=""/> 
           `;
         }
         const commentTime = new Date(comments[j].commentTime);
@@ -206,7 +202,7 @@ function getDoneHappening() {
     //   `; }
     html += /*html*/`<button class="btn--top"
         title="Detaljer" id="detailsSwich" 
-        onclick="toggleDetailsSelected(${doneHappening.id})"
+        onclick=(toggleDetailsSelected(${doneHappening.id})"
         ${getChecked(doneHappening.detailsShown)}>Detaljer</button>
         <hr>
         </div>
@@ -249,7 +245,7 @@ function happenMenuHtml() {
           <input type="checkbox" onclick="toggleDoWithinWeekSelected()"
           ${getChecked(model.inputs.doWithinWeek)}/>
           |
-          <button class="drawButton" onclick="drawUser(); updateView()">Trekk</button>
+          <button class="btn--top" onclick="drawUser(); updateView()">Trekk</button>
           </div>
       `;
 }

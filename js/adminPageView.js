@@ -4,9 +4,7 @@ function updateAdminViewHome() {
     
     <div class="containerAdmin">
       <div class="kolonne1Admin">
-        <h3 class="headerAdmin">Arrangementer</h3>
-
-        
+        <h3 class="headerAdmin" style="padding-left:40px">Arrangementer</h3>
         <div class="happeningListAdmin">
 
         ${getAllHappeningsHome()}
@@ -31,11 +29,12 @@ function updateAdminViewHome() {
         </div>
       </div>
       <div class="kolonne2Admin">
-        <h3 class="headerAdmin2">Personer</h3>
+        <h3 class="headerAdmin2" style="padding-left:40px">Personer</h3>
         
         <div class="userListAdmin">
 
         ${getusersHome()}
+        
         </div>
         <div class="addPersonBox">
         <form>

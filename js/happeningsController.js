@@ -30,10 +30,11 @@ function togglePersonSelected(id) {
     updateView();
 }
 
+
 function toggleDetailsSelected(id) {
     const doneHappening = getDoneHappeningById(id);
     doneHappening.detailsShown = !doneHappening.detailsShown;
-    updateView();
+    updateView()
 }
 
 function toggleHappeningSelected(id) {

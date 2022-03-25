@@ -92,13 +92,13 @@ function adminGetDoneHappening() {
     html += /*html*/ `
         <br />
         <form>
-        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
+        <input class="inputFields" oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
         title="Skriv kommentar" 
         required type="text" 
         oninput="model.inputs.comment=this.value"/> 
-        <button onclick=addCommentAdmin(${doneHappening.id})>Legg til kommentar</button>
-        <button id="slette" onclick="goToDeleteCommentPageAdmin(${doneHappening.id})">Slette en kommentar</button>
-        <button onclick="deleteDoneHappening(${doneHappening.id})">Slett Happening</button>
+        <button class="btn--small" onclick=addCommentAdmin(${doneHappening.id})>Legg til kommentar</button>
+        <button class="btn--small" id="slette" onclick="goToDeleteCommentPageAdmin(${doneHappening.id})">Slette en kommentar</button>
+        <button class="btn--small" onclick="deleteDoneHappening(${doneHappening.id})">Slett Happening</button>
         </form>
         <hr>
         </div> 

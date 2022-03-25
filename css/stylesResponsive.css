@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    width: 100vw;
+    position:absolute;
+    min-width: 30rem;
+    max-width: 100vw;
+    margin-top: -20px;
+    max-height: 90vh;
+}
+.happeningsColumn{
+    position:relative;
+    display: inline-block;
+    max-height: 80vh;
+    max-width: 13em;
+    min-width: 13em;
+    word-wrap: break-word;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+.userColumn{
+    padding-left: 1em;
+    position: relative;
+    max-height: 80vh;
+    max-width: 13em;
+    min-width: 13em;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  
+
+}
+  .doneHappeningsColumn{
+    position: relative;
+    width: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+    max-height: 90vh;
+    min-width: 30em;
+    overflow-y: hidden;
+ 
+}
+
+.containerAdmin
+{
+    display: flex;
+    justify-content: space-evenly;
+    position:absolute;
+    height: 80vh;
+    min-height: 1em;
+    min-width: 30em;
+    margin-top: -20px;
+    margin-bottom: -3em;
+}
+
+.kolonne1Admin{
+    padding-top: 5px;
+    margin-right: 20px;
+    width:  35.25em;
+    min-height: 1em;
+    max-width: 20.75em;
+    min-width: 18.75em;
+    scrollbar-width: none;
+    overflow: none;
+  }
+  
+.kolonne2Admin{
+    padding-top: 5px;
+    margin-right: 20px;
+    /* height: 46.875rem; */
+    width:  35.25em;
+    min-height: 1em;
+    max-width: 18.75em;
+    min-width: 18.75em;
+    scrollbar-width: none;
+    overflow: hidden;
+ 
+    }
+
+
+
