@@ -13,11 +13,13 @@ function updateViewHappenings() {
       <div class="userColumn">
             <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
             <div class="userList">
-            <input type="checkbox"
-            onclick="selectAllOrNone(this.checked)"
-            ${getChecked(
-    model.data.selectAll
-  )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+              <div class="checkboxWrap2">
+              <input type="checkbox"
+              onclick="selectAllOrNone(this.checked)"
+              ${getChecked(
+              model.data.selectAll
+              )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+              </div>
             ${getUsers()}<br/>
             </div>
       </div>

@@ -191,13 +191,14 @@ function drawUser(){
     model.inputs.doAsap = false
 }
 
-function addComment(id){
-    let happening = getDoneHappeningById(id)
+function addComment(id) {
+    let happening = getDoneHappeningById(id) 
     if (model.inputs.comment === '') {
         return
     }
     else {
         let comment = {}
+        comment.commentTime = getNowForStorage()
         comment.commentId = getMaxCommentIdDoneHappening(id) + 1
         comment.comment = model.inputs.comment
         happening.comments.push(comment)
