@@ -42,6 +42,22 @@ function toggleHappeningSelected(id) {
     updateView();
 }
 
+function toggleDoAsapSelected() {
+    const input = model.inputs
+    input.doAsap = !input.doAsap;
+    model.inputs.drawDate = null
+    model.inputs.doWithinWeek = false
+    updateView();
+}
+
+function toggleDoWithinWeekSelected() {
+    const input = model.inputs
+    input.doWithinWeek = !input.doWithinWeek
+    model.inputs.drawDate = null
+    model.inputs.doAsap = false
+    updateView();
+}
+
 
 function getCheckedUsers() {
     let users = model.data.users;
@@ -109,9 +125,33 @@ function getCheckedHappenings() {
 }
 
 function drawUser(){
+    let drawCount = model.inputs.drawCount
     let checkedHappenings = getCheckedHappenings()
     let checkedHappeningName = getCheckedHappeningName()
     let checkedHappeningIds = getCheckedUsers()
+    let doDate = model.inputs.drawDate
+    let date = new Date(doDate)
+    if (doDate === null ){
+        date = null
+    }
+    if (model.inputs.doAsap === true){
+        date = 'Så fort som mulig'
+    }
+    if (model.inputs.doWithinWeek === true){
+        date = 'Innen en uke'
+    }
+    if (checkedHappeningName === undefined) {
+        alert('Velg arrangement!')
+        return
+    }
+    if (checkedHappenings.length > 1) {
+        alert('Du har huket av flere arrangementer!')
+        return
+    }
+    if (checkedHappeningIds.length === 0) {
+        alert('Velg personer å trekke mellom!')
+        return
+    }
     if(checkedHappeningName === undefined){
         alert('Velg arrangement!')
         return
@@ -124,27 +164,30 @@ function drawUser(){
         alert('Velg personer å trekke mellom!')
         return
     }
-    let winners = model.data.doneHappenings
-    let winner = {}
-    winner.participants = getCheckedUsersNamesFromLowestPoint()
-    let listOfUsers = getUsersWithLowestPoint()
-    let drawnPerson = listOfUsers[Math.floor(Math.random()*listOfUsers.length)];
-    drawnPerson.points += 2
-    let winnerId = drawnPerson.userId
-    let winnerUser = getUserById(winnerId)
-    winner.comments = []
-    winner.id = getMaxDoneHappeningId() + 1
-    winner.userId = winnerId
-    winner.happeningId = getCheckedHappeningId()
-    winner.name = getCheckedHappeningName()
-    winner.userDrawn = winnerUser.name
-    winner.time = getNowForStorage()
-    winner.comment = ''
-    winner.detailsShown = false,
-    winners.unshift(winner)
-    model.app.page = 'happening'
-    updateView()
-    return winner
+    for (let i = 0; i < drawCount; i++) {
+        let winners = model.data.doneHappenings
+        let winner = {}
+        let listOfUsers = getUsersWithLowestPoint()
+        let drawnPerson = listOfUsers[Math.floor(Math.random() * listOfUsers.length)];
+        drawnPerson.points += 2
+        let winnerId = drawnPerson.userId
+        let winnerUser = getUserById(winnerId)
+        winner.participants = getCheckedUsersNamesFromLowestPoint()
+        winner.comments = []
+        winner.id = getMaxDoneHappeningId() + 1
+        winner.userId = winnerId
+        winner.doDate = date
+        winner.happeningId = getCheckedHappeningId()
+        winner.name = getCheckedHappeningName()
+        winner.userDrawn = winnerUser.name
+        winner.time = getNowForStorage()
+        winner.detailsShown = false,
+            winners.unshift(winner)
+        model.app.page = 'happening'
+        updateView()
+    }
+    model.inputs.drawDate = null
+    model.inputs.doAsap = false
 }
 
 function addComment(id){
@@ -183,12 +226,12 @@ function getScrollPoistion() {
     const element = document.getElementById("doneHappenListId");
     var y = element.scrollTop;
     console.log(y);
-    model.inputs.scrollPositionDoneHappening = y
+    model.inputs.scrollPositionDoneHappenings = y
   }
   
   function setScrollDoneHappen(scrollPosition) {
     const element = document.getElementById("doneHappenListId");
-    scrollPosition = model.inputs.scrollPositionDoneHappening;
+    scrollPosition = model.inputs.scrollPositionDoneHappenings;
     element.scrollTo(0, scrollPosition)
   }
  

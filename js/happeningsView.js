@@ -3,7 +3,7 @@ function updateViewHappenings() {
     ${happenMenuHtml()}
     <div class="container">
       
-      <div class="kolonne1">
+      <div class="happeningsColumn">
       <h4 class="headerAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
             <div class="happeningList">
             ${getHappeningsHtml()}
@@ -15,14 +15,14 @@ function updateViewHappenings() {
       </div>
 
 
-      <div class="kolonne2">
+      <div class="doneHappeningsColumn">
         <h4 class="headerAboveTwo">Trekninger</h4>
            <div id="doneHappenListId" onscroll="getScrollPoistion()" class="doneHappenList">
             ${getDoneHappening()}
             </div>
       </div>
 
-      <div class="kolonne3">
+      <div class="userColumn">
             <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
             <div class="userList">
             <input type="checkbox"
@@ -109,55 +109,108 @@ function getDoneHappening() {
       'Fredag',
       'Lørdag',
     ];
+    // doDate.setDate(doDate.getDate()+7);
     const time = new Date(drawTime[i].time);
     const dateText = getDateStringForDisplay(time);
     const dayName = dayNames[time.getDay()];
     const doneHappening = happenings[i];
+    const date = doneHappening.doDate
     html += /*html*/ `
-        <h4>Trekning - <span style="color: #FF5733;">${
-          doneHappening.name
-        }</span>
-        </h4> 
-       
-        <h3>Trukket person - <span style="color: #6AB334;">${
-          doneHappening.userDrawn
-        }</span></h3>
-        <label class="switch">
-        <input type="checkbox" class="cb1" onclick="toggleDetailsSelected(${
-          doneHappening.id
-        })"${getChecked(doneHappening.detailsShown)}">
-        <span class="slider"></span>
-        </label>`
+    <div class="doneHappeningBox">
+    <h3>Trekning - <span style="color: #FF5733;">${doneHappening.name
+    }</span>
+    </h3>
+    <label class="switch">
+    <input 
+    type="checkbox" 
+    class="cb1" 
+    onclick="toggleDetailsSelected(${doneHappening.id})"${getChecked(doneHappening.detailsShown)}">
+    <span class="slider"></span>
+    </label>
+    
+    <h4>Trukket person - <span style="color: #6AB334;">${doneHappening.userDrawn
+    }</span></h4>
+      `;
+    if (date === 'Så fort som mulig') {
+      html += /*html*/ `
+      <h4 id=>Utføres - 
+      <span style="color: #0075ff">Så fort som mulig</span></h4>
+      `;
+    }
 
-        
-        if (doneHappening.detailsShown === true){
-          html += /*html*/`
-        <div>
-        <h4>Trukket: ${dayName} ${dateText}</h4>
-        <h3>Kommentarer</h3>`
+    if (date === 'Innen en uke') {
+      time.setDate(time.getDate() + 7)
+      const doWithinText = getDateStringForDisplay(time);
+      const doWithinName = dayNames[time.getDay()];
+      html += /*html*/ `
+      <h4 id=>
+      Utføres innen - 
+      <span style="color: #0075ff">${doWithinName} ${doWithinText}
+      </span>
+      </h4>
+      `;
+    }
+
+    if (date !== null && date !== 'Så fort som mulig' && date !== 'Innen en uke') {
+      const doDate = new Date(date)
+      let doDateText = getDateStringForDisplay(doDate).substr(0, 9)
+      let doDateName = dayNames[doDate.getDay()]
+      html += /*html*/ `
+        <h4 id=>Utføres - 
+        <span style="color: #0075ff">${doDateName} ${doDateText}</span></h4>
+        `;
+    }
+
+    if (doneHappening.detailsShown === true) {
+      html += /*html*/`
+      <div>
+      <h4>Kommentarer - </h4>`
       for (let j = 0; j < comments.length; j++) {
         let comment = comments[j]
+        if(comment.comment === 'Utført' || comment.comment === 'utført'){
+          html += /*html*/`
+          <img src="img/greenCheck.png" alt=""/> <br />
+          `;
+        }
+        const commentTime = new Date(comments[j].commentTime);
+        const commentTimeText = getDateStringForDisplay(commentTime);
+        const commentDayName = dayNames[commentTime.getDay()];
         html += /*html*/`
-          <span style="font-weight: 500;">- ${comment.comment}</span><br />
+        <span style="font-weight: 500;">- ${comment.comment} 
+        <span style="font-weight: 400; font-size: 10px;">(${commentDayName} ${commentTimeText})</span></span><br />
         `;
+        
       }
 
       html += /*html*/ `
-        <br />
-        <form>
-        <input oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
-        title="Skriv kommentar" 
-        required type="text" 
-        oninput="model.inputs.comment=this.value"/> 
-        
-        <button onclick=addComment(${doneHappening.id
+          <br/>
+          <form>
+          <input 
+          class="inputFields"
+          oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
+          title="Skriv kommentar" 
+          required type="text" 
+          oninput="model.inputs.comment=this.value"/> 
+          
+        <button class="btn--small" onclick=addComment(${doneHappening.id
         })>Legg til kommentar</button>
+        <button class="btn--small" id="slette" onclick="goToDeleteCommentPage(${doneHappening.id
+        })">Slett en kommentar</button>
         </form>
-        <button id="slette" onclick="goToDeleteCommentPage(${doneHappening.id
-        })">Slette en kommentar</button>
-        <hr>
+        <h4>Trukket - ${dayName} ${dateText}</h4>
         </div> 
-        `;}else{html +=`<hr>`}
+        `;
+    }
+    // else { 
+    //   html += /*html*/`
+    //   `; }
+    html += /*html*/`<button class="btn--top"
+        title="Detaljer" id="detailsSwich" 
+        onclick="toggleDetailsSelected(${doneHappening.id})"
+        ${getChecked(doneHappening.detailsShown)}>Detaljer</button>
+        <hr>
+        </div>
+        `;
   }
   return html;
 }
@@ -175,6 +228,28 @@ function happenMenuHtml() {
   return /*html*/ `
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
+          Antall trekninger -
+          <input 
+          style="margin-right: 0.5rem; width: 45px;"
+          type="number"
+          size="1" 
+          value="${model.inputs.drawCount}" 
+          onchange="model.inputs.drawCount=parseInt(this.value)"
+          />
+          Skal utføres -
+          <input
+          style="margin-right: 0.5rem"
+          type="date" value="${model.inputs.drawDate}" 
+          oninput="model.inputs.drawDate = (this.value)"
+          min="2022-03-01"/>
+          <span style="color: red">Så fort som mulig -</span>
+          <input type="checkbox" onclick="toggleDoAsapSelected()"
+          ${getChecked(model.inputs.doAsap)}/>
+          | <span style="color: blue">Innen en uke</span> -
+          <input type="checkbox" onclick="toggleDoWithinWeekSelected()"
+          ${getChecked(model.inputs.doWithinWeek)}/>
+          |
+          <button class="drawButton" onclick="drawUser(); updateView()">Trekk</button>
           </div>
       `;
 }

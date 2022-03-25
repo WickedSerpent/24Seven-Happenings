@@ -65,6 +65,16 @@ margin-bottom: 0;
     background-color: #000000;
   }
 
+.btn--small {
+  background-color: #2266ff;
+  color: white;
+  border-radius: 6px;
+}
+
+.inputFields {
+  border: 2px solid #2266ff;
+  border-radius: 6px;
+}
 
 .containerAdmin
 {
@@ -257,41 +267,38 @@ margin-bottom: 0;
   display: flex;
   width: 100vw;
   position:absolute;
-  max-height: 80vh;
+  max-height: 100vh;
   min-width: 30rem;
   max-width: 54rem;
   margin-top: -20px;
-  /* height: calc(60vh - 10em); */
-  border-bottom: 5px double #2266ff; 
 }
 
-.kolonne1{
+.happeningsColumn{
   position:relative;
   display: inline-block;
   padding-right: 1em;
   width: 15em;
   min-width: 10em;
-  max-height: 78vh;
+  max-height: 70vh;
   word-wrap: break-word;
-  overflow-y: hidden;
-  
+  overflow-y: hidden;  
 
 }
 
-.kolonne2{
+.doneHappeningsColumn{
   position: relative;
   width: 40vw;
   margin-left: 1em;
   margin-right: 1em;
-  max-height: 78vh;
+  max-height: 80vh;
   min-width: 30em;
   overflow-y: hidden;
  
 }
-.kolonne3{
+.userColumn{
   padding-left: 1em;
   position: relative;
-  max-height: 78vh;
+  max-height: 80vh;
   min-width: 8em;
   position: relative;
   overflow-y: hidden;
@@ -317,7 +324,8 @@ margin-bottom: 0;
 }
 
 .doneHappenList{
-  max-height: 100%;
+  max-height: 28em;
+  min-height: 2em;
   overflow-y: scroll;
   background-color: #f6f9ff;
 }
@@ -357,7 +365,7 @@ scrollbar-width: none;
   max-width: 15em;
   margin-bottom: 5px;
   overflow-y: scroll;
-  max-height: 50vh;
+  max-height: 60vh;
   scrollbar-width: none;
 
 }

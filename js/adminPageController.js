@@ -7,11 +7,10 @@ function createNewUser() {
   if (user.name !== '') {
     model.data.users.push(user);
     newHappeningPointsObj();
-    
+    selectAllOrNoneCreateNew(this.unchecked);
     updateAdminView();
   }
   model.inputs.newUser.name = '';
-  selectAllOrNone(this.unchecked);
 }
 
 function createNewHappening() {

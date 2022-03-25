@@ -5,7 +5,11 @@ const model = {
     },
 
     inputs: {
-        scrollPositionDoneHappening: 0,
+        scrollPositionUsers: 0,
+        
+        scrollPositionDoneHappenings: 0,
+        
+        scrollPositionDoneHappeningsAdmin: 0,
 
             newHappening: {
             name: '',
@@ -56,6 +60,14 @@ const model = {
             doneHappeningId: null,
             areYouSure: false,
         },
+        
+        drawCount: 1,
+        
+        drawDate: null,
+
+        doWithinWeek: false,
+
+        doAsap: false,
     },
 
     data: {
