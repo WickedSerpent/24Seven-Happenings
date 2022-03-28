@@ -282,24 +282,4 @@ ul {
     width: 18em;
   }
 
-/* .trekkBtn{  
-  display: inline-block;
-  position: absolute;
-  bottom: 1em;
-  margin:10px;
-  width: 8em; 
-  height: 40px;
-  max-height: 40px; 
-  color:white;
-  background-color:#2266ff;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  
-  } */
-/* .trekkBtn:hover,
-.trekkBtn:active {
-  background-color: #000000;
-  border:5px, double;
-  cursor: pointer;
-  } */
+
