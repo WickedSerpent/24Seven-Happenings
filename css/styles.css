@@ -106,7 +106,43 @@ ul {
 .btn--top:hover,
 .btn--top:active {
     background-color: #000000;
+    border:5px, double;
   }
+
+@media only screen and (max-width: 1017px){
+  .btn--corner{
+    display: inline-block;
+  }}
+  @media only screen and (min-width: 1018px){
+    .btn--corner{
+      display: none;
+    }
+  
+}
+.btn--corner{  
+  text-transform: uppercase;
+  background-color: #2266ff;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 1em;
+  margin:10px;
+  width: 8em; 
+  height: 40px;
+  max-height: 40px; 
+  color:white;
+  background-color:#2266ff;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  
+  
+  } 
+.btn--corner:hover{
+  background-color: #000000;
+}
 
 .btn--small {
   background-color: #2266ff;
@@ -264,6 +300,7 @@ ul {
     position:absolute;
     margin-top: 5px;
     margin-right: 1em;
+    margin-left: 1em;
     margin-bottom: 1em;
     bottom: 0;
     }

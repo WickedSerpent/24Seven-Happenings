@@ -8,6 +8,7 @@ function updateViewHappenings() {
             <div class="happeningList">
             ${getHappeningsHtml()}
             </div>
+            <button class="btn--corner" onclick="drawUser()">Trekk</button>
       </div>
 
       <div class="userColumn">
@@ -247,7 +248,7 @@ function happenMenuHtml() {
           <input type="checkbox" onclick="toggleDoWithinWeekSelected()"
           ${getChecked(model.inputs.doWithinWeek)}/>
           |
-          <button class="btn--top" onclick="drawUser(); updateView()">Trekk</button>
+          <button class="btn--top" onclick="drawUser()">Trekk</button>
           </div>
       `;
 }
