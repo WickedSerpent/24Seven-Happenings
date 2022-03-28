@@ -13,6 +13,7 @@ function selectAllOrNoneCreateNew(selectAll) {
     
 }
 
+
 function selectNone(selectAll) {
     model.data.selectAll = selectAll;
     for (let user of model.data.happenings) {
