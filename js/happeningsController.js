@@ -13,6 +13,12 @@ function selectAllOrNoneCreateNew(selectAll) {
     
 }
 
+function toggleDateSelected() {
+    const input = model.inputs;
+    model.inputs.doAsap = false;
+    model.inputs.doWithinWeek = false;
+    updateView();
+}
 
 function selectNone(selectAll) {
     model.data.selectAll = selectAll;

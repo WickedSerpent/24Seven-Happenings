@@ -238,10 +238,7 @@ function happenMenuHtml() {
           <input
           style="margin-right: 1rem"
           type="date" value="${model.inputs.drawDate}" 
-          oninput="model.inputs.drawDate = (this.value), 
-          model.inputs.doWithinWeek = false, 
-          model.inputs.doAsap = false, 
-          updateView()"
+          oninput="model.inputs.drawDate = (this.value), toggleDateSelected()"
           min="2022-03-01"/>
           <span style="color: red">Så fort som mulig -</span>
           <input type="checkbox" onclick="toggleDoAsapSelected()"
