@@ -1,3 +1,28 @@
+@media only screen and (max-width: 1017px){
+    .btn--corner{
+    display: inline-block;
+    }
+    .showHideContainer-top{
+    display: none;
+    }
+    .happeningList{
+        max-height: 44vh;
+    }
+
+}
+@media only screen and (min-width: 1018px){
+    .showHideContainer{
+        display: none;
+    }
+    .showHideContainer-top{
+        display: inline-block;
+    }
+    .happeningList{
+        max-height: 70vh;
+    }
+
+}
+
 .container{
     display: flex;
     width: 100vw;
@@ -18,6 +43,13 @@
     overflow-x: hidden;
 
 }
+.cornerContainer{
+    position:absolute;
+    margin-left: 0.18em;
+    bottom: 0;
+
+}
+
 .userColumn{
     padding-left: 1em;
     position: relative;

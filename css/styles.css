@@ -109,16 +109,6 @@ ul {
     border:5px, double;
   }
 
-@media only screen and (max-width: 1017px){
-  .btn--corner{
-    display: inline-block;
-  }}
-  @media only screen and (min-width: 1018px){
-    .btn--corner{
-      display: none;
-    }
-  
-}
 .btn--corner{  
   text-transform: uppercase;
   background-color: #2266ff;
@@ -126,7 +116,6 @@ ul {
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
-  position: absolute;
   bottom: 1em;
   margin:10px;
   width: 8em; 
@@ -228,7 +217,6 @@ ul {
     min-width: 12em;
     max-width: 12em;
     min-height: 1em;
-    max-height: 70vh;
     overflow-y: scroll;
     scrollbar-width: none;
     
