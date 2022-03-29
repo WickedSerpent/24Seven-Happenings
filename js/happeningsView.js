@@ -56,7 +56,7 @@ function updateViewHappenings() {
           
       
           <div class="userColumn">
-            <h4 class="headerAboveDoneHappen">Velg <span style="color: #FF5733">personer</span> som skal være med i trekningen!</h4>
+            <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span> som skal være med i trekningen!</h4>
             <div class="userList">
               <input type="checkbox"
               onclick="selectAllOrNone(this.checked)"
@@ -71,7 +71,7 @@ function updateViewHappenings() {
         
       
         <div class="doneHappeningsColumn">
-          <h4 class="headerAboveTwo">Trekninger</h4>
+          <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
           <div id="doneHappenListId" onscroll="getScrollPoistion()" 
           class="doneHappenList">
           ${getDoneHappening()}

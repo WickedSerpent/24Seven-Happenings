@@ -203,35 +203,45 @@ ul {
 
 .headerAboveDate {
   width: 13em;
+  margin-bottom: 2.65em;
+  float: left;
   margin-left: 1px;
   white-space: pre-wrap;
   }
 
-.headerAboveTwo {
-width: 13em;
-margin-left: 1em;
-white-space: pre-wrap;
-}
+
 
 .headerAboveHappen {
-  margin-left: 1em;
+  
   width: 13em;
+  margin-bottom: 2.65em;
+  margin-left:1em;
+  float: left;
   white-space: pre-wrap;
+  overflow-x: none;
   }
 
-.headerAboveDoneHappen { 
-  width: 13em;
+.headerAboveUsers { 
+  width: 100%;
+  float: left;
   white-space: pre-wrap;
   overflow-x: none;
  }
+.headerAboveDoneHappen{
+  width: 100%;
+  float: left;
+  overflow-x: none;
+}
+
 
 .happeningList{
   margin-top: 1.65em;
   margin-left: 1em;
+  margin-bottom: 5px;
   min-width: 12em;
   max-width: 12em;
   min-height: 1em;
-  max-height: 100%;
+  max-height: 70vh;
   overflow-y: scroll;
   scrollbar-width: none;
   
@@ -239,10 +249,10 @@ white-space: pre-wrap;
 
 
 .userList{
-  margin-top: -20px;
+  margin-top: 1.65em;
+  margin-bottom: 5px;
   min-width: 12em;
   max-width: 12em;
-  margin-bottom: 5px;
   max-height: 70vh;
   overflow-y: scroll;
   overflow-x: none;
