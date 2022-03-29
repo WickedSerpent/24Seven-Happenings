@@ -2,66 +2,84 @@ function updateViewHappenings() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${happenMenuHtml()}
     <div class="container">
-      
-      <div class="happeningsColumn">
-      <h4 class="headerAboveOne">Velg <span style="color: #FF5733">en</span> trekning!</h4>
+      <div class="row">
+        <div class="mainColumn1">
+          <div class="dateAndDrawColumn">
+           <h4 class="headerAboveDate">Skal utføres:</h4><br>
+            <div class="datoBoxWrap">
+            dato -
+
+            <input
+            class="setDateInput"
+            type="date" 
+            value="${model.inputs.drawDate}" 
+            oninput="model.inputs.drawDate = (this.value),
+            toggleDateSelected()"
+            min="2022-03-01"/>
+            </div><br>
+
+            <div class="checkboxWrap">
+            <span style="color:#FF5733;">
+            Umiddelbart -</span>
+            <input type="checkbox" 
+            onclick="toggleDoAsapSelected()"
+            ${getChecked(model.inputs.doAsap)}/>
+            </div><br>
+
+            <div class="checkboxWrap">
+            <span style="color: blue">Innen en uke</span> -
+            <input type="checkbox"
+            onclick="toggleDoWithinWeekSelected()"
+            ${getChecked(model.inputs.doWithinWeek)}/>
+            </div><br>
+
+            Antall <span style="color: #FF5733">trekninger:</span>
+            <div class="dateInputWrap">
+            <input
+            type="number"
+            class="drawTimesInput"
+            size="1" 
+            value="${model.inputs.drawCount}"
+            onchange="model.inputs.drawCount=parseInt(this.value)"/>
+            </div>
+            <button class="btn--corner" 
+            onclick="drawUser()">Trekk</button>
+          </div>
+        
+          
+          <div class="happeningsColumn">
+            <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>      
+            <div class="happeningList">
+            ${getHappeningsHtml()}
+            </div>
+          </div>    
           
       
-        <div class="happeningList">
-          ${getHappeningsHtml()}
-          </div>
-          <div class="cornerContainer">
-            <div class="showHideContainer">
-            Antall trekninger:
-            <input 
-            style="margin-right: 0.5rem; width: 45px;"
-            type="number"
-            size="1" 
-            value="${model.inputs.drawCount}" 
-            onchange="model.inputs.drawCount=parseInt(this.value)"
-            />
-            Skal utføres -
-            <input
-            style="margin-left: 2.2em; width: 3.3em;"
-            type="date" value="${model.inputs.drawDate}" 
-            oninput="model.inputs.drawDate = (this.value), toggleDateSelected()"
-            min="2022-03-01"/>
-            <span style="color: red">Så fort som mulig -</span>
-            <input type="checkbox" onclick="toggleDoAsapSelected()"
-            ${getChecked(model.inputs.doAsap)}/>
-            <span style="color: blue">Innen en uke</span> -
-            <input type="checkbox" style="margin-left: 3.23em ;" 
-            onclick="toggleDoWithinWeekSelected()"
-            ${getChecked(model.inputs.doWithinWeek)}/><br>
-            <button class="btn--corner" onclick="drawUser()">Trekk</button>
-            </div>
-          </div>
-      </div>
-
-      <div class="userColumn">
-            <h4 class="headerAboveThree">Velg personer som skal være med i trekningen!</h4>
+          <div class="userColumn">
+            <h4 class="headerAboveDoneHappen">Velg <span style="color: #FF5733">personer</span> som skal være med i trekningen!</h4>
             <div class="userList">
-              <div class="checkboxWrap2">
               <input type="checkbox"
               onclick="selectAllOrNone(this.checked)"
               ${getChecked(
               model.data.selectAll
               )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-              </div>
+            
             ${getUsers()}<br/>
             </div>
-      </div>
-      <div class="doneHappeningsColumn">
-      <h4 class="headerAboveTwo">Trekninger</h4>
-         <div id="doneHappenListId" onscroll="getScrollPoistion()" class="doneHappenList">
+          </div>
+        </div>
+        
+      
+        <div class="doneHappeningsColumn">
+          <h4 class="headerAboveTwo">Trekninger</h4>
+          <div id="doneHappenListId" onscroll="getScrollPoistion()" 
+          class="doneHappenList">
           ${getDoneHappening()}
           </div>
+        </div>
+      
     </div>
-  
-
-    </div>
-
-    `;
+  `;
 }
 
 function getHappeningsHtml() {
@@ -73,12 +91,10 @@ function getHappeningsHtml() {
   for (let i = 0; i < happenings.length; i++) {
     let happening = happenings[i];
     html += /*html*/ `
-      <div class="checkboxWrap">
         <input type="checkbox" class="HappeningCheckbox"
         onclick="toggleHappeningSelected(${happening.id})" 
         ${getChecked(happening.isSelected)}/>
-        ${happening.name}<br/>    
-        </div>
+        ${happening.name}<br/>
         `;
   }
   return html;
@@ -254,29 +270,6 @@ function happenMenuHtml() {
   return /*html*/ `
           <div class="topMenu">
           <button class="btn--top" onclick="model.app.page='login'; updateView()">Admin</button>
-            <div class="showHideContainer-top">
-            Antall trekninger -
-            <input 
-            style="margin-right: 0.5rem; width: 45px;"
-            type="number"
-            size="1" 
-            value="${model.inputs.drawCount}" 
-            onchange="model.inputs.drawCount=parseInt(this.value)"
-            />
-            Skal utføres -
-            <input
-            style="margin-right: 1rem"
-            type="date" value="${model.inputs.drawDate}" 
-            oninput="model.inputs.drawDate = (this.value), toggleDateSelected()"
-            min="2022-03-01"/>
-            <span style="color: red">Så fort som mulig -</span>
-            <input type="checkbox" onclick="toggleDoAsapSelected()"
-            ${getChecked(model.inputs.doAsap)}/>
-            | <span style="color: blue">Innen en uke</span> -
-            <input type="checkbox" onclick="toggleDoWithinWeekSelected()"
-            ${getChecked(model.inputs.doWithinWeek)}/>
-            |
-            <button class="btn--top" onclick="drawUser()">Trekk</button>
             </div>
           </div>
       `;

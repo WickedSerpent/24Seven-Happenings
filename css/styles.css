@@ -1,44 +1,44 @@
 *{
-    font-family: 'Poppins', sans-serif;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none; 
-    -khtml-user-select: none;  
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-    box-sizing: border-box;
-    
-    }
+  font-family: 'Poppins', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none;  
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  box-sizing: border-box;
+  
+}
 ::-webkit-scrollbar {
-    width: 0.4em;
-    border-top-left-radius: 50% ;
-    border-top-right-radius: 50%;
-  }
+  width: 0.4em;
+  border-top-left-radius: 50% ;
+  border-top-right-radius: 50%;
+}
    
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-top-left-radius: 5px ;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 5px ;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
    
 ::-webkit-scrollbar-thumb {
-    background-color: #2266ff;
-    outline: 1px solid slategrey;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
+  background-color: #2266ff;
+  outline: 1px solid slategrey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 
 [id*=details] {
     display: none;
 }
 
 body{
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 ul {
@@ -48,44 +48,47 @@ ul {
 
 
 .btn{
-    text-transform: uppercase;
-    background-color: #2266ff;
-    justify-content: center;
-    justify-items: center;
-    height: 35px;
-    width: 35px;
-    color: #fff ;
-    font-weight: bold;
-    text-decoration: none;
-    float: right;
-    border:double;
-    border-radius: 25%;
-    margin: 2px;
-    cursor: pointer;
+  text-transform: uppercase;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  height: 35px;
+  width: 35px;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  border:double;
+  border-radius: 25%;
+  margin: 2px;
+  cursor: pointer;
 }
 .btnL {
-    background-color: #2266ff;
-    justify-content: center;
-    justify-items: center;
-    color: #fff ;
-    font-weight: bold;
-    text-decoration: none;
-    border:solid;
-    height: 2.4em;
-    border-radius:6px;
-    margin: 2px;
-    cursor: pointer;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  border:solid;
+  height: 2.4em;
+  border-radius:6px;
+  margin: 2px;
+  cursor: pointer;
 }
 
 .topMenu{
-    margin-top: 15px;
-    margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
-    padding-bottom: 5px;
-    margin-bottom: 0;
-    min-width: 66.25rem;
-    max-height: 24vh;
-    min-height: fit-content;
+  position:relative;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 1em;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  min-width: 66.25rem;
+  max-height: 24vh;
+  min-height: fit-content;
 
 }
 
@@ -109,7 +112,8 @@ ul {
     border:5px, double;
   }
 
-.btn--corner{  
+.btn--corner{ 
+  
   text-transform: uppercase;
   background-color: #2266ff;
   color: #fff ;
@@ -118,7 +122,8 @@ ul {
   border-radius: 6px;
   bottom: 1em;
   margin:10px;
-  width: 8em; 
+  margin-left: -0.01em;
+  width: 8em;
   height: 40px;
   max-height: 40px; 
   color:white;
@@ -126,9 +131,8 @@ ul {
   font-size: 20px;
   cursor: pointer;
   font-weight: bold;
-  
-  
-  } 
+  }
+
 .btn--corner:hover{
   background-color: #000000;
 }
@@ -141,13 +145,13 @@ ul {
   margin-left: 1em;
 }
 .btn--small:hover{
-    background-color: #000000;
-    border:5px, double;
-    cursor: pointer;
-    border: 2px solid #000000;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
+  border: 2px solid #000000;
 }
 .btn--small:active{
-    border: 2px solid white;
+  border: 2px solid white;
 }
 
 
@@ -158,86 +162,96 @@ ul {
 }
 
 .btnDetailsAndDel{
-    text-transform: uppercase;
-    background-color: #2266ff;
-    justify-content: center;
-    justify-items: center;
-    height: 35px;
-    width: 35px;
-    color: #fff ;
-    font-weight: bold;
-    text-decoration: none;
-    border:double;
-    border-radius: 25%;
-    margin: 2px;
-    cursor: pointer;
+  text-transform: uppercase;
+  background-color: #2266ff;
+  justify-content: center;
+  justify-items: center;
+  height: 35px;
+  width: 35px;
+  color: #fff ;
+  font-weight: bold;
+  text-decoration: none;
+  border:double;
+  border-radius: 25%;
+  margin: 2px;
+  cursor: pointer;
 }
 .btn:hover,
 .btn:active {
-    background-color: #000000;
-    border:5px, double;
-    cursor: pointer;
+  background-color: #000000;
+  border:5px, double;
+  cursor: pointer;
 }
 
 .addBtn{
-    display:inline-block;
-    border: double;
-    background-color: #2266ff;
-    color:white;
-    border-radius: 25%;
-    cursor: pointer;
+  display:inline-block;
+  border: double;
+  background-color: #2266ff;
+  color:white;
+  border-radius: 25%;
+  cursor: pointer;
 }
 .addBtn:hover{ 
-    border: double;
-    background-color: #000000;
-    color:white;
-    border-radius: 25%;
-    cursor: pointer;
+  border: double;
+  background-color: #000000;
+  color:white;
+  border-radius: 25%;
+  cursor: pointer;
 
 }
 
-.headerAboveOne {
-    max-width: 20vw;
-    min-width: 11.25rem;
-    white-space: pre-wrap;
-    }
+.headerAboveDate {
+  width: 13em;
+  margin-left: 1px;
+  white-space: pre-wrap;
+  }
 
 .headerAboveTwo {
+width: 13em;
+margin-left: 1em;
+white-space: pre-wrap;
+}
 
-    min-width: 14.375rem;
-    white-space: pre-wrap;
-    }
-.headerAboveThree { 
-    min-width: 14.375rem;
-    white-space: pre-wrap;
-   }
+.headerAboveHappen {
+  margin-left: 1em;
+  width: 13em;
+  white-space: pre-wrap;
+  }
+
+.headerAboveDoneHappen { 
+  width: 13em;
+  white-space: pre-wrap;
+  overflow-x: none;
+ }
 
 .happeningList{
-    margin-top: 1.65em;
-    min-width: 12em;
-    max-width: 12em;
-    min-height: 1em;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    
+  margin-top: 1.65em;
+  margin-left: 1em;
+  min-width: 12em;
+  max-width: 12em;
+  min-height: 1em;
+  max-height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  
     }
 
 
 .userList{
-    margin-top: -20px;
-    min-width: 12em;
-    max-width: 12em;
-    margin-bottom: 5px;
-    overflow-y: scroll;
-    max-height: 70vh;
-    scrollbar-width: none;
+  margin-top: -20px;
+  min-width: 12em;
+  max-width: 12em;
+  margin-bottom: 5px;
+  max-height: 70vh;
+  overflow-y: scroll;
+  overflow-x: none;
   }
 
 .doneHappenList{
-    max-height: 70vh;
-    min-height: 2em;
-    overflow-y: scroll;
-    background-color: #f6f9ff;
+  max-height: 70vh;
+  overflow-y: scroll;
+  width:100%;
+  background-color: #f6f9ff;
 }
 .checkmark{
     width: 20px;
@@ -294,17 +308,17 @@ ul {
     }
 
 .addPersonBox{
-    position:absolute;
-    margin-top: 5px;
-    margin-left: 2em;
-    margin-bottom: 1em;
-    min-width: 6em;
-    bottom: 0;
-    }
+  position:absolute;
+  margin-top: 5px;
+  margin-left: 2em;
+  margin-bottom: 1em;
+  min-width: 6em;
+  bottom: 0;
+}
 .inputsAdmin {
-    margin-top: 10px;
-    border-radius: 6px;
-    width: 18em;
+  margin-top: 10px;
+  border-radius: 6px;
+  width: 18em;
   }
 
 

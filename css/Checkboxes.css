@@ -1,18 +1,3 @@
-.checkboxWrap{
-    text-align: right;
-    word-wrap: break word;
-    margin-right: 1em;
-  
-}
-.checkboxWrap input{
-  float:right;
-}
-.checkboxWrap2{
-  text-align: left;
-}
-.checkboxWrap2 input{
-  float:right;
-}
 .switch {
   position:relative;
   display:  block;
@@ -20,6 +5,16 @@
   height: 3.3em;
   margin-left:260px;
 }
+
+.checkboxWrap{
+  text-align: left;
+
+  
+}
+.checkboxWrap input{
+  float:right;
+}
+
 
 .switch input {
   opacity: 0;
