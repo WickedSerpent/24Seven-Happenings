@@ -33,7 +33,7 @@
 }
 
 [id*=details] {
-    display: none;
+  display: none;
 }
 
 body{
@@ -42,8 +42,8 @@ body{
 }
 
 ul {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 
 
@@ -110,7 +110,7 @@ ul {
 .btn--top:active {
     background-color: #000000;
     border:5px, double;
-  }
+}
 
 .btn--corner{ 
   
@@ -131,7 +131,7 @@ ul {
   font-size: 20px;
   cursor: pointer;
   font-weight: bold;
-  }
+}
 
 .btn--corner:hover{
   background-color: #000000;
@@ -150,6 +150,7 @@ ul {
   cursor: pointer;
   border: 2px solid #000000;
 }
+
 .btn--small:active{
   border: 2px solid white;
 }
@@ -234,7 +235,7 @@ white-space: pre-wrap;
   overflow-y: scroll;
   scrollbar-width: none;
   
-    }
+}
 
 
 .userList{
@@ -259,53 +260,52 @@ white-space: pre-wrap;
 
 
 .doneHappeningBtn{
-    width: 1.5em;
-    height: 1.5em;
-    justify-items: center;
-  }
+  width: 1.5em;
+  height: 1.5em;
+  justify-items: center;
+}
 
 .comment {
-    position: absolute;
-    height: 35px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    grid-column: 2;
-    grid-row: 3;
-    bottom: 0;
-  }
+  position: absolute;
+  height: 35px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  grid-column: 2;
+  grid-row: 3;
+  bottom: 0;
+}
 
 .happeningListAdmin{
 
-    padding-top: 5px;
-    margin-right: 20px;
-    max-height: 60vh;
-    max-width: 30.75em;
-    min-width: 18.75em;
-    scrollbar-width: none;
-    overflow-y: scroll;  
-      }
+  padding-top: 5px;
+  margin-right: 20px;
+  max-height: 60vh;
+  max-width: 30.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+  overflow-y: scroll;  
+}
   
 .userListAdmin{
-    padding-top: 5px;
-    margin-right: 20px;
-    max-height: 60vh;
-    min-height: 1em;
-    max-width: 30.75em;
-    min-width: 18.75em;
-    scrollbar-width: none;
-    overflow-y: scroll;  
-
-    }
+  padding-top: 5px;
+  margin-right: 20px;
+  max-height: 60vh;
+  min-height: 1em;
+  max-width: 30.75em;
+  min-width: 18.75em;
+  scrollbar-width: none;
+  overflow-y: scroll;  
+}
 
 
 .addArrangementBox{
-    position:absolute;
-    margin-top: 5px;
-    margin-right: 1em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    bottom: 0;
-    }
+  position:absolute;
+  margin-top: 5px;
+  margin-right: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  bottom: 0;
+}
 
 .addPersonBox{
   position:absolute;
