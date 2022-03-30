@@ -138,7 +138,7 @@ function drawUser(){
     let checkedHappeningIds = getCheckedUsers()
     let doDate = model.inputs.drawDate
     let date = new Date(doDate)
-    if (doDate === null ){
+    if (doDate === null || doDate === '' ){
         date = null
     }
     if (model.inputs.doAsap === true){
