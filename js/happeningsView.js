@@ -38,6 +38,7 @@ function updateViewHappenings() {
             <input
             type="number"
             class="drawTimesInput"
+            min="1"
             size="1" 
             value="${model.inputs.drawCount}"
             onchange="model.inputs.drawCount=parseInt(this.value)"/>
