@@ -159,7 +159,13 @@ ul {
 .inputFields {
   border: 2px solid #2266ff;
   border-radius: 6px;
-  margin-left: 1em;
+  margin-left: 1rem;
+}
+
+.inputLogin{
+  border: 2px solid #2266ff;
+  border-radius: 6px;
+  margin-left: 1rem;
 }
 
 .btnDetailsAndDel{
