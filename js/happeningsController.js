@@ -171,6 +171,10 @@ function drawUser(){
         alert('Velg personer å trekke mellom!')
         return
     }
+    if(model.inputs.drawCount > 50){
+        alert('maximum trekninger er 50!')
+        return
+    }
     for (let i = 0; i < drawCount; i++) {
         let winners = model.data.doneHappenings
         let winner = {}
@@ -233,7 +237,6 @@ function goToDetailsPage(happeningId) {
 function getScrollPoistion() {
     const element = document.getElementById("doneHappenListId");
     var y = element.scrollTop;
-    console.log(y);
     model.inputs.scrollPositionDoneHappenings = y
   }
   
