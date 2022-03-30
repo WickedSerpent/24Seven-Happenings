@@ -32,7 +32,7 @@ function updateViewUserEdit(){
     class="btn--small"
     style="cursor: pointer;" 
     onclick="editUser()"
-    >Lagre og gå tilbake til hjemmesiden</button>
+    >Lagre og gå tilbake</button>
     </div>
     
     
