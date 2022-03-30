@@ -3,7 +3,7 @@ function loginView() {
     ${loginMenuHtml()}
     <form>
         <input
-        class="inputFields"
+        class="inputLogin"
         id="password"
         type="password"
         placeholder="Passord"
