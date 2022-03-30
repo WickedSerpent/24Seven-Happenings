@@ -1,46 +1,79 @@
 
-@media only screen and (max-width: 1020px) { 
+@media only screen and (max-width: 1119px) { 
+    
     .mainColumn1{
-    max-width: 15rem;
+    width: 17em;
+    flex-direction: column;
+    overflow-x: none;
+    overflow-y: hidden;
     }
+    .userList{
+    max-height: 13em;
+    overflow-y: scroll;
+    overflow-x: none;
+    }
+    .userColumn{
+    max-height: 13em;
+    overflow-y: scroll;
+    overflow-x: none;
+    }
+
+    .happeningList{
+    max-height: 10em;
+    }
+
+ 
+    
+
 
 }
 
-@media only screen and (min-width: 1020px) { 
+@media only screen and (max-width: 1380px) { 
     
     .mainColumn1{
-        min-width: 34.9em;
-        }
-    .mainColumn2{
-        min-width: 100%;
-    
+    max-width: 50vw;
     }
+
     .row{
-        min-width: 100%;
+    min-width: 100vw;
+    }
+
+    .userList{
+    max-height: 20em;
     }
 }
 
-.container{
+/* .container{
     display: block;
+    justify-content: space-between;
     position:relative;
     min-width: 30rem;
     max-width: 100%;
     margin-top: -20px;
     margin-left: -1em;
+} */
+.userAndHappenWrap{
+    display: flex;
+    flex-wrap: wrap;
+    
+
 }
 .row{
     display: flex;
+    
     flex-direction: row;
-    min-width: 100%;  
+   
 }
 .mainColumn1{
     display: flex;
     flex-wrap: wrap;
-    max-height: fit-content;
+    flex-direction: row;
+   
 }
 .mainColumn2{
     display: flex;
-    min-width: 100%;
+    flex-direction: column;
+    
 }
 
 .dateAndDrawColumn{
@@ -65,6 +98,7 @@
 .happeningsColumn{
     position:relative;
     display: flexbox;
+    
     margin-left: 1em;
     width: 13em;
     word-wrap: break-word;
@@ -75,8 +109,11 @@
 
 }
 .doneHappeningsColumn{
-    max-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 80vh;
     min-width: 30em;
+    max-width: 38.8125em;
     float: left;
     margin-right: 1em;
     margin-left: 1em;
@@ -93,14 +130,14 @@
 .umiddelbart{
     width: 10em;
 }
-.dateInputWrap{
-    margin-right: 0.4rem; 
+.AmountInputWrap{
+    margin-right: 0.7rem; 
     max-width: 1.8em;
     float: right
 
 }
-.drawTimesInput{
-    width:2.6em;
+.drawAmountInput{
+    width: 3em;
     margin-right: 1.74em;
 }
 

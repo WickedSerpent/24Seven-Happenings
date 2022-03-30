@@ -34,10 +34,10 @@ function updateViewHappenings() {
             </div><br>
 
             Antall <span style="color: #FF5733">trekninger:</span>
-            <div class="dateInputWrap">
+            <div class="AmountInputWrap">
             <input
             type="number"
-            class="drawTimesInput"
+            class="drawAmountInput"
             size="1" 
             value="${model.inputs.drawCount}"
             onchange="model.inputs.drawCount=parseInt(this.value)"/>
@@ -46,7 +46,6 @@ function updateViewHappenings() {
             onclick="drawUser()">Trekk</button>
           </div>
         
-          
           <div class="happeningsColumn">
             <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>      
             <div class="happeningList">
@@ -54,7 +53,7 @@ function updateViewHappenings() {
             </div>
           </div>    
           
-      
+        
           <div class="userColumn">
             <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span> som skal være med i trekningen!</h4>
             <div class="userList">
@@ -63,13 +62,13 @@ function updateViewHappenings() {
               ${getChecked(
               model.data.selectAll
               )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-            
+        
             ${getUsers()}<br/>
             </div>
           </div>
         </div>
         
-      
+      <div class="mainColumn2">
         <div class="doneHappeningsColumn">
           <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
           <div id="doneHappenListId" onscroll="getScrollPoistion()" 
@@ -77,7 +76,7 @@ function updateViewHappenings() {
           ${getDoneHappening()}
           </div>
         </div>
-      
+      </div>
     </div>
   `;
 }
