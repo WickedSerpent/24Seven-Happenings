@@ -10,8 +10,12 @@
   box-sizing: border-box;
   
 }
+
 #app{
-max-width: 100%;
+max-width: 100vmax;
+max-height:100vmin;
+overflow-y: none;
+
 }
 
 ::-webkit-scrollbar {
@@ -48,8 +52,6 @@ body{
 ul {
   list-style: none;
 }
-
-
 
 .btn{
   text-transform: uppercase;
@@ -207,54 +209,49 @@ ul {
 
 .headerAboveDate {
   width: 13em;
-  margin-bottom: 2.65em;
+  margin-bottom: 1em;
   float: left;
   margin-left: 1px;
-  white-space: pre-wrap;
-  }
-
+  
+}
 
 
 .headerAboveHappen {
-  width: 100%;
-  margin-bottom: 2.65em;
-  margin-left:1em;
+  width: 12em;
+  margin-left: 1em;
   float: left;
-  white-space: pre-wrap;
   overflow-x: none;
   }
 
 .headerAboveUsers { 
-  width: 100%;
+  width: 12em;
   float: left;
-  
   overflow-x: none;
  }
 .headerAboveDoneHappen{
+  margin-bottom: 1em;
   width: 20em;
-  max-height: 2em;
   float: left;
   overflow-x: none;
 }
 
 
 .happeningList{
-  margin-top: 30px;
   margin-left: 1em;
   margin-bottom: 5px;
   min-width: 12em;
   max-width: 12em;
+  max-height: 70vh;
   overflow-y: scroll;
   scrollbar-width: none;
   
 }
 
-
 .userList{
-  margin-top: 1.65em;
   margin-bottom: 5px;
-  min-width: 12em;
-  max-width: 12em;
+  width: 12em;
+  max-height: 60em;
+  min-height: 10em;
   overflow-y: scroll;
   overflow-x: none;
   }
@@ -269,7 +266,6 @@ ul {
     width: 20px;
 }
 
-
 .doneHappeningBtn{
   width: 1.5em;
   height: 1.5em;
@@ -281,17 +277,13 @@ ul {
   height: 35px;
   margin-top: 10px;
   margin-bottom: 15px;
-  grid-column: 2;
-  grid-row: 3;
   bottom: 0;
 }
 
 .happeningListAdmin{
-
   padding-top: 5px;
   margin-right: 20px;
-  max-height: 60vh;
-  max-width: 30.75em;
+  height: 30em;
   min-width: 18.75em;
   scrollbar-width: none;
   overflow-y: scroll;  
@@ -300,9 +292,8 @@ ul {
 .userListAdmin{
   padding-top: 5px;
   margin-right: 20px;
-  max-height: 60vh;
+  height: 30em;
   min-height: 1em;
-  max-width: 30.75em;
   min-width: 18.75em;
   scrollbar-width: none;
   overflow-y: scroll;  
@@ -310,7 +301,7 @@ ul {
 
 
 .addArrangementBox{
-  position:absolute;
+  position:relative;
   margin-top: 5px;
   margin-right: 1em;
   margin-left: 1em;
@@ -319,7 +310,7 @@ ul {
 }
 
 .addPersonBox{
-  position:absolute;
+  position:relative;
   margin-top: 5px;
   margin-left: 2em;
   margin-bottom: 1em;

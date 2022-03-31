@@ -10,7 +10,7 @@ function selectAllOrNoneCreateNew(selectAll) {
     for (let user of model.data.users) {
         user.isSelected = selectAll;
     }
-    
+
 }
 
 function toggleDateSelected() {
@@ -39,7 +39,12 @@ function togglePersonSelected(id) {
 
 function toggleDetailsSelected(id) {
     const doneHappening = getDoneHappeningById(id);
+    const allHappenings = model.data.doneHappenings
     doneHappening.detailsShown = !doneHappening.detailsShown;
+    allHappenings.filter(obj => {
+        if(obj.id !== id) 
+        obj.detailsShown = false
+        })
     updateView()
 }
 
@@ -138,7 +143,7 @@ function drawUser(){
     let checkedHappeningIds = getCheckedUsers()
     let doDate = model.inputs.drawDate
     let date = new Date(doDate)
-    if (doDate === null ){
+    if (doDate === null || doDate === '' ){
         date = null
     }
     if (model.inputs.doAsap === true){
@@ -171,6 +176,10 @@ function drawUser(){
         alert('Velg personer å trekke mellom!')
         return
     }
+    if(model.inputs.drawCount > 50){
+        alert('maximum trekninger er 50!')
+        return
+    }
     for (let i = 0; i < drawCount; i++) {
         let winners = model.data.doneHappenings
         let winner = {}
@@ -198,19 +207,17 @@ function drawUser(){
 }
 
 function addComment(id) {
-    let happening = getDoneHappeningById(id) 
-    if (model.inputs.comment === '') {
-        return
+    let happening = getDoneHappeningById(id)
+    let doneHappeningId = model.inputs.commentHappening.doneHappeningId
+    if(model.inputs.commentHappening.comment == '' || id !== doneHappeningId) alert('Kommentarfeltet og knappen samsvarer ikke')
+    else{
+            let comment = {}
+            comment.commentTime = getNowForStorage()
+            comment.commentId = getMaxCommentIdDoneHappening(id) + 1
+            comment.comment = model.inputs.commentHappening.comment
+            happening.comments.push(comment)
     }
-    else {
-        let comment = {}
-        comment.commentTime = getNowForStorage()
-        comment.commentId = getMaxCommentIdDoneHappening(id) + 1
-        comment.comment = model.inputs.comment
-        happening.comments.push(comment)
-        model.inputs.comment = ''
-        updateView()
-    }
+    updateView()
 }
 
 function goToDeleteCommentPage(happeningId) {
@@ -233,7 +240,6 @@ function goToDetailsPage(happeningId) {
 function getScrollPoistion() {
     const element = document.getElementById("doneHappenListId");
     var y = element.scrollTop;
-    console.log(y);
     model.inputs.scrollPositionDoneHappenings = y
   }
   

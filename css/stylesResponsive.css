@@ -1,42 +1,94 @@
 
-@media only screen and (max-width: 1120px) { 
+@media only screen and (max-width: 1160px) { 
     
     .mainColumn1{
     width: 17em;
-    max-height: 100vh;
+    max-height: 70vh;;
     min-width: 17em;
+    flex-flow: row wrap;
     overflow-x: none;
     overflow-y: none;
     }
 
+    .userColumn{
+    max-height: 13em;
+    overflow-y: none;
+    }
     .userList{
-    max-height: 5em;
+    max-height: 13em;
     overflow-y: scroll;
     overflow-x: none;
+    }
+    .happeningUserWrap{
+    display: flexbox;
+    max-height: 26em;
+        
+    }
+    .userList{
+    height: 4em;
+    }
+    
+
+    .happeningList{
+    
+    height: 4em;
+    }
+}
+
+@media only screen and (max-width: 1360px) and (min-width: 1160px)  { 
+    
+    .mainColumn1{
+    justify-content: space-between;    
+    max-width: 50vw;
+    max-height: 70vh;
+    
+    }
+    .happeningUserWrap{
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 70vh;
+    }
+    .row{
+    min-width: 100vw;
+    
+    }
+
+    .happeningsColumn{
+    max-height: 25em;
+    }
+    .userColumn{
+    max-height: 25em;
+    }
+   
+    .userList{
+    max-height: 20em;
     }
 
     .happeningList{
     max-height: 10em;
     }
-}
-
-@media only screen and (max-width: 1380px) and (min-height:1120px){ 
     
-    .mainColumn1{
-    max-width: 50vw;
-    }
-
-    .row{
-    min-width: 100vw;
+}
+@media only screen and (min-width: 1360px) {
+    
+    .happeningUserWrap{
+    display: flex;
+    flex-direction: row;
+    max-height: inherit;
     }
 
     .userList{
-    max-height: 20em;
+    max-height: 70vh;
+    }
+
+    .happeningList{
+    max-height: 70vh;
     }
 }
 
 .container{
-    display: block;
+    display: flex;
     position:relative;
     min-width: 30rem;
     max-width: 100%;
@@ -44,54 +96,52 @@
     margin-left: -1em;
 }
 .userAndHappenWrap{
+    position:relative;
+    min-width: 30em;
     display: flex;
     flex-wrap: wrap;
+    overflow-y: none;
 
 }
 .row{
     display: flex;
-    justify-content: space-between;    
     flex-direction: row;
-   
+    max-height: 60vh;
+    overflow-y: none;
 }
 .mainColumn1{
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    max-height: 70vh;
+    overflow-y: none;
    
 }
 .mainColumn2{
     display: flex;
-    justify-content: space-between;
     
 }
 
 .dateAndDrawColumn{
     position: relative;
     margin-left: 2em;
-    max-height: 80vh;
+    margin-bottom: 0.5em;
+    max-height: 15em;
     width: 13em;
-    float: left;
-    bottom:0;
+    
+    
 
 }
 .userColumn{
     padding-left: 1em;
-    position: relative;
     margin-left: 1em;
     width: 13em;
-    overflow-y: hidden;
+    overflow-y: none;
     overflow-x: none;
 
 
 }
 .happeningsColumn{
-    position:relative;
-    display: flexbox;
-    
-    margin-left: 1em;
     width: 13em;
+    margin-left: 1em;
     word-wrap: break-word;
     overflow-y: none;
     overflow-x: hidden;
@@ -100,9 +150,9 @@
 
 }
 .doneHappeningsColumn{
-    display: flex;
+    display: relative;
     flex-wrap: wrap;
-    max-height: 80vh;
+    max-height: fit-content;
     min-width: 30em;
     max-width: 38.8125em;
     float: left;
@@ -113,7 +163,7 @@
 }
 
 .setDateInput{
-    width:11em;
+    width:6em;
     margin-left: 10px;
     float:right;
 }
@@ -123,12 +173,12 @@
 }
 .AmountInputWrap{
     margin-right: 0.7rem; 
-    max-width: 1.8em;
+    max-width: 1.8rem;
     float: right
 
 }
-.drawAmountInput{
-    width: 3em;
+.drawTimesInput{
+    width: 2.8em;
     margin-right: 1.74em;
 }
 
@@ -137,7 +187,7 @@
     display: flex;
     justify-content: space-evenly;
     position:absolute;
-    height: 80vh;
+    height: 70vh;
     min-height: 1em;
     min-width: 30em;
     margin-top: -20px;
@@ -147,8 +197,8 @@
 .kolonne1Admin{
     padding-top: 5px;
     margin-right: 20px;
-    width:  35.25em;
-    min-height: 1em;
+    
+    min-height: 3em;
     max-width: 20.75em;
     min-width: 18.75em;
     scrollbar-width: none;
@@ -157,14 +207,11 @@
 
 .kolonne2Admin{
     padding-top: 5px;
-    margin-right: 20px;
-    /* height: 46.875rem; */
-    width:  35.25em;
-    min-height: 1em;
-    max-width: 18.75em;
+    min-height: 3em;
+    max-width: 20.75em;
     min-width: 18.75em;
     scrollbar-width: none;
-    overflow: hidden;
+    overflow: none;
 
 }
 

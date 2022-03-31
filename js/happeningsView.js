@@ -6,6 +6,7 @@ function updateViewHappenings() {
         <div class="mainColumn1">
           <div class="dateAndDrawColumn">
            <h4 class="headerAboveDate">Skal utføres:</h4><br>
+           <h5>
             <div class="datoBoxWrap">
             dato -
 
@@ -17,7 +18,7 @@ function updateViewHappenings() {
             toggleDateSelected()"
             min="2022-03-01"/>
             </div><br>
-
+            
             <div class="checkboxWrap">
             <span style="color:#FF5733;">
             Umiddelbart -</span>
@@ -37,7 +38,9 @@ function updateViewHappenings() {
             <div class="AmountInputWrap">
             <input
             type="number"
-            class="drawAmountInput"
+            class="drawTimesInput"
+            min="1"
+            max="50"
             size="1" 
             value="${model.inputs.drawCount}"
             onchange="model.inputs.drawCount=parseInt(this.value)"/>
@@ -45,45 +48,47 @@ function updateViewHappenings() {
             <button class="btn--corner" 
             onclick="drawUser()">Trekk</button>
           </div>
-        
-          <div class="happeningsColumn">
-            <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>
-            <div class="happeningList">
-            ${getHappeningsHtml()}
-            </div>
-          </div>    
+          <div class="happeningUserWrap">
+            <div class="happeningsColumn">
+              <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>
+              <div class="happeningList">
+              ${getHappeningsHtml()}
+              </div>
+            </div>    
           
-        
-          <div class="userColumn">
-            <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span> som skal være med i trekningen!</h4>
-            <div class="userList">
-              <input type="checkbox"
-              onclick="selectAllOrNone(this.checked)"
-              ${getChecked(
-              model.data.selectAll
-              )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
-        
-            ${getUsers()}<br/>
+          
+            <div class="userColumn">
+              <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span>!</h4>
+                <div class="userList">
+                  <input type="checkbox"
+                  onclick="selectAllOrNone(this.checked)"
+                  ${getChecked(
+                  model.data.selectAll
+                  )}/> <span style="color: #0075ff; font-weight: 600;">Velg alle</span><br/>
+                  
+                  ${getUsers()}<br/>
+                </div>
             </div>
           </div>
         </div>
-        
-      <div class="mainColumn2">
-        <div class="doneHappeningsColumn">
-          <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
-          <div id="doneHappenListId" onscroll="getScrollPoistion()" 
-          class="doneHappenList">
-          ${getDoneHappening()}
+      
+        <div class="mainColumn2">
+          <div class="doneHappeningsColumn">
+            <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
+            <div id="doneHappenListId" onscroll="getScrollPoistion()" 
+            class="doneHappenList">
+            ${getDoneHappening()}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  `;
+  `;  
 }
 
 function getHappeningsHtml() {
   let html = '';
-  let happenings = model.data.happenings;
+  let happenings = [...model.data.happenings];
   happenings.sort((a, b) =>
     a.name.toLowerCase().localeCompare(b.name.toLowerCase())
   );
@@ -163,7 +168,7 @@ function getDoneHappening() {
     </h3>
     <label class="switch">
     <input 
-    type="checkbox" 
+    type="radio" 
     class="cb1" 
     onclick="toggleDetailsSelected(${doneHappening.id})"${getChecked(doneHappening.detailsShown)}">
     <span class="slider"></span>
@@ -226,13 +231,13 @@ function getDoneHappening() {
       html += /*html*/ `
           <br/>
           <form>
-          <input 
+<input 
           class="inputFields"
           oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
           title="Skriv kommentar" 
           required type="text" 
-          oninput="model.inputs.comment=this.value"
-          onfocus="model.inputs.comment=''"/> 
+          oninput="model.inputs.commentHappening.comment=this.value"
+          onfocus="model.inputs.commentHappening.comment='', model.inputs.commentHappening.doneHappeningId=${doneHappening.id}"/>
           
         <button class="btn--small" onclick=addComment(${doneHappening.id
         })>Legg til kommentar</button>
@@ -246,13 +251,8 @@ function getDoneHappening() {
     // else { 
     //   html += /*html*/`
     //   `; }
-    html += /*html*/`<button class="btn--top"
-        title="Detaljer" id="detailsSwich" 
-        onclick=(toggleDetailsSelected(${doneHappening.id})"
-        ${getChecked(doneHappening.detailsShown)}>Detaljer</button>
-        <hr>
-        </div>
-        `;
+
+ 
   }
   return html;
 }

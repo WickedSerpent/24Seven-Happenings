@@ -26,7 +26,7 @@ function createDeleteCommentHtml() {
     let comments = getAllCommentsFromDoneHappening(happeningId);
     for (comment of comments) {
         html +=/*html*/`
-        ${comment.comment} <button onclick="deleteComment(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
+        ${comment.comment} <button class="btn--small" onclick="deleteComment(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
     `;
     }
     return html
@@ -38,7 +38,7 @@ function createDeleteCommentHtmlAdmin() {
     let comments = getAllCommentsFromDoneHappening(happeningId);
     for (comment of comments) {
         html +=/*html*/`
-        ${comment.comment} <button onclick="deleteCommentAdmin(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
+        ${comment.comment} <button class="btn--small" onclick="deleteCommentAdmin(${comment.commentId}, ${happeningId})">Slett</button> <br /><br />
     `;
     }
     return html
