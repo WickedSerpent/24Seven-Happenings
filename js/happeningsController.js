@@ -185,7 +185,6 @@ function drawUser(){
         let winnerUser = getUserById(winnerId)
         winner.participants = getCheckedUsersNamesFromLowestPoint()
         winner.comments = []
-        winner.commentHappening = {comment: '', happeningId: null,}
         winner.id = getMaxDoneHappeningId() + 1
         winner.userId = winnerId
         winner.doDate = date

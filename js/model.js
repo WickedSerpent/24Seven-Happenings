@@ -54,7 +54,10 @@ const model = {
             areYouSure: false,
         },
 
-        comment: '',
+        commentHappening: {
+            happeningId: null,
+            comment: '',
+        },
 
         deleteComment: {
             doneHappeningId: null,
@@ -145,10 +148,6 @@ const model = {
 
             {
                 comments: [],
-                commentHappening: {
-                    happeningId: null,
-                    comment: '',
-                },
                 detailsShown: false,
                 doDate: null, 
                 happeningId: 2,

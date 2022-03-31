@@ -234,7 +234,7 @@ function getDoneHappening() {
           oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
           title="Skriv kommentar" 
           required type="text" 
-          oninput="doneHappening.commentHappening.comment=this.value , 
+          oninput="model.inputs.commentHappening.comment=this.value , 
           model.inputs.commentHappening.happeningId=${doneHappening.id} "/>  
           
         <button class="btn--small" onclick=addComment(${doneHappening.id
