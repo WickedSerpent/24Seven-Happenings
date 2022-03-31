@@ -143,6 +143,25 @@ const model = {
         
         doneHappenings: [
 
+            {
+                comments: [],
+                commentHappening: {
+                    happeningId: null,
+                    comment: '',
+                },
+                detailsShown: false,
+                doDate: null, 
+                happeningId: 2,
+                id: 1,
+                name: "Rense kaffemaskin",
+                participants: ['Anders H', 'Bjørn', 'Edgar', 'Emil', 'Espen', 'Fredrik', 
+                'Helene', 'Jeanette', 'Jørn', 'Kay', 'Kjetil', 'Matthias', 'Milad', 'Nicolai', 
+                'Rune', 'Sindre', 'Steinar J', 'Steinar S', 'Vegard'],
+                time: "2022-03-25 10:24:24.336Z",
+                userDrawn: "Charlotte",
+                userId: 11,
+            }
+
         ],
     },
 

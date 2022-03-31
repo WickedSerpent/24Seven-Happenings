@@ -185,6 +185,7 @@ function drawUser(){
         let winnerUser = getUserById(winnerId)
         winner.participants = getCheckedUsersNamesFromLowestPoint()
         winner.comments = []
+        winner.commentHappening = {comment: '', happeningId: null,}
         winner.id = getMaxDoneHappeningId() + 1
         winner.userId = winnerId
         winner.doDate = date
@@ -202,17 +203,15 @@ function drawUser(){
 }
 
 function addComment(id) {
-    let happening = getDoneHappeningById(id) 
-    if (model.inputs.comment === '') {
-        return
-    }
-    else {
+    let happening = getDoneHappeningById(id)
+    let happeningId = model.inputs.commentHappening.happeningId
+    if(model.inputs.commentHappening.comment === '') return
+    if (id === happeningId) {
         let comment = {}
         comment.commentTime = getNowForStorage()
         comment.commentId = getMaxCommentIdDoneHappening(id) + 1
-        comment.comment = model.inputs.comment
+        comment.comment = model.inputs.commentHappening.comment
         happening.comments.push(comment)
-        model.inputs.comment = ''
         updateView()
     }
 }
