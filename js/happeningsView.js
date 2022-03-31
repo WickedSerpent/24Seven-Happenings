@@ -178,7 +178,7 @@ function getDoneHappening() {
     if (date === 'Så fort som mulig') {
       html += /*html*/ `
       <h4 id=>Utføres - 
-      <span style="color: #0075ff">Så fort som mulig</span></h4>
+      <span style="color: #0075ff">Så snart som mulig</span></h4>
       `;
     }
 
