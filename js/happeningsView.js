@@ -47,7 +47,7 @@ function updateViewHappenings() {
           </div>
         
           <div class="happeningsColumn">
-            <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>      
+            <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>
             <div class="happeningList">
             ${getHappeningsHtml()}
             </div>
@@ -231,7 +231,8 @@ function getDoneHappening() {
           oninvalid="this.setCustomValidity('Feltet kan ikke være tomt')" 
           title="Skriv kommentar" 
           required type="text" 
-          oninput="model.inputs.comment=this.value"/> 
+          oninput="model.inputs.comment=this.value"
+          onfocus="model.inputs.comment=''"/> 
           
         <button class="btn--small" onclick=addComment(${doneHappening.id
         })>Legg til kommentar</button>

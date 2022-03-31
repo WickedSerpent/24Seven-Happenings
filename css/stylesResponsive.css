@@ -1,19 +1,16 @@
 
-@media only screen and (max-width: 1119px) { 
+@media only screen and (max-width: 1120px) { 
     
     .mainColumn1{
     width: 17em;
-    flex-direction: column;
+    max-height: 100vh;
+    min-width: 17em;
     overflow-x: none;
-    overflow-y: hidden;
+    overflow-y: none;
     }
+
     .userList{
-    max-height: 13em;
-    overflow-y: scroll;
-    overflow-x: none;
-    }
-    .userColumn{
-    max-height: 13em;
+    max-height: 5em;
     overflow-y: scroll;
     overflow-x: none;
     }
@@ -21,14 +18,9 @@
     .happeningList{
     max-height: 10em;
     }
-
- 
-    
-
-
 }
 
-@media only screen and (max-width: 1380px) { 
+@media only screen and (max-width: 1380px) and (min-height:1120px){ 
     
     .mainColumn1{
     max-width: 50vw;
@@ -43,36 +35,35 @@
     }
 }
 
-/* .container{
+.container{
     display: block;
-    justify-content: space-between;
     position:relative;
     min-width: 30rem;
     max-width: 100%;
     margin-top: -20px;
     margin-left: -1em;
-} */
+}
 .userAndHappenWrap{
     display: flex;
     flex-wrap: wrap;
-    
 
 }
 .row{
     display: flex;
-    
+    justify-content: space-between;    
     flex-direction: row;
    
 }
 .mainColumn1{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
    
 }
 .mainColumn2{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     
 }
 

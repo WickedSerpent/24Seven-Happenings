@@ -216,8 +216,7 @@ ul {
 
 
 .headerAboveHappen {
-  
-  width: 13em;
+  width: 100%;
   margin-bottom: 2.65em;
   margin-left:1em;
   float: left;
@@ -228,7 +227,7 @@ ul {
 .headerAboveUsers { 
   width: 100%;
   float: left;
-  white-space: pre-wrap;
+  
   overflow-x: none;
  }
 .headerAboveDoneHappen{
@@ -240,7 +239,7 @@ ul {
 
 
 .happeningList{
-  margin-top: 1.65em;
+  margin-top: 30px;
   margin-left: 1em;
   margin-bottom: 5px;
   min-width: 12em;
