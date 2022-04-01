@@ -48,6 +48,7 @@ function updateViewHappenings() {
             <button class="btn--corner" 
             onclick="drawUser()">Trekk</button>
           </div>
+
           <div class="happeningUserWrap">
             <div class="happeningsColumn">
               <h4 class="headerAboveHappen">Velg <span style="color: #FF5733">en</span> trekning!</h4>
@@ -55,7 +56,6 @@ function updateViewHappenings() {
               ${getHappeningsHtml()}
               </div>
             </div>    
-          
           
             <div class="userColumn">
               <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span>!</h4>

@@ -1,96 +1,118 @@
 
-@media only screen and (max-width: 1160px) { 
-    
+@media only screen and (max-width: 1160px) {
+
     .mainColumn1{
     width: 17em;
-    max-height: 70vh;;
+    height: 80vh;;
     min-width: 17em;
     flex-flow: row wrap;
     overflow-x: none;
     overflow-y: none;
+
     }
 
     .userColumn{
-    max-height: 13em;
+    height: 40vh;
     overflow-y: none;
+
     }
-    .userList{
-    max-height: 13em;
-    overflow-y: scroll;
-    overflow-x: none;
-    }
-    .happeningUserWrap{
-    display: flexbox;
-    max-height: 26em;
-        
-    }
-    .userList{
-    height: 4em;
-    }
-    
 
     .happeningList{
+    max-height: 13vh;
+    }
     
-    height: 4em;
+    .userList{
+    max-height: 15vh;
+    overflow-y: scroll;
+    overflow-x: none;
+
+    }
+
+    .happeningUserWrap{
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    }
+
+    .checkboxWrap{
+    margin-top: -7px;
+
     }
 }
 
-@media only screen and (max-width: 1360px) and (min-width: 1160px)  { 
-    
+@media only screen and (max-width: 1360px) and (min-width: 1160px)  {
+
     .mainColumn1{
-    justify-content: space-between;    
-    max-width: 50vw;
-    max-height: 70vh;
-    
+    justify-content: space-between;
+
+
     }
     .happeningUserWrap{
     display: flexbox;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 70vh;
+    height: 80vh;
+    flex-basis: 0;
     }
     .row{
     min-width: 100vw;
-    
+
+    }
+
+    .checkboxWrap{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
     }
 
     .happeningsColumn{
     max-height: 25em;
+
     }
-    .userColumn{
-    max-height: 25em;
-    }
-   
+
     .userList{
-    max-height: 20em;
+        max-height: 55vh;
     }
 
     .happeningList{
+
     max-height: 10em;
+
     }
-    
+
+    .checkboxWrap{
+    margin-top: 10px;
+    text-align: left;
+
+    }
+
 }
 @media only screen and (min-width: 1360px) {
-    
+
     .happeningUserWrap{
     display: flex;
+    max-height: 75vh;
     flex-direction: row;
     max-height: inherit;
+
+    }
+    .checkboxWrap{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
     }
 
-    .userList{
-    max-height: 70vh;
-    }
 
     .happeningList{
     max-height: 70vh;
+
     }
 }
 
 .container{
-    display: flex;
+    display: block;
     position:relative;
-    min-width: 30rem;
     max-width: 100%;
     margin-top: -20px;
     margin-left: -1em;
@@ -111,33 +133,29 @@
 }
 .mainColumn1{
     display: flex;
-    max-height: 70vh;
+    max-height: 80vh;
     overflow-y: none;
-   
+
 }
 .mainColumn2{
     display: flex;
-    
+    max-height: 80vh;
+
 }
 
 .dateAndDrawColumn{
     position: relative;
     margin-left: 2em;
-    margin-bottom: 0.5em;
-    max-height: 15em;
+    margin-bottom: -2em;
     width: 13em;
-    
-    
-
 }
 .userColumn{
     padding-left: 1em;
     margin-left: 1em;
     width: 13em;
+    max-height: 80vh;
     overflow-y: none;
     overflow-x: none;
-
-
 }
 .happeningsColumn{
     width: 13em;
@@ -150,6 +168,7 @@
     display: relative;
     flex-wrap: wrap;
     max-height: fit-content;
+    max-height: 80vh;
     min-width: 30em;
     max-width: 38.8125em;
     float: left;
@@ -159,8 +178,8 @@
 }
 
 .setDateInput{
-    width:6em;
-    margin-left: 10px;
+    width:11em;
+
     float:right;
 }
 
@@ -168,7 +187,7 @@
     width: 10em;
 }
 .AmountInputWrap{
-    margin-right: 0.7rem; 
+    margin-right: 0.7rem;
     max-width: 1.8rem;
     float: right
 
@@ -193,7 +212,7 @@
 .kolonne1Admin{
     padding-top: 5px;
     margin-right: 20px;
-    
+
     min-height: 3em;
     max-width: 20.75em;
     min-width: 18.75em;

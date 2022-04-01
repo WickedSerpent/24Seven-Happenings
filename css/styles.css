@@ -1,5 +1,4 @@
 *{
-
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none; 
@@ -12,9 +11,10 @@
 }
 
 #app{
-max-width: 100vmax;
-max-height:100vmin;
-overflow-y: none;
+  max-width: 100vmax;
+  max-height:100vmin;
+  overflow-y: none;
+  overflow-x: none;
 
 }
 
@@ -241,7 +241,7 @@ ul {
   margin-bottom: 5px;
   min-width: 12em;
   max-width: 12em;
-  max-height: 70vh;
+  max-height: 80vh;
   overflow-y: scroll;
   scrollbar-width: none;
   
@@ -250,14 +250,14 @@ ul {
 .userList{
   margin-bottom: 5px;
   width: 12em;
-  max-height: 60em;
+  max-height: 80vh;
   min-height: 10em;
   overflow-y: scroll;
   overflow-x: none;
   }
 
 .doneHappenList{
-  max-height: 70vh;
+  max-height: 80vh;
   overflow-y: scroll;
   width: 39.31em;
   background-color: #f6f9ff;
@@ -323,4 +323,7 @@ ul {
   width: 18em;
   }
 
+  .orangeText {
+    color: #FF5733;
+  }
 
