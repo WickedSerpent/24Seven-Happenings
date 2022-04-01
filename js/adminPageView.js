@@ -1,6 +1,6 @@
 function updateAdminViewHome() {
   document.getElementById('app').innerHTML = /*html*/ `
-    ${createMenuHtmlAdmin()}
+    ${adminMenuHtmlAdmin()}
     
     <div class="containerAdmin">
       <div class="kolonne1Admin">
