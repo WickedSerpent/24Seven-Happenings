@@ -2,10 +2,19 @@ function createMenuHtmlAdmin() {
   return /*html*/ `
         <div class="topMenu">
         <button class="btn--top" onclick="model.app.page='admin'; updateAdminView()">Administrer</button>
-        <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Trekninger</button>
+        <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Utførte Trekninger</button>
         <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
         </div>
     `;
+}
+
+function adminMenuHtmlAdmin() {
+  return /*html*/ `
+          <div class="topMenu">
+          <button class="btn--top" onclick="model.app.page='happeningsAdmin'; updateAdminView()">Utførte Trekninger</button>
+          <button class="btn--top" onclick="model.app.page='happening'; logout()">Logg ut</button>
+          </div>
+      `;
 }
 
 function createMenuHtml() {
