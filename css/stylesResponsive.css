@@ -2,41 +2,41 @@
 @media only screen and (max-width: 1160px) {
 
     .mainColumn1{
-    width: 17em;
-    height: 80vh;;
-    min-width: 17em;
-    flex-flow: row wrap;
-    overflow-x: none;
-    overflow-y: none;
+        width: 17em;
+        height: 80vh;;
+        min-width: 17em;
+        flex-flow: row wrap;
+        overflow-x: none;
+        overflow-y: none;
 
     }
 
     .userColumn{
-    height: 40vh;
-    overflow-y: none;
+        height: 40vh;
+        overflow-y: none;
 
     }
 
     .happeningList{
-    max-height: 13vh;
+        max-height: 13vh;
     }
     
     .userList{
-    max-height: 15vh;
-    overflow-y: scroll;
-    overflow-x: none;
+        max-height: 15vh;
+        overflow-y: scroll;
+        overflow-x: none;
 
     }
 
     .happeningUserWrap{
-    display: flexbox;
-    flex-wrap: wrap;
-    flex-direction: column;
+        display: flexbox;
+        flex-wrap: wrap;
+        flex-direction: column;
     
     }
 
     .checkboxWrap{
-    margin-top: -7px;
+        margin-top: -7px;
 
     }
 }
@@ -44,30 +44,30 @@
 @media only screen and (max-width: 1360px) and (min-width: 1160px)  {
 
     .mainColumn1{
-    justify-content: space-between;
+        justify-content: space-between;
 
 
     }
     .happeningUserWrap{
-    display: flexbox;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 80vh;
-    flex-basis: 0;
+        display: flexbox;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 80vh;
+        flex-basis: 0;
     }
     .row{
-    min-width: 100vw;
+        min-width: 100vw;
 
     }
 
     .checkboxWrap{
-    margin-top: 10px;
-    margin-bottom: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
     }
 
     .happeningsColumn{
-    max-height: 25em;
+        max-height: 25em;
 
     }
 
@@ -77,13 +77,13 @@
 
     .happeningList{
 
-    max-height: 10em;
+        max-height: 10em;
 
     }
 
     .checkboxWrap{
-    margin-top: 10px;
-    text-align: left;
+        margin-top: 10px;
+        text-align: left;
 
     }
 
@@ -91,21 +91,21 @@
 @media only screen and (min-width: 1360px) {
 
     .happeningUserWrap{
-    display: flex;
-    max-height: 75vh;
-    flex-direction: row;
-    max-height: inherit;
+        display: flex;
+        max-height: 75vh;
+        flex-direction: row;
+        max-height: inherit;
 
     }
     .checkboxWrap{
-    margin-top: 10px;
-    margin-bottom: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
     }
 
 
     .happeningList{
-    max-height: 70vh;
+        max-height: 70vh;
 
     }
 }
