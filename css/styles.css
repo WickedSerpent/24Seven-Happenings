@@ -47,6 +47,8 @@
 
 body{
   margin: 1em;
+  overflow-y: none;
+  overflow-x: none;
 }
 
 ul {
@@ -210,7 +212,7 @@ ul {
 .headerAboveDate {
   width: 13em;
   margin-bottom: 1em;
-  float: left;
+  
   margin-left: 1px;
   
 }
@@ -219,19 +221,18 @@ ul {
 .headerAboveHappen {
   width: 12em;
   margin-left: 1em;
-  float: left;
+  
   overflow-x: none;
   }
 
 .headerAboveUsers { 
   width: 12em;
-  float: left;
+
   overflow-x: none;
  }
 .headerAboveDoneHappen{
   margin-bottom: 1em;
   width: 20em;
-  float: left;
   overflow-x: none;
 }
 
@@ -239,8 +240,7 @@ ul {
 .happeningList{
   margin-left: 1em;
   margin-bottom: 5px;
-  min-width: 12em;
-  max-width: 12em;
+  min-width: 13em;
   max-height: 80vh;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -248,8 +248,8 @@ ul {
 }
 
 .userList{
-  margin-bottom: 5px;
-  width: 12em;
+  margin-bottom: 10px;
+  min-width: 13em;
   max-height: 80vh;
   min-height: 10em;
   overflow-y: scroll;

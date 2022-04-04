@@ -3,7 +3,7 @@
 
     .mainColumn1{
         width: 17em;
-        height: 80vh;;
+        height: 80vh;
         min-width: 17em;
         flex-flow: row wrap;
         overflow-x: none;
@@ -18,17 +18,18 @@
     }
 
     .happeningList{
-        max-height: 13vh;
+        height: 10vh;
     }
     
     .userList{
-        max-height: 15vh;
+        height: 10vh;
         overflow-y: scroll;
         overflow-x: none;
 
     }
 
     .happeningUserWrap{
+        width: 15em;
         display: flexbox;
         flex-wrap: wrap;
         flex-direction: column;
@@ -43,16 +44,12 @@
 
 @media only screen and (max-width: 1360px) and (min-width: 1160px)  {
 
-    .mainColumn1{
-        justify-content: space-between;
 
-
-    }
     .happeningUserWrap{
         display: flexbox;
         flex-wrap: wrap;
         flex-direction: column;
-        height: 80vh;
+        height: 80zvh;
         flex-basis: 0;
     }
     .row{
@@ -67,12 +64,12 @@
     }
 
     .happeningsColumn{
-        max-height: 25em;
+        height: 15em;
 
     }
 
     .userList{
-        max-height: 55vh;
+        max-height: 40vh;
     }
 
     .happeningList{
@@ -90,18 +87,36 @@
 }
 @media only screen and (min-width: 1360px) {
 
+    .mainColumn1{
+        width: 50%;
+        justify-content: space-evenly;
+    }
+
     .happeningUserWrap{
         display: flex;
         max-height: 75vh;
         flex-direction: row;
         max-height: inherit;
+        width: 65%;
+        justify-content: space-between;
+        
 
+    }
+
+    .happeningsColumn{
+        margin-right: auto;
+        margin-left: auto;
+        
+    }
+    .userColumn{
+        margin-right: auto;
     }
     .checkboxWrap{
         margin-top: 10px;
         margin-bottom: 10px;
 
     }
+
 
 
     .happeningList{
@@ -117,24 +132,21 @@
     margin-top: -20px;
     margin-left: -1em;
 }
-.userAndHappenWrap{
-    position:relative;
-    min-width: 30em;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: none;
 
-}
 .row{
     display: flex;
     flex-direction: row;
-    max-height: 60vh;
+    max-height: 80vh;
     overflow-y: none;
+    justify-content: space-between;
+
 }
 .mainColumn1{
     display: flex;
+    max-width: 75%;
     max-height: 80vh;
     overflow-y: none;
+    justify-content: space-between;
 
 }
 .mainColumn2{
@@ -161,7 +173,7 @@
     width: 13em;
     margin-left: 1em;
     word-wrap: break-word;
-    overflow-y: none;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 .doneHappeningsColumn{
@@ -171,7 +183,7 @@
     max-height: 80vh;
     min-width: 30em;
     max-width: 38.8125em;
-    float: left;
+    float: right;
     margin-right: 1em;
     margin-left: 1em;
     overflow-y: none;
