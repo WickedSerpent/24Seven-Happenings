@@ -1,5 +1,4 @@
 *{
-
   font-family: 'Poppins', sans-serif;
   -webkit-touch-callout: none;
   -webkit-user-select: none; 
@@ -12,9 +11,10 @@
 }
 
 #app{
-max-width: 100vmax;
-max-height:100vmin;
-overflow-y: none;
+  max-width: 100vmax;
+  max-height:100vmin;
+  overflow-y: none;
+  overflow-x: none;
 
 }
 
@@ -47,6 +47,8 @@ overflow-y: none;
 
 body{
   margin: 1em;
+  overflow-y: none;
+  overflow-x: none;
 }
 
 ul {
@@ -210,7 +212,7 @@ ul {
 .headerAboveDate {
   width: 13em;
   margin-bottom: 1em;
-  float: left;
+  
   margin-left: 1px;
   
 }
@@ -219,19 +221,18 @@ ul {
 .headerAboveHappen {
   width: 12em;
   margin-left: 1em;
-  float: left;
+  
   overflow-x: none;
   }
 
 .headerAboveUsers { 
   width: 12em;
-  float: left;
+
   overflow-x: none;
  }
 .headerAboveDoneHappen{
   margin-bottom: 1em;
   width: 20em;
-  float: left;
   overflow-x: none;
 }
 
@@ -239,25 +240,24 @@ ul {
 .happeningList{
   margin-left: 1em;
   margin-bottom: 5px;
-  min-width: 12em;
-  max-width: 12em;
-  max-height: 70vh;
+  min-width: 13em;
+  max-height: 80vh;
   overflow-y: scroll;
   scrollbar-width: none;
   
 }
 
 .userList{
-  margin-bottom: 5px;
-  width: 12em;
-  max-height: 60em;
+  margin-bottom: 10px;
+  min-width: 13em;
+  max-height: 80vh;
   min-height: 10em;
   overflow-y: scroll;
   overflow-x: none;
   }
 
 .doneHappenList{
-  max-height: 70vh;
+  max-height: 80vh;
   overflow-y: scroll;
   width: 39.31em;
   background-color: #f6f9ff;
@@ -323,4 +323,7 @@ ul {
   width: 18em;
   }
 
+  .orangeText {
+    color: #FF5733;
+  }
 

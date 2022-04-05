@@ -22,9 +22,5 @@ updateView()
             else if(page === 'deleteCommentAdmin') deleteCommentViewAdmin(); 
         }
 
-            // function updateDetailsView(){
-            //     const page = model.app.page;
-            //     if(page === 'happening') updateViewHappenings();
-            //     else if(page === 'login') loginView();
-            // }
+
 

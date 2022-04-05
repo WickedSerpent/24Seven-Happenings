@@ -55,8 +55,6 @@ function updateViewHappenings() {
               ${getHappeningsHtml()}
               </div>
             </div>    
-          
-          
             <div class="userColumn">
               <h4 class="headerAboveUsers">Velg <span style="color: #FF5733">personer</span>!</h4>
                 <div class="userList">
@@ -69,18 +67,19 @@ function updateViewHappenings() {
                   ${getUsers()}<br/>
                 </div>
             </div>
-          </div>
-        </div>
-      
-        <div class="mainColumn2">
-          <div class="doneHappeningsColumn">
-            <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
-            <div id="doneHappenListId" onscroll="getScrollPoistion()" 
-            class="doneHappenList">
-            ${getDoneHappening()}
             </div>
           </div>
-        </div>
+    
+          <div class="mainColumn2">
+            <div class="doneHappeningsColumn">
+              <h4 class="headerAboveDoneHappen"><span style="color: #FF5733">Trekninger</span></h4>
+              <div id="doneHappenListId" onscroll="getScrollPoistion()" 
+              class="doneHappenList">
+              ${getDoneHappening()}
+              </div>
+            </div>
+          </div>
+          
       </div>
     </div>
   `;  

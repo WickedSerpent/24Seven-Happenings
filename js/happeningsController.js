@@ -248,7 +248,6 @@ function getScrollPoistion() {
     scrollPosition = model.inputs.scrollPositionDoneHappenings;
     element.scrollTo(0, scrollPosition)
   }
- 
 
 
   
