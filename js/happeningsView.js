@@ -186,7 +186,7 @@ function getDoneHappening() {
 
     if (date === 'Innen en uke') {
       time.setDate(time.getDate() + 7)
-      const doWithinText = getDateStringForDisplay(time);
+      const doWithinText = getDateStringForDisplay(time).substr(0,9);
       const doWithinName = dayNames[time.getDay()];
       html += /*html*/ `
       <h4 id=>
