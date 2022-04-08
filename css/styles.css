@@ -243,7 +243,8 @@ ul {
   min-width: 13em;
   max-height: 80vh;
   overflow-y: scroll;
-  scrollbar-width: none;
+  overflow-x: none;
+ 
   
 }
 
@@ -257,10 +258,12 @@ ul {
   }
 
 .doneHappenList{
+  margin-right: 3em;
   max-height: 80vh;
   overflow-y: scroll;
   width: 39.31em;
   background-color: #f6f9ff;
+
 }
 .checkmark{
     width: 20px;

@@ -49,7 +49,7 @@
         display: flexbox;
         flex-wrap: wrap;
         flex-direction: column;
-        height: 80zvh;
+        height: 80vh;
         flex-basis: 0;
     }
     .row{
@@ -64,17 +64,20 @@
     }
 
     .happeningsColumn{
-        height: 15em;
+        max-height: 15em;
 
     }
 
     .userList{
+        max-height: 60vh;
         max-height: 40vh;
     }
+
 
     .happeningList{
 
         max-height: 10em;
+        min-height: 3em;
 
     }
 
@@ -91,7 +94,6 @@
         width: 100%;
         justify-content: space-evenly;
     }
-
     .happeningUserWrap{
         display: flex;
         max-height: 75vh;
@@ -102,7 +104,6 @@
         
 
     }
-
     .happeningsColumn{
         margin-right: auto;
         margin-left: auto;
@@ -116,9 +117,6 @@
         margin-bottom: 10px;
 
     }
-
-
-
     .happeningList{
         max-height: 70vh;
 
@@ -146,13 +144,13 @@
     max-width: 75%;
     max-height: 80vh;
     overflow-y: none;
-    justify-content: space-between;
+    
 
 }
 .mainColumn2{
     display: flex;
     max-height: 80vh;
-
+    margin-right: auto; 
 }
 
 .dateAndDrawColumn{
