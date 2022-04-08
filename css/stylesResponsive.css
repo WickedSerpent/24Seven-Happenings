@@ -51,6 +51,7 @@
         flex-direction: column;
         height: 80vh;
         flex-basis: 0;
+        overflow: none;
     }
     .row{
         min-width: 100vw;
@@ -69,8 +70,8 @@
     }
 
     .userList{
-        max-height: 60vh;
-        max-height: 40vh;
+        margin-top: auto;
+        max-height: 50vh;
     }
 
 
@@ -144,6 +145,7 @@
     max-width: 75%;
     max-height: 80vh;
     overflow-y: none;
+    justify-content: space-between;
     
 
 }
@@ -171,8 +173,8 @@
     width: 13em;
     margin-left: 1em;
     word-wrap: break-word;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-y: none;
+    overflow-x: none;
 }
 .doneHappeningsColumn{
     display: relative;
